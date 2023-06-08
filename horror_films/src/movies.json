@@ -1,0 +1,12 @@
+{
+    "movies" : [
+        {
+            "title" : "The Sitter",
+            "year" : 1977,
+            "genres" : ["Eerie", "Suburban", "Slasher", "Surreal"],
+            "director" : "Fred Walton",
+            "writers" : [ "Fred Walton", "Steve Feke" ],
+            "photo" : "../../photos/the_sitter.jpg"
+        }
+    ]
+}

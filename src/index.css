@@ -10,7 +10,7 @@ body {
   background-color: black;
   text-align: center;
   font-family: 'Signika Negative', sans-serif;
-  background: url('../../horror_films/public/photos/background.jpg') no-repeat center center fixed; 
+  background: url('../public/photos/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

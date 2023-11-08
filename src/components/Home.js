@@ -13,8 +13,9 @@ export default function Home( props ) {
                 <Search movies={props.movies} genres={ props.genres }/>
                 <h1 className='my-5 pt-5'> Horror Films </h1>
                 <Carousel month={ props.month }/>
+                <Footer />
             </div>
-            <Footer />
+            
         </div>
     );
 }

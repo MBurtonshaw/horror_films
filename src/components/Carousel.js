@@ -13,7 +13,12 @@ export default function Carousel( props ) {
                 <h2 className='m-2 p-1'> Autumn Recommendations </h2>
                 <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-inner">
-                        <div className="carousel-item active p-3">
+                    <div className="carousel-item active p-3">
+                            <a href='/titles/halloween'>
+                                <img className='smaller_img' src={ '../../photos/halloween.jpg' }/>
+                            </a>
+                        </div>
+                        <div className="carousel-item p-3">
                             <a href='/titles/ginger_snaps'>
                                 <img className='smaller_img' src={ '../../photos/ginger_snaps.jpg' }/>
                             </a>
@@ -24,8 +29,8 @@ export default function Carousel( props ) {
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                        <a href='/titles/shivers'>
-                                <img className='smaller_img' src={ '../../photos/shivers.jpg' }/>
+                        <a href='/titles/it_follows'>
+                                <img className='smaller_img' src={ '../../photos/it_follows.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -62,13 +67,13 @@ export default function Carousel( props ) {
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                            <a href='/titles/the_mist'>
-                                <img className='smaller_img' src={ '../../photos/the_mist.jpg' }/>
+                            <a href='/titles/evil_dead'>
+                                <img className='smaller_img' src={ '../../photos/evil_dead.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                            <a href='/titles/1'>
-                                <img className='smaller_img' src={ '../../photos/the_sitter.jpg' }/>
+                            <a href='/titles/evil_dead_2'>
+                                <img className='smaller_img' src={ '../../photos/evil_dead_2.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -95,8 +100,8 @@ export default function Carousel( props ) {
                 <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
-                            <a href='/titles/it_follows'>
-                                <img className='smaller_img' src={ '../../photos/it_follows.jpg' }/>
+                            <a href='/titles/the_mist'>
+                                <img className='smaller_img' src={ '../../photos/the_mist.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
@@ -105,8 +110,13 @@ export default function Carousel( props ) {
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                            <a href='/titles/jeepers_creepers'>
-                                <img className='smaller_img' src={ '../../photos/jeepers_creepers.jpg' }/>
+                            <a href='/titles/the_lighthouse'>
+                                <img className='smaller_img' src={ '../../photos/the_lighthouse.jpg' }/>
+                            </a>
+                        </div>
+                        <div className="carousel-item p-3">
+                            <a href='/titles/hereditary'>
+                                <img className='smaller_img' src={ '../../photos/hereditary.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -133,18 +143,23 @@ export default function Carousel( props ) {
                 <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
-                            <a href='/titles/the_sitter'>
-                                <img className='smaller_img' src={ '../../photos/the_sitter.jpg' }/>
+                            <a href='/titles/texas_chainsaw_massacre'>
+                                <img className='smaller_img' src={ '../../photos/texas_chainsaw_massacre.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                        <a href='/titles/dusk_till_dawn'>
+                            <a href='/titles/dusk_till_dawn'>
                                 <img className='smaller_img' src={ '../../photos/dusk_till_dawn.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                        <a href='/titles/pumpkinhead'>
+                            <a href='/titles/pumpkinhead'>
                                 <img className='smaller_img' src={ '../../photos/pumpkinhead.jpg' }/>
+                            </a>
+                        </div>
+                        <div className="carousel-item p-3">
+                            <a href='/titles/jeepers_creepers'>
+                                <img className='smaller_img' src={ '../../photos/jeepers_creepers.jpg' }/>
                             </a>
                         </div>
                     </div>

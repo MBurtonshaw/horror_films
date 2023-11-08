@@ -249,6 +249,16 @@
             "directors" : [ "John Carpenter" ],
             "writers" : [ "John Carpenter", "Debra Hill" ],
             "photo" : "../../photos/halloween.jpg"
+        },
+        {
+            "id" : 26,
+            "title" : "The Thing",
+            "url" : "the_thing",
+            "year" : 1982,
+            "genres" : ["Eerie", "Surreal", "Cosmic", "Invasion", "Gore", "Body"],
+            "directors" : [ "John Carpenter" ],
+            "writers" : [ "Bill Lancaster", "John Carpenter" ],
+            "photo" : "../../photos/the_thing.jpg"
         }
     ]
 }

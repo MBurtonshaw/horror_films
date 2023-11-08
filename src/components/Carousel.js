@@ -72,8 +72,8 @@ export default function Carousel( props ) {
                             </a>
                         </div>
                         <div className="carousel-item p-3">
-                            <a href='/titles/evil_dead_2'>
-                                <img className='smaller_img' src={ '../../photos/evil_dead_2.jpg' }/>
+                            <a href='/titles/the_thing'>
+                                <img className='smaller_img' src={ '../../photos/the_thing.jpg' }/>
                             </a>
                         </div>
                     </div>

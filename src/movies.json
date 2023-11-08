@@ -1,0 +1,244 @@
+{
+    "movies" : [
+        {
+            "id" : 1,
+            "title" : "The Sitter",
+            "url" : "the_sitter",
+            "year" : 1977,
+            "genres" : ["Eerie", "Suburban", "Slasher", "Indie", "Short"],
+            "directors" : [ "Fred Walton" ],
+            "writers" : [ "Fred Walton", "Steve Feke" ],
+            "photo" : "../../photos/the_sitter.jpg"
+        },
+        {
+            "id" : 2,
+            "title" : "It Follows",
+            "url" : "it_follows",
+            "year" : 2014,
+            "genres" : ["Eerie", "Suburban", "Surreal", "Indie"],
+            "directors" : [ "David Robert Mitchell" ],
+            "writers" : [ "David Robert Mitchell" ],
+            "photo" : "../../photos/it_follows.jpg"
+        },
+        {
+            "id" : 3,
+            "title" : "Ginger Snaps",
+            "url" : "ginger_snaps",
+            "year" : 2000,
+            "genres" : ["Creature", "Suburban", "Indie", "Body", "Gore"],
+            "directors" : [ "John Fawcett" ],
+            "writers" : [ "Karen Walton" ],
+            "photo" : "../../photos/ginger_snaps.jpg"
+        },
+        {
+            "id" : 4,
+            "title" : "Phantasm",
+            "url" : "phantasm",
+            "year" : 1979,
+            "genres" : ["Surreal", "Indie", "Cosmic", "Eerie"],
+            "directors" : [ "Don Coscarelli" ],
+            "writers" : [ "Don Coscarelli" ],
+            "photo" : "../../photos/phantasm.jpg"
+        },
+        {
+            "id" : 5,
+            "title" : "Pumpkinhead",
+            "url" : "pumpkinhead",
+            "year" : 1988,
+            "genres" : ["Creature", "Occult", "Rural"],
+            "directors" : [ "Stan Winston" ],
+            "writers" : [ "Mark Patrick Carducci", "Gary Gerani", "Richard C. Weinman", "Sam Winston" ],
+            "photo" : "../../photos/pumpkinhead.jpg"
+        },
+        {
+            "id" : 6,
+            "title" : "Shivers",
+            "url" : "shivers",
+            "year" : 1975,
+            "genres" : ["Invasion", "Indie", "Body", "Gore"],
+            "directors" : [ "David Cronenberg" ],
+            "writers" : [ "David Cronenberg" ],
+            "photo" : "../../photos/shivers.jpg"
+        },
+        {
+            "id" : 7,
+            "title" : "Jeepers Creepers",
+            "url" : "jeepers_creepers",
+            "year" : 2001,
+            "genres" : ["Creature", "Rural", "Body"],
+            "directors" : [ "An actual creeper" ],
+            "writers" : [ "An actual creeper" ],
+            "photo" : "../../photos/jeepers_creepers.jpg"
+        },
+        {
+            "id" : 8,
+            "title" : "The Mist",
+            "url" : "the_mist",
+            "year" : 2007,
+            "genres" : ["Creature", "Cosmic", "Rural", "Invasion"],
+            "directors" : [ "Frank Darabont" ],
+            "writers" : [ "Steven King", "Frank Darabont" ],
+            "photo" : "../../photos/the_mist.jpg"
+        },
+        {
+            "id" : 9,
+            "title" : "From Dusk Till Dawn",
+            "url" : "dusk_till_dawn",
+            "year" : 1996,
+            "genres" : ["Creature", "Campy", "Body", "Gore"],
+            "directors" : [ "Robert Rodriguez" ],
+            "writers" : [ "Robert Kurtzman", "Quentin Tarantino" ],
+            "photo" : "../../photos/dusk_till_dawn.jpg"
+        },
+        {
+            "id" : 10,
+            "title" : "Ravenous",
+            "url" : "ravenous",
+            "year" : 1999,
+            "genres" : ["Invasion", "Gore", "Period", "Campy"],
+            "directors" : [ "Antonia Bird" ],
+            "writers" : [ "Ted Griffin" ],
+            "photo" : "../../photos/ravenous.jpg"
+        },
+        {
+            "id" : 11,
+            "title" : "The Curse of Frankenstein",
+            "url" : "curse_of_frankenstein",
+            "year" : 1957,
+            "genres" : ["Classic", "Creature", "Period"],
+            "directors" : [ "Terence Fisher" ],
+            "writers" : [ "Jimmy Sangster" ],
+            "photo" : "../../photos/curse_of_frankenstein.jpg"
+        },
+        {
+            "id" : 12,
+            "title" : "Black Christmas",
+            "url" : "black_christmas",
+            "year" : 1974,
+            "genres" : ["Suburban", "Eerie", "Slasher"],
+            "directors" : [ "Bob Clark" ],
+            "writers" : [ "A. Roy Moore" ],
+            "photo" : "../../photos/black_christmas.jpg"
+        },
+        {
+            "id" : 13,
+            "title" : "Funny Games (US)",
+            "url" : "funny_games_us",
+            "year" : 2007,
+            "genres" : ["Suburban", "Invasion", "Surreal"],
+            "directors" : [ "Michael Haneke" ],
+            "writers" : [ "Michael Haneke" ],
+            "photo" : "../../photos/funny_games.jpg"
+        },
+        {
+            "id" : 14,
+            "title" : "The VVitch",
+            "url" : "the_vvitch",
+            "year" : 2015,
+            "genres" : ["Occult", "Period", "Rural", "Eerie"],
+            "directors" : [ "Robert Eggers" ],
+            "writers" : [ "Robert Eggers" ],
+            "photo" : "../../photos/the_vvitch.jpg"
+        },
+        {
+            "id" : 15,
+            "title" : "The Lighthouse",
+            "url" : "the_lighthouse",
+            "year" : 2019,
+            "genres" : ["Eerie", "Period", "Surreal", "Cosmic"],
+            "directors" : ["Robert Eggers" ],
+            "writers" : [ "Robert Eggers" ],
+            "photo" : "../../photos/the_lighthouse.jpg"
+        },
+        {
+            "id" : 16,
+            "title" : "Hereditary",
+            "url" : "hereditary",
+            "year" : 2018,
+            "genres" : ["Occult", "Suburban", "Surreal", "Gore"],
+            "directors" : [ "Ari Aster"],
+            "writers" : [ "Ari Aster" ],
+            "photo" : "../../photos/hereditary.jpg"
+        },
+        {
+            "id" : 17,
+            "title" : "Get Out",
+            "url" : "get_out",
+            "year" : 2017,
+            "genres" : ["Eerie", "Suburban", "Body"],
+            "directors" : [ "Jordan Peele" ],
+            "writers" : [ "Jordan Peele" ],
+            "photo" : "../../photos/get_out.jpg"
+        },
+        {
+            "id" : 18,
+            "title" : "V/H/S",
+            "url" : "vhs",
+            "year" : 2012,
+            "genres" : ["Analog", "Slasher", "Gore", "Occult", "Surreal", "Anthology"],
+            "directors" : [ "Adam Wingard", "David Bruckner", "Ti West", "Glenn McQuaid", "Joe Swanberg", "Radio Silence" ],
+            "writers" : [ "Simon Barrett", "David Bruckner", "Nicholas Tecosky", "Ti West", "Glenn McQuaid", "Matt Bettinelli-Olpin, Tyler Gillett, Justin Martinez, Chad Villella" ],
+            "photo" : "../../photos/vhs.jpg"
+        },
+        {
+            "id" : 19,
+            "title" : "Black Phone",
+            "url" : "black_phone",
+            "year" : 2021,
+            "genres" : ["Eerie", "Cosmic", "Suburban", "Period"],
+            "directors" : ["Scott Derrickson"],
+            "writers" : [ "Scott Derrickson" ],
+            "photo" : "../../photos/black_phone.jpg"
+        },
+        {
+            "id" : 20,
+            "title" : "Pearl",
+            "url" : "pearl",
+            "year" : 2022,
+            "genres" : ["Rural", "Period", "Campy"],
+            "directors" : [ "Ti West" ],
+            "writers" : [ "Mia Goth", "Ti West" ],
+            "photo" : "../../photos/pearl.jpg"
+        },
+        {
+            "id" : 21,
+            "title" : "The Texas Chainsaw Massacre",
+            "url" : "texas_chainsaw_massacre",
+            "year" : 1974,
+            "genres" : ["Rural", "Slasher", "Surreal", "Gore", "Indie"],
+            "directors" : [ "Tobe Hooper" ],
+            "writers" : [ "Tobe Hooper" ],
+            "photo" : "../../photos/texas_chainsaw_massacre.jpg"
+        },
+        {
+            "id" : 22,
+            "title" : "The Evil Dead",
+            "url" : "evil_dead",
+            "year" : 1981,
+            "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
+            "directors" : [ "Sam Raimi" ],
+            "writers" : [ "Sam Raimi" ],
+            "photo" : "../../photos/evil_dead.jpg"
+        },
+        {
+            "id" : 23,
+            "title" : "Evil Dead 2: Dead by Dawn",
+            "url" : "evil_dead_2",
+            "year" : 1987,
+            "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
+            "directors" : [ "Sam Raimi" ],
+            "writers" : [ "Sam Raimi" ],
+            "photo" : "../../photos/evil_dead_2.jpg"
+        },
+        {
+            "id" : 24,
+            "title" : "Creep",
+            "url" : "creep",
+            "year" : 2014,
+            "genres" : ["Eerie", "Analog"],
+            "directors" : [ "Patrick Brice" ],
+            "writers" : [ "Mark Duplass", "Patrick Brice" ],
+            "photo" : "../../photos/creep.jpg"
+        }
+    ]
+}

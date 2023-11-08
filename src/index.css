@@ -1,0 +1,97 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-family: 'Signika Negative', sans-serif;
+  background: url('../../horror_films/public/photos/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(152, 248, 192);
+  font-size: 1.1em;
+}
+
+li {
+  list-style: none;
+}
+
+#footer {
+  background-color: none;
+}
+
+.accordion-body {
+  color: lightgray;
+}
+
+.accordion-header {
+  background-color: black;
+}
+
+.accordion-item {
+  background-color: black;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgb(57, 12, 12);
+  color: rgb(92, 200, 137);
+}
+
+.accordion-button:is(.collapsed) {
+  background-color: rgb(25, 6, 6);
+  color: rgb(92, 200, 137);
+}
+
+.card {
+  background-color: black;
+}
+
+.list-group {
+  background: transparent;
+}
+
+.list-group-item {
+  background: transparent;
+}
+
+.purple {
+  color: rgb(206, 119, 206)
+}
+
+.nav {
+  background: transparent;
+}
+
+.nav-item {
+  background: transparent;
+}
+
+.nonChalant {
+  color: white;
+}
+
+.smaller_img {
+  max-width: 630px;
+  max-height: 400px;
+  opacity: 75%;
+}
+
+.smaller_img:hover {
+  opacity: 100%;
+}
+
+.header-nav a {
+  color: rgb(152, 248, 192);
+  font-size: 1.2em;
+}

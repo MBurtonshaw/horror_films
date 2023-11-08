@@ -15,12 +15,22 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-shadow: 1px 1px 2px black;
 }
 
 a {
   text-decoration: none;
   color: rgb(152, 248, 192);
   font-size: 1.1em;
+}
+
+a:hover {
+  color:rgb(29, 91, 39);
+  text-shadow: 2px 2px 4px black;
+}
+
+.nav-link:hover {
+  color: rgb(79, 130, 100);
 }
 
 li {

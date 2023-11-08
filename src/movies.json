@@ -239,6 +239,16 @@
             "directors" : [ "Patrick Brice" ],
             "writers" : [ "Mark Duplass", "Patrick Brice" ],
             "photo" : "../../photos/creep.jpg"
+        },
+        {
+            "id" : 25,
+            "title" : "Halloween",
+            "url" : "halloween",
+            "year" : 1978,
+            "genres" : ["Eerie", "Slasher", "Suburban"],
+            "directors" : [ "John Carpenter" ],
+            "writers" : [ "John Carpenter", "Debra Hill" ],
+            "photo" : "../../photos/halloween.jpg"
         }
     ]
 }

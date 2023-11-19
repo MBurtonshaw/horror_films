@@ -8,7 +8,7 @@
             "genres" : ["Eerie", "Suburban", "Slasher", "Indie", "Short"],
             "directors" : [ "Fred Walton" ],
             "writers" : [ "Fred Walton", "Steve Feke" ],
-            "photo" : "../../photos/the_sitter.jpg"
+            "photo" : "../../photos/ogs/the_sitter.jpg"
         },
         {
             "id" : 2,
@@ -18,7 +18,7 @@
             "genres" : ["Eerie", "Suburban", "Surreal", "Indie"],
             "directors" : [ "David Robert Mitchell" ],
             "writers" : [ "David Robert Mitchell" ],
-            "photo" : "../../photos/it_follows.jpg"
+            "photo" : "../../photos/ogs/it_follows.jpg"
         },
         {
             "id" : 3,
@@ -28,7 +28,7 @@
             "genres" : ["Creature", "Suburban", "Indie", "Body", "Gore"],
             "directors" : [ "John Fawcett" ],
             "writers" : [ "Karen Walton" ],
-            "photo" : "../../photos/ginger_snaps.jpg"
+            "photo" : "../../photos/ogs/ginger_snaps.jpg"
         },
         {
             "id" : 4,
@@ -38,7 +38,7 @@
             "genres" : ["Surreal", "Indie", "Cosmic", "Eerie"],
             "directors" : [ "Don Coscarelli" ],
             "writers" : [ "Don Coscarelli" ],
-            "photo" : "../../photos/phantasm.jpg"
+            "photo" : "../../photos/ogs/phantasm.jpg"
         },
         {
             "id" : 5,
@@ -48,7 +48,7 @@
             "genres" : ["Creature", "Occult", "Rural"],
             "directors" : [ "Stan Winston" ],
             "writers" : [ "Mark Patrick Carducci", "Gary Gerani", "Richard C. Weinman", "Sam Winston" ],
-            "photo" : "../../photos/pumpkinhead.jpg"
+            "photo" : "../../photos/ogs/pumpkinhead.jpg"
         },
         {
             "id" : 6,
@@ -58,7 +58,7 @@
             "genres" : ["Invasion", "Indie", "Body", "Gore"],
             "directors" : [ "David Cronenberg" ],
             "writers" : [ "David Cronenberg" ],
-            "photo" : "../../photos/shivers.jpg"
+            "photo" : "../../photos/ogs/shivers.jpg"
         },
         {
             "id" : 7,
@@ -68,7 +68,7 @@
             "genres" : ["Creature", "Rural", "Body"],
             "directors" : [ "An actual creeper" ],
             "writers" : [ "An actual creeper" ],
-            "photo" : "../../photos/jeepers_creepers.jpg"
+            "photo" : "../../photos/ogs/jeepers_creepers.jpg"
         },
         {
             "id" : 8,
@@ -78,7 +78,7 @@
             "genres" : ["Creature", "Cosmic", "Rural", "Invasion"],
             "directors" : [ "Frank Darabont" ],
             "writers" : [ "Steven King", "Frank Darabont" ],
-            "photo" : "../../photos/the_mist.jpg"
+            "photo" : "../../photos/ogs/the_mist.jpg"
         },
         {
             "id" : 9,
@@ -88,7 +88,7 @@
             "genres" : ["Creature", "Campy", "Body", "Gore"],
             "directors" : [ "Robert Rodriguez" ],
             "writers" : [ "Robert Kurtzman", "Quentin Tarantino" ],
-            "photo" : "../../photos/dusk_till_dawn.jpg"
+            "photo" : "../../photos/ogs/dusk_till_dawn.jpg"
         },
         {
             "id" : 10,
@@ -98,7 +98,7 @@
             "genres" : ["Invasion", "Gore", "Period", "Campy"],
             "directors" : [ "Antonia Bird" ],
             "writers" : [ "Ted Griffin" ],
-            "photo" : "../../photos/ravenous.jpg"
+            "photo" : "../../photos/ogs/ravenous.jpg"
         },
         {
             "id" : 11,
@@ -108,7 +108,7 @@
             "genres" : ["Classic", "Creature", "Period"],
             "directors" : [ "Terence Fisher" ],
             "writers" : [ "Jimmy Sangster" ],
-            "photo" : "../../photos/curse_of_frankenstein.jpg"
+            "photo" : "../../photos/ogs/curse_of_frankenstein.jpg"
         },
         {
             "id" : 12,
@@ -118,7 +118,7 @@
             "genres" : ["Suburban", "Eerie", "Slasher"],
             "directors" : [ "Bob Clark" ],
             "writers" : [ "A. Roy Moore" ],
-            "photo" : "../../photos/black_christmas.jpg"
+            "photo" : "../../photos/ogs/black_christmas.jpg"
         },
         {
             "id" : 13,
@@ -128,7 +128,7 @@
             "genres" : ["Suburban", "Invasion", "Surreal"],
             "directors" : [ "Michael Haneke" ],
             "writers" : [ "Michael Haneke" ],
-            "photo" : "../../photos/funny_games.jpg"
+            "photo" : "../../photos/ogs/funny_games.jpg"
         },
         {
             "id" : 14,
@@ -138,7 +138,7 @@
             "genres" : ["Occult", "Period", "Rural", "Eerie"],
             "directors" : [ "Robert Eggers" ],
             "writers" : [ "Robert Eggers" ],
-            "photo" : "../../photos/the_vvitch.jpg"
+            "photo" : "../../photos/ogs/the_vvitch.jpg"
         },
         {
             "id" : 15,
@@ -148,7 +148,7 @@
             "genres" : ["Eerie", "Period", "Surreal", "Cosmic"],
             "directors" : ["Robert Eggers" ],
             "writers" : [ "Robert Eggers" ],
-            "photo" : "../../photos/the_lighthouse.jpg"
+            "photo" : "../../photos/ogs/the_lighthouse.jpg"
         },
         {
             "id" : 16,
@@ -158,7 +158,7 @@
             "genres" : ["Occult", "Suburban", "Surreal", "Gore"],
             "directors" : [ "Ari Aster"],
             "writers" : [ "Ari Aster" ],
-            "photo" : "../../photos/hereditary.jpg"
+            "photo" : "../../photos/ogs/hereditary.jpg"
         },
         {
             "id" : 17,
@@ -168,7 +168,7 @@
             "genres" : ["Eerie", "Suburban", "Body"],
             "directors" : [ "Jordan Peele" ],
             "writers" : [ "Jordan Peele" ],
-            "photo" : "../../photos/get_out.jpg"
+            "photo" : "../../photos/ogs/get_out.jpg"
         },
         {
             "id" : 18,
@@ -178,7 +178,7 @@
             "genres" : ["Analog", "Slasher", "Gore", "Occult", "Surreal", "Anthology"],
             "directors" : [ "Adam Wingard", "David Bruckner", "Ti West", "Glenn McQuaid", "Joe Swanberg", "Radio Silence" ],
             "writers" : [ "Simon Barrett", "David Bruckner", "Nicholas Tecosky", "Ti West", "Glenn McQuaid", "Matt Bettinelli-Olpin, Tyler Gillett, Justin Martinez, Chad Villella" ],
-            "photo" : "../../photos/vhs.jpg"
+            "photo" : "../../photos/ogs/vhs.jpg"
         },
         {
             "id" : 19,
@@ -188,7 +188,7 @@
             "genres" : ["Eerie", "Cosmic", "Suburban", "Period"],
             "directors" : ["Scott Derrickson"],
             "writers" : [ "Scott Derrickson" ],
-            "photo" : "../../photos/black_phone.jpg"
+            "photo" : "../../photos/ogs/black_phone.jpg"
         },
         {
             "id" : 20,
@@ -198,7 +198,7 @@
             "genres" : ["Rural", "Period", "Campy"],
             "directors" : [ "Ti West" ],
             "writers" : [ "Mia Goth", "Ti West" ],
-            "photo" : "../../photos/pearl.jpg"
+            "photo" : "../../photos/ogs/pearl.jpg"
         },
         {
             "id" : 21,
@@ -208,7 +208,7 @@
             "genres" : ["Rural", "Slasher", "Surreal", "Gore", "Indie"],
             "directors" : [ "Tobe Hooper" ],
             "writers" : [ "Tobe Hooper" ],
-            "photo" : "../../photos/texas_chainsaw_massacre.jpg"
+            "photo" : "../../photos/ogs/texas_chainsaw_massacre.jpg"
         },
         {
             "id" : 22,
@@ -218,7 +218,7 @@
             "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
-            "photo" : "../../photos/evil_dead.jpg"
+            "photo" : "../../photos/ogs/evil_dead.jpg"
         },
         {
             "id" : 23,
@@ -228,7 +228,7 @@
             "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
-            "photo" : "../../photos/evil_dead_2.jpg"
+            "photo" : "../../photos/ogs/evil_dead_2.jpg"
         },
         {
             "id" : 24,
@@ -238,7 +238,7 @@
             "genres" : ["Eerie", "Analog"],
             "directors" : [ "Patrick Brice" ],
             "writers" : [ "Mark Duplass", "Patrick Brice" ],
-            "photo" : "../../photos/creep.jpg"
+            "photo" : "../../photos/ogs/creep.jpg"
         },
         {
             "id" : 25,
@@ -248,7 +248,7 @@
             "genres" : ["Eerie", "Slasher", "Suburban"],
             "directors" : [ "John Carpenter" ],
             "writers" : [ "John Carpenter", "Debra Hill" ],
-            "photo" : "../../photos/halloween.jpg"
+            "photo" : "../../photos/ogs/halloween.jpg"
         },
         {
             "id" : 26,
@@ -258,7 +258,7 @@
             "genres" : ["Eerie", "Surreal", "Cosmic", "Invasion", "Gore", "Body"],
             "directors" : [ "John Carpenter" ],
             "writers" : [ "Bill Lancaster", "John Carpenter" ],
-            "photo" : "../../photos/the_thing.jpg"
+            "photo" : "../../photos/ogs/the_thing.jpg"
         },
         {
             "id" : 27,
@@ -268,7 +268,7 @@
             "genres" : ["Slasher", "Invasion", "Suburban"],
             "directors" : [ "Wes Craven" ],
             "writers" : [ "Kevin Williamson" ],
-            "photo" : "../../photos/scream.jpg"
+            "photo" : "../../photos/ogs/scream.jpg"
         },
         {
             "id" : 28,
@@ -278,7 +278,7 @@
             "genres" : ["Campy", "Gore", "Body", "Cosmic"],
             "directors" : [ "Stuart Gordon" ],
             "writers" : [ "Stuart Gordon", "William J. Norris", "Dennis Paoli" ],
-            "photo" : "../../photos/re_animator.jpg"
+            "photo" : "../../photos/ogs/re_animator.jpg"
         },
         {
             "id" : 29,
@@ -288,7 +288,7 @@
             "genres" : ["Surreal", "Campy", "Gore", "Invasion", "Rural"],
             "directors" : [ "Robert Rodriguez" ],
             "writers" : [ "Robert Rodriguez" ],
-            "photo" : "../../photos/planet_terror.jpg"
+            "photo" : "../../photos/ogs/planet_terror.jpg"
         }
     ]
 }

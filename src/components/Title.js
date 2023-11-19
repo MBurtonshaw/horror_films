@@ -72,7 +72,7 @@ export default function Title( props ) {
                             </div>
                         </div>
                         <div id='title_photo' className='container w-50'>
-                            <img src={ movie.photo } className='w-75'></img>
+                            <a href='/titles'><img src={ movie.photo } className='w-75 transparent'></img></a>
                         </div>
                     </div>
                 </div>

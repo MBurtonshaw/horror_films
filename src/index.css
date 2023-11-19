@@ -101,6 +101,14 @@ li {
   opacity: 100%;
 }
 
+.transparent {
+  opacity: 75%;
+}
+
+.transparent:hover {
+  opacity: 100%;
+}
+
 .header-nav a {
   color: rgb(152, 248, 192);
   font-size: 1.2em;

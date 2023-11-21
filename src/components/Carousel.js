@@ -15,22 +15,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                     <div className="carousel-item active p-3">
                             <a href='/titles/halloween'>
-                                <img className='smaller_img' src={ '../../photos/halloween.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/halloween.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/ginger_snaps'>
-                                <img className='smaller_img' src={ '../../photos/ginger_snaps.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/ginger_snaps.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/curse_of_frankenstein'>
-                                <img className='smaller_img' src={ '../../photos/curse_of_frankenstein.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/curse_of_frankenstein.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/it_follows'>
-                                <img className='smaller_img' src={ '../../photos/it_follows.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/it_follows.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -58,22 +58,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/black_christmas'>
-                                <img className='smaller_img' src={ '../../photos/black_christmas.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/black_christmas.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/ravenous'>
-                                <img className='smaller_img' src={ '../../photos/ravenous.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/ravenous.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/evil_dead'>
-                                <img className='smaller_img' src={ '../../photos/evil_dead.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/evil_dead.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/the_thing'>
-                                <img className='smaller_img' src={ '../../photos/the_thing.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_thing.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -101,22 +101,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/the_mist'>
-                                <img className='smaller_img' src={ '../../photos/the_mist.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_mist.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/phantasm'>
-                                <img className='smaller_img' src={ '../../photos/phantasm.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/phantasm.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/the_lighthouse'>
-                                <img className='smaller_img' src={ '../../photos/the_lighthouse.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_lighthouse.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/hereditary'>
-                                <img className='smaller_img' src={ '../../photos/hereditary.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/hereditary.jpg' }/>
                             </a>
                         </div>
                     </div>
@@ -144,22 +144,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/texas_chainsaw_massacre'>
-                                <img className='smaller_img' src={ '../../photos/texas_chainsaw_massacre.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/texas_chainsaw_massacre.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/dusk_till_dawn'>
-                                <img className='smaller_img' src={ '../../photos/dusk_till_dawn.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/dusk_till_dawn.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/pumpkinhead'>
-                                <img className='smaller_img' src={ '../../photos/pumpkinhead.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/pumpkinhead.jpg' }/>
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/jeepers_creepers'>
-                                <img className='smaller_img' src={ '../../photos/jeepers_creepers.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/jeepers_creepers.jpg' }/>
                             </a>
                         </div>
                     </div>

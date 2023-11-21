@@ -19,7 +19,7 @@ export default function GenrePage( props ) {
                                         <div key={ i } className='w-25'>
                                             <div className="card">
                                                 <a href={`/genres/${ genre }`}>
-                                                    <img src={ `../../photos/${ newGenre }.jpg` } className="card-img-top" alt="..." />
+                                                    <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
                                                     <div className="card-body">
                                                         <h5 className="card-title">{ genre }</h5>
                                                     </div>

@@ -10,9 +10,10 @@ export default function Results(props) {
    async function getData() {
     if (window.location.hostname === 'localhost') {
         setTerm(window.location.href.slice(30));
+        console.log(window.pathname);
     } else {
         setTerm(window.location.href);
-        console.log(window.pathName.slice(23));
+        console.log(window.pathname.slice(23));
     }
     movieArray = await props.movies;
     if (movieArray.length <= 1) {

@@ -12,7 +12,7 @@ export default function Results(props) {
         setTerm(window.location.href.slice(30));
     } else {
         setTerm(window.location.href);
-        console.log(window.location);
+        console.log(window.pathName.slice(23));
     }
     movieArray = await props.movies;
     if (movieArray.length <= 1) {

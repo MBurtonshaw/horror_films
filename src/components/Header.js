@@ -66,7 +66,7 @@ export default function Header() {
         } catch(err) {
             console.log(err.message);
         }
-    } else if (window.location.href.includes('/decades')) {
+    } else if (window.location.href.includes('/decades') || window.location.href.includes('/results')) {
         try {
             //
             return(

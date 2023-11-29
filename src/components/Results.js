@@ -8,22 +8,26 @@ export default function Results(props) {
 
    //function to set a term from url to state then sort movies based on that term
    async function getData() {
+    if (window.location.hostname === 'localhost') {
         setTerm(window.location.href.slice(30));
-        movieArray = await props.movies;
-        if (movieArray.length <= 1) {
-            return(null)
-        } else {
-            for (let i = 0; i < movieArray.length; i++) {
-                let newType = term.toLowerCase();
-                let newArray = [];
-                movieArray.forEach((film, i) => {
-                    if (film.url.includes(newType)) {
-                        newArray.push(film);
-                    }
-                    setMovies(newArray);
-                });
-            }
+    } else {
+        setTerm(window.location.href);
+    }
+    movieArray = await props.movies;
+    if (movieArray.length <= 1) {
+        return(null)
+    } else {
+        for (let i = 0; i < movieArray.length; i++) {
+            let newType = term.toLowerCase();
+            let newArray = [];
+            movieArray.forEach((film) => {
+                if (film.url.includes(newType)) {
+                    newArray.push(film);
+                }
+                setMovies(newArray);
+            });
         }
+    }
    }
 
    useEffect( () => { getData() } );

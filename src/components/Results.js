@@ -8,13 +8,7 @@ export default function Results(props) {
 
    //function to set a term from url to state then sort movies based on that term
    async function getData() {
-    if (window.location.hostname === 'localhost') {
-        setTerm(window.location.href.slice(30));
-        console.log(window.pathname);
-    } else {
-        setTerm(window.location.href);
-        console.log(window.pathname.slice(23));
-    }
+    setTerm(window.location.pathname.slice(9));
     movieArray = await props.movies;
     if (movieArray.length <= 1) {
         return(null)

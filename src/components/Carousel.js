@@ -31,17 +31,17 @@ export default function Carousel( props ) {
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/ginger_snaps'>
-                                <img id='ginger_snaps' className='smaller_img' src={ '../../photos/tinted/ginger_snaps.jpg' } onMouseOver={hover_over} />
+                                <img id='ginger_snaps' className='smaller_img' src={ '../../photos/tinted/ginger_snaps.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/curse_of_frankenstein'>
-                                <img id='curse_of_frankenstein' className='smaller_img' src={ '../../photos/tinted/curse_of_frankenstein.jpg' } onMouseOver={hover_over} />
+                                <img id='curse_of_frankenstein' className='smaller_img' src={ '../../photos/tinted/curse_of_frankenstein.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/it_follows'>
-                                <img id='it_follows' className='smaller_img' src={ '../../photos/tinted/it_follows.jpg' } onMouseOver={hover_over}/>
+                                <img id='it_follows' className='smaller_img' src={ '../../photos/tinted/it_follows.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                     </div>
@@ -69,22 +69,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/black_christmas'>
-                                <img className='smaller_img' src={ '../../photos/tinted/black_christmas.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/black_christmas.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/ravenous'>
-                                <img className='smaller_img' src={ '../../photos/tinted/ravenous.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/ravenous.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/evil_dead'>
-                                <img className='smaller_img' src={ '../../photos/tinted/evil_dead.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/evil_dead.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/the_thing'>
-                                <img className='smaller_img' src={ '../../photos/tinted/the_thing.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_thing.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                     </div>
@@ -112,22 +112,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/the_mist'>
-                                <img className='smaller_img' src={ '../../photos/tinted/the_mist.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_mist.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/phantasm'>
-                                <img className='smaller_img' src={ '../../photos/tinted/phantasm.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/phantasm.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/the_lighthouse'>
-                                <img className='smaller_img' src={ '../../photos/tinted/the_lighthouse.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/the_lighthouse.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/hereditary'>
-                                <img className='smaller_img' src={ '../../photos/tinted/hereditary.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/hereditary.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                     </div>
@@ -155,22 +155,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                         <div className="carousel-item active p-3">
                             <a href='/titles/texas_chainsaw_massacre'>
-                                <img className='smaller_img' src={ '../../photos/tinted/texas_chainsaw_massacre.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/texas_chainsaw_massacre.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/dusk_till_dawn'>
-                                <img className='smaller_img' src={ '../../photos/tinted/dusk_till_dawn.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/dusk_till_dawn.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/pumpkinhead'>
-                                <img className='smaller_img' src={ '../../photos/tinted/pumpkinhead.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/pumpkinhead.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/jeepers_creepers'>
-                                <img className='smaller_img' src={ '../../photos/tinted/jeepers_creepers.jpg' }/>
+                                <img className='smaller_img' src={ '../../photos/tinted/jeepers_creepers.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                     </div>

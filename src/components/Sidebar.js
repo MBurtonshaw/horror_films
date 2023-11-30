@@ -1,5 +1,4 @@
 import { React } from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Sidebar(props) {
 
@@ -18,9 +17,9 @@ export default function Sidebar(props) {
                                 //
                                 return(
                                     <li key={ i } className="list-group-item mb-3">
-                                        <Link to={`/genres/${ genre }`} title={`${ genre }`}>
+                                        <a href={`/genres/${ genre }`} title={`${ genre }`}>
                                             { genre }
-                                        </Link>
+                                        </a>
                                     </li>
                                 )
                             }

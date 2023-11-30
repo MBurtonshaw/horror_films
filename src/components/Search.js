@@ -13,7 +13,7 @@ export default function Search(props) {
     const wrapper = document.createElement('div');
     wrapper.innerHTML = [
         `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-        `   <div>${message}</div>`,
+        `   <div class='thinner'>${message}</div>`,
         '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
         '</div>'
     ].join('');

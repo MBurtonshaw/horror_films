@@ -289,6 +289,16 @@
             "directors" : [ "Robert Rodriguez" ],
             "writers" : [ "Robert Rodriguez" ],
             "photo" : "../../photos/planet_terror.jpg"
+        },
+        {
+            "id" : 30,
+            "title" : "Gremlins",
+            "url" : "gremlins",
+            "year" : 1984,
+            "genres" : ["Surreal", "Campy", "Creature", "Invasion", "Suburban"],
+            "directors" : [ "Joe Dante" ],
+            "writers" : [ "Chris Columbus" ],
+            "photo" : "../../photos/gremlins.jpg"
         }
     ]
 }

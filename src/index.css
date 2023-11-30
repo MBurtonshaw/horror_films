@@ -101,6 +101,10 @@ li {
   opacity: 100%;
 }
 
+.thinner {
+  text-shadow: none;
+}
+
 .transparent {
   opacity: 75%;
 }

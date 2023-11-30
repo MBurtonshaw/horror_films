@@ -13,9 +13,7 @@ import movies from './movies.json';
 
 function App() {
 
-const date = new Date();
-const setter = date.getMonth();
-
+// Initializing state
 let [ month, setMonth ] = useState('');
 let [ types, setTypes ] = useState('');
 let [ films, setFilms ] = useState('');
@@ -33,16 +31,25 @@ function removeDuplicates( arr ) {
 
 async function getData() {
   try {
-    setMonth( setter + 1 );
-    setFilms( movies.movies );
     let vidArray = [];
 
-//////////////////////////////////
+    // Setting month to state
+    const date = new Date();
+    const setter = date.getMonth();
+    setMonth( setter + 1 );
+
+    //Setting movies to state as 'films'
+    setFilms( movies.movies );
+
+    // First loop is to parse through individual movies
     for ( let i = 0; i < movies.movies.length; i++ ) {
     let subdata = movies.movies[i];
-///////////////////////////////////
+
+    // Second loop is to parse through each movies' genres
       for ( let k = 0; k < subdata.genres.length; k++ ) {
         vidArray.push( subdata.genres[k] );
+
+        // Genres are set to state as 'types' after duplicates are removed
         let genreArray = removeDuplicates( vidArray );
         setTypes( genreArray );
       }
@@ -55,6 +62,8 @@ async function getData() {
 useEffect( () => { getData() }, [ setTypes, setFilms, setMonth, setUrls ] );
 
   return (
+
+    // Routing and passing props
     <div id='app_div' className="App">
       <Header genres={ types } />
       <BrowserRouter>

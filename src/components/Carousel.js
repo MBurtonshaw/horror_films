@@ -2,6 +2,17 @@ import { React } from 'react';
 
 export default function Carousel( props ) {
 
+
+    function hover_over() {
+        let picture = document.getElementsByClassName('active')[0].children[0].children[0];
+        picture.src = '../../photos/' + picture.id + '.jpg';
+
+    }
+    function hover_off(title) {
+        let picture = document.getElementsByClassName('active')[0].children[0].children[0];
+        picture.src = '../../photos/tinted/' + picture.id + '.jpg';
+    }
+
     let month = props.month;
 
     if ( month === 9 || month === 10 || month === 11 ) { 
@@ -15,22 +26,22 @@ export default function Carousel( props ) {
                     <div className="carousel-inner">
                     <div className="carousel-item active p-3">
                             <a href='/titles/halloween'>
-                                <img className='smaller_img' src={ '../../photos/tinted/halloween.jpg' }/>
+                                <img id='halloween' className='smaller_img' src={ '../../photos/tinted/halloween.jpg' } onMouseOver={hover_over} onMouseOut={hover_off} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                             <a href='/titles/ginger_snaps'>
-                                <img className='smaller_img' src={ '../../photos/tinted/ginger_snaps.jpg' }/>
+                                <img id='ginger_snaps' className='smaller_img' src={ '../../photos/tinted/ginger_snaps.jpg' } onMouseOver={hover_over} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/curse_of_frankenstein'>
-                                <img className='smaller_img' src={ '../../photos/tinted/curse_of_frankenstein.jpg' }/>
+                                <img id='curse_of_frankenstein' className='smaller_img' src={ '../../photos/tinted/curse_of_frankenstein.jpg' } onMouseOver={hover_over} />
                             </a>
                         </div>
                         <div className="carousel-item p-3">
                         <a href='/titles/it_follows'>
-                                <img className='smaller_img' src={ '../../photos/tinted/it_follows.jpg' }/>
+                                <img id='it_follows' className='smaller_img' src={ '../../photos/tinted/it_follows.jpg' } onMouseOver={hover_over}/>
                             </a>
                         </div>
                     </div>

@@ -6,7 +6,7 @@ export default function Header() {
         try {
             //
             return(
-                <div id='Header' className='container'>
+                <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/titles"> Titles </a>
@@ -27,7 +27,7 @@ export default function Header() {
         try {
             //
             return(
-                <div id='Header' className='container'>
+                <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/"> Home </a>

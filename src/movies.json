@@ -299,6 +299,16 @@
             "directors" : [ "Joe Dante" ],
             "writers" : [ "Chris Columbus" ],
             "photo" : "../../photos/gremlins.jpg"
+        },
+        {
+            "id" : 31,
+            "title" : "Hell House LLC",
+            "url" : "hell_house_llc",
+            "year" : 2015,
+            "genres" : ["Analog", "Eerie", "Occult"],
+            "directors" : [ "Stephen Cognetti" ],
+            "writers" : [ "Stephen Cognetti" ],
+            "photo" : "../../photos/hell_house_llc.jpg"
         }
     ]
 }

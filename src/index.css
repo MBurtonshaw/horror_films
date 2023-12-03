@@ -67,6 +67,10 @@ li {
   background-color: black;
 }
 
+.dropdown-menu {
+  background-color: black;
+}
+
 .list-group {
   background: transparent;
 }

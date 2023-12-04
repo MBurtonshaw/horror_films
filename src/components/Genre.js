@@ -24,19 +24,14 @@ export default function Genre( props ) {
     } else {
         sort();
         return(
-            <div id='Genre' className='container w-25'>
+            <div id='Genre' className='container w-50'>
                 <div className='m-5'>
-                    <h1 className='m-5 pt-5'>
-                        { genre }
+                    <h1 className='pt-5'>
+                        Genre: { genre }  
                     </h1>
                 </div>
-                <div className='container'>
-                    <img src='' />
-                </div>
-                <h5 className='p-3'>
-                    List of Titles
-                </h5>
-                <div className='container pb-4 mb-4'>
+               
+                <div className='container pb-4 mb-4 w-75'>
                     <ul className='list-group list-group-flush'>
                         {
                             chosen.map(

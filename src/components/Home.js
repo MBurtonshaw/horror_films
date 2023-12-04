@@ -30,9 +30,9 @@ export default function Home( props ) {
             <Sidebar genres={ props.genres }/> 
             <div id='Home' className='container'>
                 {searchbar_lg()}
-                <h1 className='my-5 pt-5'> Horror Films </h1>
+                <h1 className='my-5 pt-md-5'> Horror Films </h1>
                 <Carousel month={ props.month }/>
-                {searchbar_sm()}
+              
                 <Footer />
             </div>
         </div>

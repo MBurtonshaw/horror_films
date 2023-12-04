@@ -93,7 +93,7 @@ export default function Decades(props) {
         if (url === 'classics') {
             return('Classics');
         } else {
-            return(url);
+            return('Decade: ' + url);
         }
     }
 
@@ -114,11 +114,11 @@ export default function Decades(props) {
     }
     //
     return(      
-        <div id='TitlePage' className='container w-25'>
+        <div id='DecadePage' className='container w-50'>
             <h1 className='m-5 pt-5'>
                 {attention()}
             </h1>
-            <div className='container pb-4 mb-4'>
+            <div className='container pb-4 mb-4 w-75'>
                 <ul className="list-group list-group-flush">
                     {fill_in()}
                 </ul>

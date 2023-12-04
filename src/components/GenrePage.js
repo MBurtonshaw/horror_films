@@ -15,8 +15,10 @@ export default function GenrePage( props ) {
                             { 
                                 props.genres.map(( genre, i ) => {
                                     let newGenre = genre.toLowerCase();
+                                    if (window.innerWidth < 1001) {
+                                        if (window.innerWidth < 768) {
                                     return(
-                                        <div key={ i } className='w-25'>
+                                        <div key={ i }  className='w-100 p-3 m-auto'>
                                             <div className="card">
                                                 <a href={`/genres/${ genre }`}>
                                                     <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
@@ -27,6 +29,34 @@ export default function GenrePage( props ) {
                                             </div>
                                         </div>
                                     );
+                                        } else {
+                                            return(
+                                                <div key={ i }  className='w-75 p-3 m-auto'>
+                                                    <div className="card">
+                                                        <a href={`/genres/${ genre }`}>
+                                                            <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
+                                                            <div className="card-body">
+                                                                <h5 className="card-title">{ genre }</h5>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+                                    } else {
+                                        return(
+                                            <div key={ i } className='w-25'>
+                                                <div className="card">
+                                                    <a href={`/genres/${ genre }`}>
+                                                        <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">{ genre }</h5>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        );
+                                    }
                                 })
                             }
                         </div>

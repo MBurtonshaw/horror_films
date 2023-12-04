@@ -3,8 +3,8 @@ import Search from './Search';
 
 export default function Carousel( props ) {
 
-    const whole = document.getElementById('Carousel');
-    let first;
+    const whole = document.getElementById( 'Carousel' );
+        let first;
         let second;
         let third;
         let fourth;
@@ -47,13 +47,13 @@ export default function Carousel( props ) {
         }
 
         function hover_over() {
-            let picture_parent = document.getElementsByClassName('active')[0];
+            let picture_parent = document.getElementsByClassName( 'active' )[0];
             let picture = picture_parent.children[0].children[0];
             picture.src = '../../photos/' + picture.id + '.jpg';
         }
     
         function hover_off() {
-            let picture_parent = document.getElementsByClassName('active')[0];
+            let picture_parent = document.getElementsByClassName( 'active' )[0];
             let picture = picture_parent.children[0].children[0];
             picture.src = '../../photos/tinted/' + picture.id + '.jpg';
         }
@@ -72,23 +72,23 @@ export default function Carousel( props ) {
                     <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active p-3">
-                                <a href={`/titles/${first}`}>
-                                    <img id={first} className='smaller_img' src={ `../../photos/tinted/${first}.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                <a href={`/titles/${ first }`}>
+                                    <img id={ first } className='smaller_img' src={ `../../photos/tinted/${ first }.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
                                 </a>
                             </div>
                             <div className="carousel-item p-3">
-                                <a href={`/titles/${second}`}>
-                                    <img id={second} className='smaller_img' src={ `../../photos/tinted/${second}.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                <a href={`/titles/${ second }`}>
+                                    <img id={ second } className='smaller_img' src={ `../../photos/tinted/${ second }.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
                                 </a>
                             </div>
                             <div className="carousel-item p-3">
-                                <a href={`/titles/${third}`}>
-                                    <img id={third} className='smaller_img' src={ `../../photos/tinted/${third}.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                <a href={`/titles/${ third }`}>
+                                    <img id={ third } className='smaller_img' src={ `../../photos/tinted/${ third }.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
                                 </a>
                             </div>
                             <div className="carousel-item p-3">
-                                <a href={`/titles/${fourth}`}>
-                                    <img id={fourth} className='smaller_img' src={ `../../photos/tinted/${fourth}.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                <a href={`/titles/${ fourth }`}>
+                                    <img id={ fourth } className='smaller_img' src={ `../../photos/tinted/${ fourth }.jpg` } onMouseOver={ hover_over } onMouseOut={ hover_off } />
                                 </a>
                             </div>
                         </div>
@@ -109,23 +109,23 @@ export default function Carousel( props ) {
                     <h1 className='py-2 pt-5 pt-md-2'>Autumn Recommendations</h1>
                     <div>
                         <div className='container'>
-                            <a href={`/titles/${first}`}>
-                                <img id={first} className='smaller_img py-3' src={ `../../photos/${first}.jpg` }/>
+                            <a href={`/titles/${ first }`}>
+                                <img id={ first } className='smaller_img py-3' src={ `../../photos/${ first }.jpg` }/>
                             </a>
                         </div>
                         <div>
-                            <a href={`/titles/${second}`}>
-                                <img id={second} className='smaller_img py-3' src={ `../../photos/${second}.jpg` }/>
+                            <a href={`/titles/${ second }`}>
+                                <img id={ second } className='smaller_img py-3' src={ `../../photos/${ second }.jpg` }/>
                             </a>
                         </div>
                         <div>
-                            <a href={`/titles/${third}`}>
-                                <img id={third} className='smaller_img py-3' src={ `../../photos/${third}.jpg` }/>
+                            <a href={`/titles/${ third }`}>
+                                <img id={ third } className='smaller_img py-3' src={ `../../photos/${ third }.jpg` }/>
                             </a>
                         </div>
                         <div>
-                            <a href={`/titles/${fourth}`}>
-                                <img id={fourth} className='smaller_img py-3' src={ `../../photos/${fourth}.jpg` }/>
+                            <a href={`/titles/${ fourth }`}>
+                                <img id={ fourth } className='smaller_img py-3' src={ `../../photos/${ fourth }.jpg` }/>
                             </a>
                         </div>
                     </div>

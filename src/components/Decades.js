@@ -90,37 +90,37 @@ export default function Decades(props) {
     let fill_array = [];
 
     function attention() {
-        if (url === 'classics') {
-            return('Classics');
+        if ( url === 'classics' ) {
+            return( 'Classics' );
         } else {
-            return('Decade: ' + url);
+            return( 'Decade: ' + url );
         }
     }
 
     function fill_in() {
         try {
-            for (let f = 0; f < movies.length; f++) {
-                fill_array.push(movies[f]);
+            for ( let f = 0; f < movies.length; f++ ) {
+                fill_array.push( movies[f] );
             }
             //
             return(
-                fill_array.map( (film, i) =>
-                    <li className='list-group-item pt-3 mb-3' key={i}><a href={`/titles/${film.url}`}>{film.title}</a></li>
+                fill_array.map( ( film, i ) =>
+                    <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
                 )
             );
-        } catch(err) {
-            console.log(err.message)
+        } catch( err ) {
+            console.log( err.message )
         }
     }
     //
     return(      
         <div id='DecadePage' className='container w-50'>
             <h1 className='m-5 pt-5'>
-                {attention()}
+                { attention() }
             </h1>
             <div className='container pb-4 mb-4 w-75'>
                 <ul className="list-group list-group-flush">
-                    {fill_in()}
+                    { fill_in() }
                 </ul>
             </div>
         </div>

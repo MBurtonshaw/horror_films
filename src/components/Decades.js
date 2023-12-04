@@ -46,37 +46,31 @@ export default function Decades(props) {
                 setCategory('2020s');
             }
 
-                for (let i = 0; i < films.length; i++) {
+            for (let i = 0; i < films.length; i++) {
               
-                    if (url === 'classics' && films[i].year < 1970) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if (url === '70s' && films[i].year > 1969 && films[i].year < 1980) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if (url === '80s' && films[i].year > 1979 && films[i].year < 1990) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if ( url === '90s' && films[i].year > 1989 && films[i].year < 2000) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if ( url === '00s' && films[i].year > 1999 && films[i].year < 2010) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if ( url === '10s' && films[i].year > 2009 && films[i].year < 2020) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                       if ( url === '20s' && films[i].year > 2019 && films[i].year < 2030) {
-                        pictures.push(films[i]);
-                        pictures = removeDuplicates(pictures);
-                       }
-                    setMovies(pictures);
+                if (url === 'classics' && films[i].year < 1970) {
+                    pictures.push(films[i]);
+                }
+                if (url === '70s' && films[i].year > 1969 && films[i].year < 1980) {
+                    pictures.push(films[i]);
+                }
+                if (url === '80s' && films[i].year > 1979 && films[i].year < 1990) {
+                    pictures.push(films[i]);
+                }
+                if ( url === '90s' && films[i].year > 1989 && films[i].year < 2000) {
+                    pictures.push(films[i]);
+                }
+                if ( url === '00s' && films[i].year > 1999 && films[i].year < 2010) {
+                    pictures.push(films[i]);
+                }
+                if ( url === '10s' && films[i].year > 2009 && films[i].year < 2020) {
+                    pictures.push(films[i]);
+                }
+                if ( url === '20s' && films[i].year > 2019 && films[i].year < 2030) {
+                    pictures.push(films[i]);
+                }
+                pictures = removeDuplicates(pictures);
+                setMovies(pictures);
                 }
         } catch(err) {
             console.log(err.message)
@@ -88,14 +82,6 @@ export default function Decades(props) {
 
     //function to map the movies corresponding to the correct decade, to list items
     let fill_array = [];
-
-    function attention() {
-        if ( url === 'classics' ) {
-            return( 'Classics' );
-        } else {
-            return( 'Decade: ' + url );
-        }
-    }
 
     function fill_in() {
         try {
@@ -116,7 +102,7 @@ export default function Decades(props) {
     return(      
         <div id='DecadePage' className='container w-50'>
             <h1 className='m-5 pt-5'>
-                { attention() }
+                { category }
             </h1>
             <div className='container pb-4 mb-4 w-75'>
                 <ul className="list-group list-group-flush">

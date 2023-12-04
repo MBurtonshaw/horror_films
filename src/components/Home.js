@@ -15,15 +15,6 @@ export default function Home( props ) {
         
     }
 
-    function searchbar_sm() {
-        if (window.innerWidth < 768) {
-            return(
-                <Search movies={props.movies} genres={ props.genres }/>
-            );
-        }
-        
-    }
-
     return(
         
         <div id='home_div'>
@@ -32,7 +23,6 @@ export default function Home( props ) {
                 {searchbar_lg()}
                 <h1 className='my-5 pt-md-5'> Horror Films </h1>
                 <Carousel month={ props.month }/>
-              
                 <Footer />
             </div>
         </div>

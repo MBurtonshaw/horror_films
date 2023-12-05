@@ -98,9 +98,7 @@ export default function Carousel( props ) {
                     </div>
                 </div>
                 <div id='mobile_carousel' className='container d-block d-lg-none'>
-                    <div className='d-md-none'>
-                        <Search />
-                    </div>
+                    
                     <h1 className='py-2 pt-5 pt-md-2'>{ season } Recommendations</h1>
                     <div>
                         <div className='container'>

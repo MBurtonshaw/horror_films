@@ -30,15 +30,21 @@ export default function Search(props) {
     }
 
     //sorting movies by title
-    function loader() {
-        try {
-            for ( let i = 0; i < props.movies.length; i++ ) {
-                titleArray.push( props.movies[i] );
-                
+    async function loader() {
+        let waiter = await props.movies;
+        if (waiter === undefined) {
+            return null;
+        } else {
+            try {
+                for ( let i = 0; i < waiter.length; i++ ) {
+                    titleArray.push( waiter[i] );
+                    
+                }
+            } catch(err) {
+                console.log(err.message);
             }
-        } catch(err) {
-            console.log(err.message);
         }
+        
     }
 
     //logging search value and setting to uppercase

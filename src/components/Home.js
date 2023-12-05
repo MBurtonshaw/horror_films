@@ -6,10 +6,20 @@ import Search from './Search';
 
 export default function Home( props ) {
     
-    function searchbar_lg() {
+    function searchbar() {
         if (window.innerWidth > 767) {
             return(
-                <Search movies={props.movies} genres={ props.genres }/>
+                <div>
+                    <Search movies={props.movies} genres={ props.genres }/>
+                    <h1 className='my-5 pt-md-5'> Horror Films </h1>
+                </div>
+            );
+        } else if (window.innerWidth < 768) {
+            return(
+                <div>
+                    <h1 className='my-5 pt-md-5'> Horror Films </h1>
+                    <Search movies={props.movies} genres={ props.genres }/>
+                </div>
             );
         }
         
@@ -20,8 +30,8 @@ export default function Home( props ) {
         <div id='home_div'>
             <Sidebar genres={ props.genres }/> 
             <div id='Home' className='container'>
-                {searchbar_lg()}
-                <h1 className='my-5 pt-md-5'> Horror Films </h1>
+                {searchbar()}
+                
                 <Carousel month={ props.month }/>
                 <Footer />
             </div>

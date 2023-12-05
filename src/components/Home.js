@@ -22,20 +22,16 @@ export default function Home( props ) {
                 </div>
             );
         }
-        
     }
-
+    
     return(
-        
         <div id='home_div'>
             <Sidebar genres={ props.genres }/> 
             <div id='Home' className='container'>
                 {searchbar()}
-                
                 <Carousel month={ props.month }/>
                 <Footer />
             </div>
         </div>
     );
-    
 }

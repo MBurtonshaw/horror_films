@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 export default function Decades(props) {
     let { url } = useParams();
-    let [ category, setCategory ] = useState('');
     let [ movies, setMovies ] = useState('');
 
     //removes duplicates from an array
@@ -21,30 +20,9 @@ export default function Decades(props) {
     //sets category and sorts films based on url and film year
     async function getData() {
         try {
+            
             let pictures = [];
             let films = await props.movies;
-
-            if (url === 'classics') {
-                setCategory('Classics');
-            }
-            if (url === '70s') {
-                setCategory('1970s');
-            }
-            if (url === '80s') {
-                setCategory('1980s');
-            }
-            if (url === '90s') {
-                setCategory('1990s');
-            }
-            if (url === '00s') {
-                setCategory('2000s');
-            }
-            if (url === '10s') {
-                setCategory('2010s');
-            }
-            if (url === '20s') {
-                setCategory('2020s');
-            }
 
             for (let i = 0; i < films.length; i++) {
               
@@ -77,7 +55,7 @@ export default function Decades(props) {
         }
     }
 ///////////////////////////////////////////////////////////////////////
-    useEffect( () => { getData() }, [ category, setMovies ] );
+    useEffect( () => { getData() } );
 ///////////////////////////////////////////////////////////////////////
 
     //function to map the movies corresponding to the correct decade, to list items
@@ -98,11 +76,19 @@ export default function Decades(props) {
             console.log( err.message )
         }
     }
+
+    function namer() {
+        if (url === 'classics') {
+            return('Decade: Classics');
+        } else {
+            return(`Decade: ${url}`);
+        }
+    }
     //
     return(      
         <div id='DecadePage' className='container w-50'>
             <h1 className='m-5 pt-5'>
-                { category }
+                { namer() }
             </h1>
             <div className='container pb-4 mb-4 w-75'>
                 <ul className="list-group list-group-flush">

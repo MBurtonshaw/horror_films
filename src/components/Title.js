@@ -85,7 +85,8 @@ export default function Title( props ) {
                 }
             
                 function accordion_2() {
-                    <div className='row align-items-start'>
+                    return(
+                        <div className='row align-items-start'>
                         <div className="accordion col w-25">
                             <div className="accordion-item">
                                 <h2 className="accordion-header">
@@ -140,6 +141,8 @@ export default function Title( props ) {
                             <a href='/titles'><img src={ movie.photo } className='w-75 transparent'></img></a>
                         </div>
                     </div>
+                    );
+                    
                 } 
                 if (window.innerWidth < 1201) {
                     if (window.innerWidth < 1001) {

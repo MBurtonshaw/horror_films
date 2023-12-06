@@ -32,6 +32,7 @@ function removeDuplicates( arr ) {
 async function getData() {
   try {
     let vidArray = [];
+    let url_array = [];
 
     // Setting month to state
     const date = new Date();
@@ -44,7 +45,7 @@ async function getData() {
     // First loop is to parse through individual movies
     for ( let i = 0; i < movies.movies.length; i++ ) {
     let subdata = movies.movies[i];
-
+    
     // Second loop is to parse through each movies' genres
       for ( let k = 0; k < subdata.genres.length; k++ ) {
         vidArray.push( subdata.genres[k] );
@@ -53,6 +54,7 @@ async function getData() {
         let genreArray = removeDuplicates( vidArray );
         setTypes( genreArray );
       }
+      
     }
   } catch(err) {
     console.log(err.message);

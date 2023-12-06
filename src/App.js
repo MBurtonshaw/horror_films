@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Results from './components/Results';
 import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
+import NotFound from './components/NotFound';
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import movies from './movies.json';
@@ -17,7 +18,6 @@ function App() {
 let [ month, setMonth ] = useState('');
 let [ types, setTypes ] = useState('');
 let [ films, setFilms ] = useState('');
-let [ urls, setUrls ] = useState('');
 
 function removeDuplicates( arr ) { 
     let unique = []; 
@@ -32,7 +32,6 @@ function removeDuplicates( arr ) {
 async function getData() {
   try {
     let vidArray = [];
-    let url_array = [];
 
     // Setting month to state
     const date = new Date();
@@ -61,7 +60,7 @@ async function getData() {
   }
 }
 
-useEffect( () => { getData() }, [ setTypes, setFilms, setMonth, setUrls ] );
+useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
 
   return (
 
@@ -79,7 +78,7 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth, setUrls ] );
           <Route
             path = '/titles/:url'
             element = {
-              <Title movies = { films } urls={ urls } />
+              <Title movies = { films } />
             }
           />
           <Route
@@ -131,6 +130,12 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth, setUrls ] );
               <Decades
                 movies = { films }
               />
+            }
+          />
+          <Route
+            path='*'
+            element = {
+              <NotFound />
             }
           />
         </Routes>

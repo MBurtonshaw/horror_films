@@ -53,7 +53,6 @@ async function getData() {
         let genreArray = removeDuplicates( vidArray );
         setTypes( genreArray );
       }
-      
     }
   } catch(err) {
     console.log(err.message);

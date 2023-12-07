@@ -215,7 +215,7 @@
             "title" : "The Evil Dead",
             "url" : "evil_dead",
             "year" : 1981,
-            "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
+            "genres" : ["Rural", "Surreal", "Occult", "Campy", "Gore", "Indie"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
             "photo" : "../../photos/evil_dead.jpg"
@@ -225,7 +225,7 @@
             "title" : "Evil Dead 2: Dead by Dawn",
             "url" : "evil_dead_2",
             "year" : 1987,
-            "genres" : ["Rural", "Surreal", "Cosmic", "Campy", "Gore", "Indie"],
+            "genres" : ["Rural", "Surreal", "Occult", "Campy", "Gore"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
             "photo" : "../../photos/evil_dead_2.jpg"
@@ -275,7 +275,7 @@
             "title" : "Re-Animator",
             "url" : "re_animator",
             "year" : 1985,
-            "genres" : ["Campy", "Gore", "Body", "Cosmic"],
+            "genres" : ["Campy", "Gore", "Body"],
             "directors" : [ "Stuart Gordon" ],
             "writers" : [ "Stuart Gordon", "William J. Norris", "Dennis Paoli" ],
             "photo" : "../../photos/re_animator.jpg"

@@ -8,7 +8,7 @@ export default function TitlePage(props) {
             try {
                 return(
                     <div id='TitlePage' className='container w-50'>
-                        <h1 className='m-5 pt-5'>
+                        <h1 className='m-5'>
                             Titles
                         </h1>
                         <div className='container pb-4 mb-4 w-75'>

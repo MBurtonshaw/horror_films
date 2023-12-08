@@ -10,7 +10,7 @@ export default function GenrePage( props ) {
                 //
                 return(
                     <div id='GenrePage' className='container'>
-                        <h1 className='p-5 m-5'> Genres </h1>
+                        <h1 className='m-5'> Genres </h1>
                         <div className="card-group">
                             { 
                                 props.genres.map(( genre, i ) => {

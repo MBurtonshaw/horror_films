@@ -9,7 +9,7 @@ export default function DecadesPage(props) {
             //
             return( 
                 <div id='GenrePage' className='container'>
-                    <h1 className='p-5 m-5'> Decades </h1>
+                    <h1 className='m-5'> Decades </h1>
                     <div className="card-group">
                         { 
                             props.decades.map(( item, i ) => {

@@ -24,9 +24,9 @@ export default function Genre( props ) {
     } else {
         sort();
         return(
-            <div id='Genre' className='container w-50'>
+            <div id='Genre' className='container m-auto w-50'>
                 <div className='m-5'>
-                    <h1 className='pt-5'>
+                    <h1 className=''>
                         Genre: { genre }  
                     </h1>
                 </div>

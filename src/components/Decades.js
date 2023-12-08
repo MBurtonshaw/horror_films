@@ -87,7 +87,7 @@ export default function Decades(props) {
     //
     return(      
         <div id='DecadePage' className='container w-50'>
-            <h1 className='m-5 pt-5'>
+            <h1 className='m-5'>
                 { namer() }
             </h1>
             <div className='container pb-4 mb-4 w-75'>

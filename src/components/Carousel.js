@@ -6,6 +6,8 @@ export default function Carousel( props ) {
     let second;
     let third;
     let fourth;
+    let fifth;
+    let sixth;
     let season;
 
     let month = props.month;
@@ -16,6 +18,8 @@ export default function Carousel( props ) {
         second = 'ginger_snaps';
         third = 'curse_of_frankenstein';
         fourth = 'it_follows';
+        fifth = 'the_vvitch';
+        sixth = 're_animator';
         season = 'Autumn';
     }
 
@@ -25,6 +29,8 @@ export default function Carousel( props ) {
         second = 'ravenous';
         third = 'gremlins';
         fourth = 'the_thing';
+        fifth = 'pontypool';
+        sixth = 'hell_house_llc';
         season = 'Winter';
     }
     
@@ -34,15 +40,19 @@ export default function Carousel( props ) {
         second = 'evil_dead';
         third = 'the_lighthouse';
         fourth = 'hereditary';
+        fifth = 'Pearl';
+        sixth = '';
         season = 'Spring';
     }
 
     if ( month === 6 || month === 7 || month === 8 ) {  
     
-        first = 'texas_chainsaw_massacre';
+        first = 'the_sitter';
         second = 'dusk_till_dawn';
         third = 'pumpkinhead';
-        fourth = 'jeepers_creepers';
+        fourth = 'scream';
+        fifth = 'black_phone';
+        sixth = 'texas_chainsaw_massacre';
         season = 'Summer';
     }
 
@@ -85,6 +95,16 @@ export default function Carousel( props ) {
                                     <img id={ fourth } className='smaller_img' src={ `../../photos/tinted/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} onMouseOver={ hover_over } onMouseOut={ hover_off } />
                                 </a>
                             </div>
+                            <div className="carousel-item p-3">
+                                <a href={`/titles/${ fifth }`}>
+                                    <img id={ fifth } className='smaller_img' src={ `../../photos/tinted/${ fifth }.jpg` } alt={`a movie poster for ${ fifth }`} onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                </a>
+                            </div>
+                            <div className="carousel-item p-3">
+                                <a href={`/titles/${ sixth }`}>
+                                    <img id={ sixth } className='smaller_img' src={ `../../photos/tinted/${ sixth }.jpg` } alt={`a movie poster for ${ sixth }`} onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                </a>
+                            </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -117,6 +137,16 @@ export default function Carousel( props ) {
                         <div>
                             <a href={`/titles/${ fourth }`}>
                                 <img id={ fourth } className='smaller_img py-3' src={ `../../photos/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} />
+                            </a>
+                        </div>
+                        <div className="carousel-item p-3">
+                                <a href={`/titles/${ fifth }`}>
+                                    <img id={ fifth } className='smaller_img' src={ `../../photos/tinted/${ fifth }.jpg` } alt={`a movie poster for ${ fifth }`} onMouseOver={ hover_over } onMouseOut={ hover_off } />
+                                </a>
+                            </div>
+                        <div className="carousel-item p-3">
+                            <a href={`/titles/${ sixth }`}>
+                                <img id={ sixth } className='smaller_img' src={ `../../photos/tinted/${ sixth }.jpg` } alt={`a movie poster for ${ sixth }`} onMouseOver={ hover_over } onMouseOut={ hover_off } />
                             </a>
                         </div>
                     </div>

@@ -85,6 +85,27 @@ export default function Title( props ) {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className="accordion-item">
+                                                <h2 className="accordion-header">
+                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                        Links
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                                                    <div className="accordion-body">
+                                                        <div className='w-100'>
+                                                            <div className='w-75 m-auto'>
+                                                                <a href='/'>
+                                                                    <img className='w-50 px-5' src='../../photos/prime_icon.jpg'></img>
+                                                                    </a>
+                                                                <a href='/'>
+                                                                    <img className='w-50 px-5' src='../../photos/youtube_icon.jpg'></img>
+                                                                </a>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -149,6 +170,28 @@ export default function Title( props ) {
                                                         { genres }                 
                                                     </div>
                                                 </div>
+                                                
+                                            </div>
+                                            <div className="accordion-item">
+                                                <h2 className="accordion-header">
+                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                        Links
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                                                    <div className="accordion-body">
+                                                        <div className='w-100'>
+                                                            <div className='w-75 m-auto'>
+                                                                <a href='/'>
+                                                                    <img className='w-25 px-5' src='../../photos/prime_icon.jpg'></img>
+                                                                    </a>
+                                                                <a href='/'>
+                                                                    <img className='w-25 px-5' src='../../photos/youtube_icon.jpg'></img>
+                                                                </a>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -206,6 +249,27 @@ export default function Title( props ) {
                                             <div id="collapseFour" className="accordion-collapse show" data-bs-parent="#accordionExample">
                                                 <div className="accordion-body">
                                                     { genres }                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="accordion-item">
+                                            <h2 className="accordion-header">
+                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    Links
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                                                <div className="accordion-body">
+                                                    <div className='w-100'>
+                                                        <div className='w-50 m-auto'>
+                                                            <a href='/'>
+                                                                <img className='w-50 px-5' src='../../photos/prime_icon.jpg'></img>
+                                                                </a>
+                                                            <a href='/'>
+                                                                <img className='w-50 px-5' src='../../photos/youtube_icon.jpg'></img>
+                                                            </a>
+                                                        </div>
+                                                    </div> 
                                                 </div>
                                             </div>
                                         </div>

@@ -25,12 +25,18 @@ a {
 }
 
 a:hover {
-  color:rgb(29, 91, 39);
+  color: rgb(220, 147, 175);
   text-shadow: 2px 2px 4px black;
 }
 
 .nav-link:hover {
-  color: rgb(79, 130, 100);
+  color: rgb(220, 147, 175);
+  text-shadow: 2px 2px 4px black;
+}
+
+.undercover {
+  text-shadow: none;
+  color: white;
 }
 
 li {

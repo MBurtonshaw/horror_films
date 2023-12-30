@@ -8,6 +8,8 @@ import Results from './components/Results';
 import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
 import NotFound from './components/NotFound';
+import Login from './components/Login';
+import Register from './components/Register';
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import movies from './movies.json';
@@ -176,6 +178,18 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
               <Decades
                 movies = { films }
               />
+            }
+          />
+          <Route
+            path='/register'
+            element = {
+              <Register />
+            }
+          />
+          <Route
+            path='login'
+            element = {
+              <Login />
             }
           />
           <Route

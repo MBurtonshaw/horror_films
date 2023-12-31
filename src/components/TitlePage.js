@@ -7,7 +7,7 @@ export default function TitlePage(props) {
         for ( let i = 0; i < props.movies.length; i++ ) {
             try {
                 return(
-                    <div id='TitlePage' className='container w-50'>
+                    <div id='TitlePage' className='container m-auto mt-5 w-50'>
                         <h1 className='m-5'>
                             Titles
                         </h1>

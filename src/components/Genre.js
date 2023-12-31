@@ -24,30 +24,42 @@ export default function Genre( props ) {
     } else {
         sort();
         return(
-            <div id='Genre' className='container m-auto w-50'>
-                <div className='m-5'>
-                    <h1 className=''>
-                        Genre: { genre }  
-                    </h1>
-                </div>
+            <div id='Genre' className='container m-auto mt-5 w-50'>
+                    <div className='m-5'>
+                        <h1 className=''>
+                            Genre: { genre }  
+                        </h1>
+                    </div>
                
-                <div className='container pb-4 mb-4 w-75'>
-                    <ul className='list-group list-group-flush'>
-                        {
-                            chosen.map(
-                                ( item, i ) => {
-                                    return(
-                                        <li key={ i } className='list-group-item pt-3 mb-3'>
-                                            <a href={ `/titles/${item.url}` }>
-                                                { item.title }
-                                            </a>
-                                        </li>
-                                    )
-                                }
-                            )
-                        }
-                    </ul>
-                </div>
+                    <div className='container pb-4 mb-4 w-75'>
+                        <ul className='list-group list-group-flush'>
+                            {
+                                chosen.map(
+                                    ( item, i ) => {
+                                        if (i > 12) {
+                                            return(
+                                                <li key={ i } className='list-group-item pt-3 mb-3 flashcard'>
+                                                    <a href={ `/titles/${item.url}` }>
+                                                        { item.title }
+                                                    </a>
+                                                </li>
+                                            )
+                                        } else {
+                                            return(
+                                                <li key={ i } className='list-group-item pt-3 mb-3'>
+                                                    <a href={ `/titles/${item.url}` }>
+                                                        { item.title }
+                                                    </a>
+                                                </li>
+                                            )
+                                        }
+                                        
+                                    }
+                                )
+                            }
+                        </ul>
+                    </div>
+                    
             </div>
         );
     }

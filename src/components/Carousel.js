@@ -71,7 +71,7 @@ export default function Carousel( props ) {
     return(
         <div>
             <div id='Carousel'>
-                <div id='regular_carousel' className='container d-none d-lg-block w-50 p-2 pb-5'>
+                <div id='regular_carousel' className='container d-none d-lg-block w-50 pb-5'>
                     <h2 className='m-2 p-1'> { season } Recommendations </h2>
                     <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div className="carousel-inner">

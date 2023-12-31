@@ -18,6 +18,26 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
+#Genre {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#DecadePage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#TitlePage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#ResultsPage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
 .flashcard {
   opacity: 0;
   transform: translate(0, 10vh);

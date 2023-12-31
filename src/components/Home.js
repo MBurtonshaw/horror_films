@@ -11,7 +11,7 @@ export default function Home( props ) {
             return(
                 <div>
                     <Search movies={props.movies} genres={ props.genres }/>
-                    <h1 className='my-5 pt-md-5'> Horror Films </h1>
+                    <h1 className='my-5'> Horror Films </h1>
                 </div>
             );
         } else if (window.innerWidth < 768) {

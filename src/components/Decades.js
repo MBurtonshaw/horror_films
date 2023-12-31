@@ -68,8 +68,16 @@ export default function Decades(props) {
             }
             //
             return(
-                fill_array.map( ( film, i ) =>
-                    <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
+                fill_array.map( ( film, i ) => {
+                if (i > 12) {
+                    return(
+                        <li className='list-group-item pt-3 mb-3 flashcard' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
+                    );
+                } else {
+                    return(
+                        <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
+                    );
+                }}
                 )
             );
         } catch( err ) {
@@ -86,7 +94,7 @@ export default function Decades(props) {
     }
     //
     return(      
-        <div id='DecadePage' className='container w-50'>
+        <div id='DecadePage' className='container m-auto mt-5 w-50'>
             <h1 className='m-5'>
                 { namer() }
             </h1>

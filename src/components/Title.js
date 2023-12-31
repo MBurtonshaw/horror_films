@@ -318,7 +318,7 @@ export default function Title( props ) {
                         return(
                             <div id='title_div' className='container'>
                                 <h1 className='my-5 p-2 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
-                                <div className='row align-items-start'>
+                                <div className='row align-items-start container'>
 
                                     <div className="accordion col w-25">
 

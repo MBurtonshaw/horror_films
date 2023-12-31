@@ -15,13 +15,23 @@ export default function TitlePage(props) {
                             <ul className="list-group list-group-flush">
                                 { 
                                     props.movies.map(( movie, i ) => {
-                                        return(
-                                            <li key={ i } className='list-group-item pt-3 mb-3'>
-                                                <a href={ `/titles/${movie.url}` }>
-                                                    { movie.title }
-                                                </a>
-                                            </li>
-                                        );
+                                        if (movie.id < 12) {
+                                            return(
+                                                <li key={ i } className='list-group-item pt-3 mb-3'>
+                                                    <a href={ `/titles/${movie.url}` }>
+                                                        { movie.title }
+                                                    </a>
+                                                </li>
+                                            );
+                                        } else {
+                                            return(
+                                                <li key={ i } className='list-group-item pt-3 mb-3 flashcard'>
+                                                    <a href={ `/titles/${movie.url}` }>
+                                                        { movie.title }
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
                                     })
                                 }
                             </ul>

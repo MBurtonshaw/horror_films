@@ -62,13 +62,12 @@ export default function Decades(props) {
     let fill_array = [];
 
     function fill_in() {
-        try {
-            for ( let f = 0; f < movies.length; f++ ) {
-                fill_array.push( movies[f] );
-            }
+        for ( let f = 0; f < movies.length; f++ ) {
+            fill_array.push( movies[f] );
+        }
             //
-            return(
-                fill_array.map( ( film, i ) => {
+        return(
+            fill_array.map( ( film, i ) => {
                 if (i > 12) {
                     return(
                         <li className='list-group-item pt-3 mb-3 flashcard' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
@@ -78,11 +77,8 @@ export default function Decades(props) {
                         <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
                     );
                 }}
-                )
-            );
-        } catch( err ) {
-            console.log( err.message )
-        }
+            )
+        );
     }
 
     function namer() {
@@ -92,17 +88,40 @@ export default function Decades(props) {
             return(`Decade: ${url}`);
         }
     }
+
+    function fill_in_2() {
+        if (window.innerWidth < 501) {
+            return(      
+                <div id='DecadePage' className='container m-auto mt-5 w-50'>
+                    <h1 className='m-5'>
+                        { namer() }
+                    </h1>
+                    {}
+                    <div className='container pb-4 mb-4 w-100'>
+                        <ul className="list-group list-group-flush">
+                            { fill_in() }
+                        </ul>
+                    </div>
+                </div>
+            );
+        } else {
+            return(      
+                <div id='DecadePage' className='container m-auto mt-5 w-50'>
+                    <h1 className='m-5'>
+                        { namer() }
+                    </h1>
+                    {}
+                    <div className='container pb-4 mb-4 w-75'>
+                        <ul className="list-group list-group-flush">
+                            { fill_in() }
+                        </ul>
+                    </div>
+                </div>
+            );
+        }
+    }
+
     //
-    return(      
-        <div id='DecadePage' className='container m-auto mt-5 w-50'>
-            <h1 className='m-5'>
-                { namer() }
-            </h1>
-            <div className='container pb-4 mb-4 w-75'>
-                <ul className="list-group list-group-flush">
-                    { fill_in() }
-                </ul>
-            </div>
-        </div>
-    );
+    return(fill_in_2());
+    
 }

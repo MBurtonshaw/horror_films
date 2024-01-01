@@ -34,15 +34,32 @@ export default function Results(props) {
 
    useEffect( () => { getData() } );
 
-    function capitalizeFirstLetter( string ) {
-        return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
-    }
-        for (let m = 0; m < movies.length; m++) {
-            //mapping movies from state
-            return(
-                <div>
-                    <div>
-                        <div id='ResultsPage' className='container m-auto mt-5 w-50'>
+   function fill_in() {
+    if (window.innerWidth < 501) {
+        return(
+        <div id='ResultsPage' className='container m-auto mt-5 w-50'>
+                            <h1 className='m-5'>
+                                {capitalizeFirstLetter(term.toLowerCase())}
+                            </h1>
+                            <div className='container pb-4 mb-4 w-100'>
+                                <ul className="list-group list-group-flush">
+                                    {movies.map((film, i)=>{
+                                        if (i > 10) {
+                                            return(
+                                                <li key={i} className='list-group-item pt-3 mb-3 flashcard'><a href={`/titles/${film.url}`}>{film.title}</a></li>
+                                            );
+                                        } else {
+                                            return(
+                                                <li key={i} className='list-group-item pt-3 mb-3'><a href={`/titles/${film.url}`}>{film.title}</a></li>
+                                            );
+                                        }
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                        );
+                        } else {
+                            <div id='ResultsPage' className='container m-auto mt-5 w-50'>
                             <h1 className='m-5'>
                                 {capitalizeFirstLetter(term.toLowerCase())}
                             </h1>
@@ -62,6 +79,18 @@ export default function Results(props) {
                                 </ul>
                             </div>
                         </div>
+                        }
+   }
+
+    function capitalizeFirstLetter( string ) {
+        return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
+    }
+        for (let m = 0; m < movies.length; m++) {
+            //mapping movies from state
+            return(
+                <div>
+                    <div>
+                        {fill_in()}
                     </div>
                 </div>
             );

@@ -16,9 +16,6 @@ export default function Header() {
                             <li className="nav-item header-nav">
                                 <a className="nav-link" href="/decades"> Decades </a>
                             </li>
-                            <li className="nav-item header-nav">
-                                <a className="nav-link" href="/login"> Login </a>
-                            </li>
                         </ul>
                     </div>
                 );
@@ -34,9 +31,6 @@ export default function Header() {
                             </li>
                             <li className="nav-item header-nav">
                                 <a className="nav-link" href="/decades"> Decades </a>
-                            </li>
-                            <li className="nav-item header-nav">
-                                <a className="nav-link" href="/login"> Login </a>
                             </li>
                         </ul>
                     </div>
@@ -54,9 +48,6 @@ export default function Header() {
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/decades"> Decades </a>
                         </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/login"> Login </a>
-                        </li>
                     </ul>
                 </div>
             );
@@ -72,9 +63,6 @@ export default function Header() {
                         </li>
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/genres"> Genres </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/login"> Login </a>
                         </li>
                     </ul>
                 </div>
@@ -95,9 +83,6 @@ export default function Header() {
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/decades"> Decades </a>
                         </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/login"> Login </a>
-                        </li>
                     </ul>
                 </div>
             );
@@ -109,7 +94,7 @@ export default function Header() {
     
             <div className="dropdown w-50 m-auto pt-3">
             <button className="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img id='menu_icon' className='w-25' src='../../photos/menu_icon.png'></img>
+                <img id='menu_icon' className='w-25' alt='a menu icon, three horizontal bars' src='../../photos/menu_icon.png'></img>
             </button>
             <ul className="dropdown-menu text-center w-100 m-auto">
                 <li>
@@ -137,13 +122,6 @@ export default function Header() {
                     <button className="dropdown-item" type="button">
                         <a href='/decades'>
                             Decades
-                        </a>
-                    </button>
-                </li>
-                <li>
-                    <button className="dropdown-item" type="button">
-                        <a href='/login'>
-                            Login
                         </a>
                     </button>
                 </li>

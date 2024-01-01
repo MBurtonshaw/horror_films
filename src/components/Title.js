@@ -154,7 +154,7 @@ export default function Title( props ) {
                         if (window.innerWidth < 1001) {
                             return(
                                 <div id='title_div' className='container'>
-                                    <h1 className='my-5 p-2 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                                    <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                                     <div id='title_photo' className='container w-100'>
                                         <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
                                     </div>
@@ -231,7 +231,7 @@ export default function Title( props ) {
                         } else {
                             return(
                                 <div id='title_div' className='container'>
-                                    <h1 className='my-5 pt-2 center'>
+                                    <h1 className='mt-5 mb-2 p-3 center'>
                                         <a href='/titles' className='nonChalant'>
                                             { movie.title }
                                         </a>
@@ -317,7 +317,7 @@ export default function Title( props ) {
                     } else {
                         return(
                             <div id='title_div' className='container'>
-                                <h1 className='m-5 pt-5 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                                <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                                 <div className='row align-items-start container'>
 
                                     <div className="accordion col w-25">

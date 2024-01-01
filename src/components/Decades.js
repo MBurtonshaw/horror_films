@@ -61,6 +61,7 @@ export default function Decades(props) {
     //function to map the movies corresponding to the correct decade, to list items
     let fill_array = [];
 
+    //function to loop thru state & map films corresponding to the decade
     function fill_in() {
         for ( let f = 0; f < movies.length; f++ ) {
             fill_array.push( movies[f] );
@@ -81,6 +82,7 @@ export default function Decades(props) {
         );
     }
 
+    //determines the decade category and sets header
     function namer() {
         if (url === 'classics') {
             return('Decade: Classics');
@@ -89,6 +91,7 @@ export default function Decades(props) {
         }
     }
 
+    //combines previous two functions and returns formatting based on screen size
     function fill_in_2() {
         if (window.innerWidth < 501) {
             return(      
@@ -110,7 +113,6 @@ export default function Decades(props) {
                     <h1 className='m-5'>
                         { namer() }
                     </h1>
-                    {}
                     <div className='container pb-4 mb-4 w-75'>
                         <ul className="list-group list-group-flush">
                             { fill_in() }
@@ -123,5 +125,4 @@ export default function Decades(props) {
 
     //
     return(fill_in_2());
-    
 }

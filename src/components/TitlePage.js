@@ -8,10 +8,10 @@ export default function TitlePage(props) {
             try {
                 return(
                     <div id='TitlePage' className='container m-auto mt-5 w-50'>
-                        <h1 className='m-5'>
+                        <h1 className='mt-5 mb-5 pt-1'>
                             Titles
                         </h1>
-                        <div className='container pb-4 mb-4 w-75'>
+                        <div className='container w-75'>
                             <ul className="list-group list-group-flush">
                                 { 
                                     props.movies.map(( movie, i ) => {

@@ -4,8 +4,6 @@ export default function Header() {
     //conditional statements will return data based on path
     if (window.innerWidth > 767) {
         if (window.location.pathname === '/') {
-            try {
-                //
                 return(
                     <div id='Header' className='container d-none d-md-block'>
                         <ul className="nav nav-fill justify-content-center">
@@ -13,10 +11,10 @@ export default function Header() {
                                 <a className="nav-link" href="/titles"> Titles </a>
                             </li>
                             <li className="nav-item header-nav">
-                                <a className="nav-link" href="/decades"> Decades </a>
+                                <a className="nav-link" href="/genres"> Genres </a>
                             </li>
                             <li className="nav-item header-nav">
-                                <a className="nav-link" href="/genres"> Genres </a>
+                                <a className="nav-link" href="/decades"> Decades </a>
                             </li>
                             <li className="nav-item header-nav">
                                 <a className="nav-link" href="/login"> Login </a>
@@ -24,12 +22,7 @@ export default function Header() {
                         </ul>
                     </div>
                 );
-            } catch(err) {
-                console.log(err.message);
-            }
-        } else {
-            try {
-                //
+        } else if (window.location.pathname === '/titles') {
                 return(
                     <div id='Header' className='container d-none d-md-block'>
                         <ul className="nav nav-fill justify-content-center">
@@ -37,9 +30,6 @@ export default function Header() {
                                 <a className="nav-link" href="/"> Home </a>
                             </li>
                             <li className="nav-item header-nav">
-                                <a className="nav-link" href="/titles"> Titles </a>
-                            </li>
-                            <li className="nav-item header-nav">
                                 <a className="nav-link" href="/genres"> Genres </a>
                             </li>
                             <li className="nav-item header-nav">
@@ -51,11 +41,69 @@ export default function Header() {
                         </ul>
                     </div>
                 );
-            } catch(err) {
-                console.log(err.message);
-            }
+        } else if (window.location.pathname === '/genres') {
+            return(
+                <div id='Header' className='container d-none d-md-block'>
+                    <ul className="nav nav-fill justify-content-center">
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/"> Home </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/titles"> Titles </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/decades"> Decades </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/login"> Login </a>
+                        </li>
+                    </ul>
+                </div>
+            );
+        } else if (window.location.pathname === '/decades') {
+            return(
+                <div id='Header' className='container d-none d-md-block'>
+                    <ul className="nav nav-fill justify-content-center">
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/"> Home </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/titles"> Titles </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/genres"> Genres </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/login"> Login </a>
+                        </li>
+                    </ul>
+                </div>
+            );
+        } else {
+            return(
+                <div id='Header' className='container d-none d-md-block'>
+                    <ul className="nav nav-fill justify-content-center">
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/"> Home </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/titles"> Titles </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/genres"> Genres </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/decades"> Decades </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/login"> Login </a>
+                        </li>
+                    </ul>
+                </div>
+            );
         }
     } else {
+        //////////////////////////////////////////MOBILE//////////////////////////////////////////////////////
         return(
             <div id='Header' className='container'>
     

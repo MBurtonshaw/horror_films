@@ -49,7 +49,7 @@ li {
 
 #TitlePage {
   background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
+  padding-top: 0.5em;
 }
 
 .accordion-body {
@@ -58,7 +58,7 @@ li {
 
 .accordion-button:not(.collapsed) {
   background-color: black;
-  background-image: linear-gradient(rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12),  rgb(42, 8, 8), black);
+  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12),  rgb(42, 8, 8), black);
   color: rgb(92, 200, 137);
   text-shadow: 2px 2px black;
   box-shadow: none;

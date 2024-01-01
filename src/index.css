@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,37 +17,6 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-#Genre {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-#DecadePage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-#TitlePage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-#ResultsPage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-.flashcard {
-  opacity: 0;
-  transform: translate(0, 10vh);
-  transition: all 1s;
-}
-
-.flashcard.visible {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
 a {
   text-decoration: none;
   color: rgb(152, 248, 192);
@@ -60,39 +28,32 @@ a:hover {
   text-shadow: 2px 2px 4px black;
 }
 
-.nav-link:hover {
-  color: rgb(220, 147, 175);
-  text-shadow: 2px 2px 4px black;
-}
-
-.undercover {
-  text-shadow: none;
-  color: white;
-}
-
-.accordion-item {
-  border: none;
-}
-
 li {
   list-style: none;
 }
 
-#footer {
-  background-color: none;
+#DecadePage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#Genre {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#ResultsPage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
+}
+
+#TitlePage {
+  background-color: rgba(14, 26, 19, 0.3);
+  padding: 1em;
 }
 
 .accordion-body {
   color: lightgray;
-}
-
-.accordion-header {
-  background-color: rgb(57, 12, 12);
-  border-radius: 90%;
-}
-
-.accordion-item {
-  background-image: linear-gradient(black, black, rgb(20, 20, 20), black);
 }
 
 .accordion-button:not(.collapsed) {
@@ -113,8 +74,25 @@ li {
   border-color: rgba(0,0,0,.125);
 }
 
+.accordion-header {
+  background-color: rgb(57, 12, 12);
+  border-radius: 90%;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-item {
+  background-image: linear-gradient(black, black, rgb(20, 20, 20), black);
+}
+
 .card {
   background-color: rgb(0, 0, 0, 0);
+}
+
+.card-body {
+  background-image: linear-gradient(black, black, black, rgb(42, 8, 8), rgb(57, 12, 12), rgb(42, 8, 8), black, black, black, black);
 }
 
 .card-group {
@@ -122,12 +100,28 @@ li {
   margin-bottom: 5em;
 }
 
-.card-body {
-  background-image: linear-gradient(black, black, black, rgb(42, 8, 8), rgb(57, 12, 12), rgb(42, 8, 8), black, black, black, black);
-}
-
 .dropdown-menu {
   background-color: black;
+}
+
+.flashcard {
+  opacity: 0;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+}
+
+.flashcard.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+#footer {
+  background-color: none;
+}
+
+.header-nav a {
+  color: rgb(152, 248, 192);
+  font-size: 1.2em;
 }
 
 .list-group {
@@ -138,10 +132,6 @@ li {
   background: transparent;
 }
 
-.purple {
-  color: rgb(206, 119, 206)
-}
-
 .nav {
   background: transparent;
 }
@@ -150,8 +140,17 @@ li {
   background: transparent;
 }
 
+.nav-link:hover {
+  color: rgb(220, 147, 175);
+  text-shadow: 2px 2px 4px black;
+}
+
 .nonChalant {
   color: white;
+}
+
+.purple {
+  color: rgb(206, 119, 206)
 }
 
 .smaller_img {
@@ -176,7 +175,8 @@ li {
   opacity: 100%;
 }
 
-.header-nav a {
-  color: rgb(152, 248, 192);
-  font-size: 1.2em;
+.undercover {
+  text-shadow: none;
+  color: white;
 }
+

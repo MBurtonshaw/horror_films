@@ -1,5 +1,5 @@
 import { React } from 'react';
-import Carousel from './Carousel';
+import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Search from './Search';
@@ -29,7 +29,7 @@ export default function Home( props ) {
             <Sidebar genres={ props.genres }/> 
             <div id='Home' className='container'>
                 {searchbar()}
-                <Carousel month={ props.month }/>
+                <Main month={ props.month }/>
                 <Footer />
             </div>
         </div>

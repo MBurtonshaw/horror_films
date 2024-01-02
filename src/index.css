@@ -52,6 +52,7 @@ li {
   padding-top: 0.5em;
 }
 
+
 .accordion-body {
   color: lightgray;
 }
@@ -85,6 +86,14 @@ li {
 
 .accordion-item {
   background-image: linear-gradient(black, black, rgb(20, 20, 20), black);
+}
+
+.background_box {
+  background-color: rgba(8, 15, 11, 0.5);
+  border-style: solid;
+  border-color: rgba(8, 15, 11, 0.7);
+  border-width: 1px;
+  padding: 1em;
 }
 
 .card {
@@ -132,6 +141,11 @@ li {
   background: transparent;
 }
 
+.main_text {
+  letter-spacing: .5px;
+  word-spacing: 3px;
+}
+
 .nav {
   background: transparent;
 }
@@ -154,9 +168,9 @@ li {
 }
 
 .smaller_img {
-  max-width: 630px;
-  max-height: 400px;
-  opacity: 75%;
+  max-width: 50%;
+  max-height: auto;
+  opacity: 90%;
 }
 
 .smaller_img:hover {

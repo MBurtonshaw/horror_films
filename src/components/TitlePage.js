@@ -41,7 +41,7 @@ export default function TitlePage(props) {
           } else {
             return(
                 <div id='TitlePage' className='container m-auto mt-5 w-50'>
-                    <h1 className='mt-5 mb-5 pt-1'>
+                    <h1 className='my-4 mx-1'>
                         Titles
                     </h1>
                     <div className='container w-75'>

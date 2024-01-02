@@ -14,18 +14,18 @@ export default function Title( props ) {
         if (window.innerWidth > 1400) {
             if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
                 return(
-                    <div>
+                    <div className='px-4'>
                         <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            <img className='w-50 px-4' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
                         <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            <img className='w-50 px-4' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
                     </div>
                 );
             } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
                 return(
-                    <div>
+                    <div className='px-4'>
                         <a href={ movie.prime_link }>
                             <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
@@ -33,7 +33,7 @@ export default function Title( props ) {
                 );
             } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
                 return(
-                    <div className=''>
+                    <div className='px-4'>
                         <a href={ movie.youtube_link }>
                             <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
@@ -46,10 +46,10 @@ export default function Title( props ) {
                 return(
                     <div>
                         <a href={ movie.prime_link }>
-                            <img className='w-50 px-4' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
                         <a href={ movie.youtube_link }>
-                            <img className='w-50 px-4' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
                     </div>
                 );
@@ -57,7 +57,7 @@ export default function Title( props ) {
                 return(
                     <div>
                         <a href={ movie.prime_link }>
-                            <img className='w-50 px-4' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
                     </div>
                 );
@@ -65,13 +65,43 @@ export default function Title( props ) {
                 return(
                     <div>
                         <a href={ movie.youtube_link }>
-                            <img className='w-50 px-4' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
                     </div>
                 );
             }
         }
         if (window.innerWidth < 1001) {
+            if (window.innerWidth < 500) {
+                if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
+                    return(
+                        <div>
+                            <a href={ movie.prime_link }>
+                                <img className='w-50 px-3' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            </a>
+                            <a href={ movie.youtube_link }>
+                                <img className='w-50 px-3' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            </a>
+                        </div>
+                    );
+                } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
+                    return(
+                        <div>
+                            <a href={ movie.prime_link }>
+                                <img className='w-50 px-3' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            </a>
+                        </div>
+                    );
+                } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
+                    return(
+                        <div className=''>
+                            <a href={ movie.youtube_link }>
+                                <img className='w-50 px-3' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            </a>
+                        </div>
+                    );
+                }
+            }
             if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
                 return(
                     <div>
@@ -101,36 +131,7 @@ export default function Title( props ) {
                 );
             }
         }
-        if (window.innerWidth < 600) {
-            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div className=''>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            }
-        } 
+         
     }
     
     if (!url) {

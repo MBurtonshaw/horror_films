@@ -26,7 +26,7 @@ export default function Genre( props ) {
         return(
             <div id='Genre' className='container m-auto mt-5'>
                     <div className='m-5'>
-                        <h1 className='m-5'>
+                        <h1 className='my-4 mx-1'>
                             Genre: { genre }  
                         </h1>
                     </div>

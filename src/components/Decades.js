@@ -95,8 +95,8 @@ export default function Decades(props) {
     function fill_in_2() {
         if (window.innerWidth < 501) {
             return(      
-                <div id='DecadePage' className='container m-auto mt-5 w-50'>
-                    <h1 className='m-5'>
+                <div id='DecadePage' className='container m-auto mt-5 w-75'>
+                    <h1 className='my-4 mx-1'>
                         { namer() }
                     </h1>
                     {}

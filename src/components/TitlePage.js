@@ -5,17 +5,17 @@ export default function TitlePage(props) {
         return null;
     } else {
         for ( let i = 0; i < props.movies.length; i++ ) {
-          if (window.innerWidth < 501) {
+          if (window.innerWidth < 768) {
             return(
-                <div id='TitlePage' className='container m-auto mt-5 w-50'>
+                <div id='TitlePage' className='container m-auto pb-2 my-5'>
                     <h1 className='mt-5 mb-5 pt-1'>
                         Titles
                     </h1>
-                    <div className='container w-100'>
+                    <div className='container w-75'>
                         <ul className="list-group list-group-flush">
                             { 
                                 props.movies.map(( movie, i ) => {
-                                    if (movie.id < 12) {
+                                    if (movie.id < 7) {
                                         return(
                                             <li key={ i } className='list-group-item pt-3 mb-3'>
                                                 <a href={ `/titles/${movie.url}` }>
@@ -40,7 +40,7 @@ export default function TitlePage(props) {
             );
           } else {
             return(
-                <div id='TitlePage' className='container m-auto mt-5 w-50'>
+                <div id='TitlePage' className='container m-auto pb-2 my-5 w-50'>
                     <h1 className='my-4 mx-1'>
                         Titles
                     </h1>

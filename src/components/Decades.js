@@ -93,14 +93,14 @@ export default function Decades(props) {
 
     //combines previous two functions and returns formatting based on screen size
     function fill_in_2() {
-        if (window.innerWidth < 501) {
+        if (window.innerWidth < 768) {
             return(      
-                <div id='DecadePage' className='container m-auto mt-5 w-75'>
+                <div id='DecadePage' className='container m-auto my-5 pb-2'>
                     <h1 className='my-4 mx-1'>
                         { namer() }
                     </h1>
                     {}
-                    <div className='container pb-4 mb-4 w-100'>
+                    <div className='container pb-4 mb-4 w-75'>
                         <ul className="list-group list-group-flush">
                             { fill_in() }
                         </ul>

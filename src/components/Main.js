@@ -56,19 +56,6 @@ export default function Main( props ) {
         season = 'Summer';
     }
 
-    function hover_over() {
-        let picture_parent = document.getElementsByClassName( 'active' )[0];
-        let picture = picture_parent.children[0].children[0];
-        picture.src = '../../photos/' + picture.id + '.jpg';
-    }
-    
-    function hover_off() {
-        let picture_parent = document.getElementsByClassName( 'active' )[0];
-        let picture = picture_parent.children[0].children[0];
-        picture.src = '../../photos/tinted/' + picture.id + '.jpg';
-    }
-    
-
         if (window.innerWidth < 768) {
                 return(
                     <div id='Main'>

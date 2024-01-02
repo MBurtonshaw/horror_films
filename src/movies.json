@@ -8,7 +8,7 @@
             "genres" : ["Eerie", "Suburban", "Slasher", "Indie", "Short"],
             "directors" : [ "Fred Walton" ],
             "writers" : [ "Fred Walton", "Steve Feke" ],
-            "photo" : "../../photos/the_sitter.jpg",
+            "photo" : "../../photos/titles/the_sitter.jpg",
             "prime_link" : "",
             "youtube_link" : "https://www.youtube.com/watch?v=--BSM6J6tGI"
         },
@@ -20,7 +20,7 @@
             "genres" : ["Eerie", "Suburban", "Surreal", "Indie"],
             "directors" : [ "David Robert Mitchell" ],
             "writers" : [ "David Robert Mitchell" ],
-            "photo" : "../../photos/it_follows.jpg",
+            "photo" : "../../photos/titles/it_follows.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B011KKFPGW/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=emhePra9Zm4"
         },
@@ -32,7 +32,7 @@
             "genres" : ["Creature", "Suburban", "Indie", "Body", "Gore"],
             "directors" : [ "John Fawcett" ],
             "writers" : [ "Karen Walton" ],
-            "photo" : "../../photos/ginger_snaps.jpg",
+            "photo" : "../../photos/titles/ginger_snaps.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B008X1O7KM/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=PaVuuiA0fO0"
         },
@@ -44,7 +44,7 @@
             "genres" : ["Eerie", "Indie", "Invasion", "Rural"],
             "directors" : [ "Bruce McDonald" ],
             "writers" : [ "Tony Burgess" ],
-            "photo" : "../../photos/pontypool.jpg",
+            "photo" : "../../photos/titles/pontypool.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0CH5YZVT9/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=jQ4DmindUIA"
         },
@@ -56,7 +56,7 @@
             "genres" : ["Creature", "Occult", "Rural"],
             "directors" : [ "Stan Winston" ],
             "writers" : [ "Mark Patrick Carducci", "Gary Gerani", "Richard C. Weinman", "Sam Winston" ],
-            "photo" : "../../photos/pumpkinhead.jpg",
+            "photo" : "../../photos/titles/pumpkinhead.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00HH3WIBW/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=qbl_E1rgbC8"
         },
@@ -68,7 +68,7 @@
             "genres" : ["Invasion", "Indie", "Body", "Gore"],
             "directors" : [ "David Cronenberg" ],
             "writers" : [ "David Cronenberg" ],
-            "photo" : "../../photos/shivers.jpg",
+            "photo" : "../../photos/titles/shivers.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00O8NPCQW/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=CQ9iL41uXug"
         },
@@ -80,7 +80,7 @@
             "genres" : ["Creature", "Rural", "Body"],
             "directors" : [ "An actual creeper" ],
             "writers" : [ "An actual creeper" ],
-            "photo" : "../../photos/jeepers_creepers.jpg",
+            "photo" : "../../photos/titles/jeepers_creepers.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00AKUNMH8/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=jSLxeCWOoN8"
         },
@@ -92,7 +92,7 @@
             "genres" : ["Creature", "Cosmic", "Rural", "Invasion"],
             "directors" : [ "Frank Darabont" ],
             "writers" : [ "Steven King", "Frank Darabont" ],
-            "photo" : "../../photos/the_mist.jpg",
+            "photo" : "../../photos/titles/the_mist.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B003TNQEF0/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=ph1umRRFTNU"
         },
@@ -104,7 +104,7 @@
             "genres" : ["Creature", "Campy", "Body", "Gore"],
             "directors" : [ "Robert Rodriguez" ],
             "writers" : [ "Robert Kurtzman", "Quentin Tarantino" ],
-            "photo" : "../../photos/dusk_till_dawn.jpg",
+            "photo" : "../../photos/titles/dusk_till_dawn.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B009JZUJIK/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=H5Vk7qiAfNk"
         },
@@ -116,7 +116,7 @@
             "genres" : ["Invasion", "Gore", "Period", "Campy"],
             "directors" : [ "Antonia Bird" ],
             "writers" : [ "Ted Griffin" ],
-            "photo" : "../../photos/ravenous.jpg",
+            "photo" : "../../photos/titles/ravenous.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B009EEVOP8/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=GQMYF4yKnyU"
         },
@@ -128,7 +128,7 @@
             "genres" : ["Classic", "Creature", "Period"],
             "directors" : [ "Terence Fisher" ],
             "writers" : [ "Jimmy Sangster" ],
-            "photo" : "../../photos/curse_of_frankenstein.jpg",
+            "photo" : "../../photos/titles/curse_of_frankenstein.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00DKN7XHC/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=FCNrxjaVf2M"
         },
@@ -140,7 +140,7 @@
             "genres" : ["Suburban", "Eerie", "Slasher"],
             "directors" : [ "Bob Clark" ],
             "writers" : [ "A. Roy Moore" ],
-            "photo" : "../../photos/black_christmas.jpg",
+            "photo" : "../../photos/titles/black_christmas.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B07X7KZ98B/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=BawUDjjgAsc"
         },
@@ -152,7 +152,7 @@
             "genres" : ["Suburban", "Invasion", "Surreal"],
             "directors" : [ "Michael Haneke" ],
             "writers" : [ "Michael Haneke" ],
-            "photo" : "../../photos/funny_games.jpg",
+            "photo" : "../../photos/titles/funny_games.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0091WEFZO/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=QKh5xTo_I14"
         },
@@ -164,7 +164,7 @@
             "genres" : ["Occult", "Period", "Rural", "Eerie"],
             "directors" : [ "Robert Eggers" ],
             "writers" : [ "Robert Eggers" ],
-            "photo" : "../../photos/the_vvitch.jpg",
+            "photo" : "../../photos/titles/the_vvitch.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B01BT3SDQO/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=0otnn7hgnek"
         },
@@ -176,7 +176,7 @@
             "genres" : ["Eerie", "Period", "Surreal", "Cosmic"],
             "directors" : ["Robert Eggers" ],
             "writers" : [ "Robert Eggers" ],
-            "photo" : "../../photos/the_lighthouse.jpg",
+            "photo" : "../../photos/titles/the_lighthouse.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B07Z4236MR/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=1TZXfVEdXyA"
         },
@@ -188,7 +188,7 @@
             "genres" : ["Occult", "Suburban", "Surreal", "Gore"],
             "directors" : [ "Ari Aster"],
             "writers" : [ "Ari Aster" ],
-            "photo" : "../../photos/hereditary.jpg",
+            "photo" : "../../photos/titles/hereditary.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B07GRB9NF3/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=W1WgJB4EkGU"
         },
@@ -200,7 +200,7 @@
             "genres" : ["Eerie", "Suburban", "Body"],
             "directors" : [ "Jordan Peele" ],
             "writers" : [ "Jordan Peele" ],
-            "photo" : "../../photos/get_out.jpg",
+            "photo" : "../../photos/titles/get_out.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B06Y1H48K7/ref=atv_dp_share_cu_r",
             "youtube_link" : ""
         },
@@ -212,7 +212,7 @@
             "genres" : ["Analog", "Slasher", "Gore", "Occult", "Surreal", "Anthology"],
             "directors" : [ "Adam Wingard", "David Bruckner", "Ti West", "Glenn McQuaid", "Joe Swanberg", "Radio Silence" ],
             "writers" : [ "Simon Barrett", "David Bruckner", "Nicholas Tecosky", "Ti West", "Glenn McQuaid", "Matt Bettinelli-Olpin, Tyler Gillett, Justin Martinez, Chad Villella" ],
-            "photo" : "../../photos/vhs.jpg",
+            "photo" : "../../photos/titles/vhs.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00944CJRK/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=YHvBw3zCebk"
         },
@@ -224,7 +224,7 @@
             "genres" : ["Eerie", "Cosmic", "Suburban", "Period"],
             "directors" : ["Scott Derrickson"],
             "writers" : [ "Scott Derrickson" ],
-            "photo" : "../../photos/black_phone.jpg",
+            "photo" : "../../photos/titles/black_phone.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0B5W5R4X3/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=0OFW1jZznac"
         },
@@ -236,7 +236,7 @@
             "genres" : ["Rural", "Period", "Campy"],
             "directors" : [ "Ti West" ],
             "writers" : [ "Mia Goth", "Ti West" ],
-            "photo" : "../../photos/pearl.jpg",
+            "photo" : "../../photos/titles/pearl.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0B8MY88QP/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=JXqgN-a1N7g"
         },
@@ -248,7 +248,7 @@
             "genres" : ["Rural", "Slasher", "Surreal", "Gore", "Indie"],
             "directors" : [ "Tobe Hooper" ],
             "writers" : [ "Tobe Hooper" ],
-            "photo" : "../../photos/texas_chainsaw_massacre.jpg",
+            "photo" : "../../photos/titles/texas_chainsaw_massacre.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B077T2DG12/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=2ujekuaOPv0"
         },
@@ -260,7 +260,7 @@
             "genres" : ["Rural", "Surreal", "Occult", "Campy", "Gore", "Indie"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
-            "photo" : "../../photos/evil_dead.jpg",
+            "photo" : "../../photos/titles/evil_dead.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0BQSC8DCK/ref=atv_dp_share_cu_r",
             "youtube_link" : ""
         },
@@ -272,7 +272,7 @@
             "genres" : ["Rural", "Surreal", "Occult", "Campy", "Gore"],
             "directors" : [ "Sam Raimi" ],
             "writers" : [ "Sam Raimi" ],
-            "photo" : "../../photos/evil_dead_2.jpg",
+            "photo" : "../../photos/titles/evil_dead_2.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B007WN5S8M/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=uzb6fMc5Z8w"
         },
@@ -284,7 +284,7 @@
             "genres" : ["Eerie", "Analog"],
             "directors" : [ "Patrick Brice" ],
             "writers" : [ "Mark Duplass", "Patrick Brice" ],
-            "photo" : "../../photos/creep.jpg",
+            "photo" : "../../photos/titles/creep.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B011KKCH0O/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=XmMbhCa3ikc"
         },
@@ -296,7 +296,7 @@
             "genres" : ["Eerie", "Slasher", "Suburban"],
             "directors" : [ "John Carpenter" ],
             "writers" : [ "John Carpenter", "Debra Hill" ],
-            "photo" : "../../photos/halloween.jpg",
+            "photo" : "../../photos/titles/halloween.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B09L2NZ5GK/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=-_8KR4U5Yhk"
         },
@@ -308,7 +308,7 @@
             "genres" : ["Eerie", "Surreal", "Cosmic", "Invasion", "Gore", "Body"],
             "directors" : [ "John Carpenter" ],
             "writers" : [ "Bill Lancaster", "John Carpenter" ],
-            "photo" : "../../photos/the_thing.jpg",
+            "photo" : "../../photos/titles/the_thing.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B0CMR2Y5CN/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=osB4KmgfIDM"
         },
@@ -320,7 +320,7 @@
             "genres" : ["Slasher", "Invasion", "Suburban"],
             "directors" : [ "Wes Craven" ],
             "writers" : [ "Kevin Williamson" ],
-            "photo" : "../../photos/scream.jpg",
+            "photo" : "../../photos/titles/scream.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00AYB1BIK/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=IQO7FAeV_lM"
         },
@@ -332,7 +332,7 @@
             "genres" : ["Campy", "Gore", "Body"],
             "directors" : [ "Stuart Gordon" ],
             "writers" : [ "Stuart Gordon", "William J. Norris", "Dennis Paoli" ],
-            "photo" : "../../photos/re_animator.jpg",
+            "photo" : "../../photos/titles/re_animator.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B075F41LJF/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=Ih6QRaKLryQ"
         },
@@ -344,7 +344,7 @@
             "genres" : ["Surreal", "Campy", "Gore", "Invasion", "Rural"],
             "directors" : [ "Robert Rodriguez" ],
             "writers" : [ "Robert Rodriguez" ],
-            "photo" : "../../photos/planet_terror.jpg",
+            "photo" : "../../photos/titles/planet_terror.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B002I7IC58/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=gUkJvulfu6k"
         },
@@ -356,7 +356,7 @@
             "genres" : ["Surreal", "Campy", "Creature", "Invasion", "Suburban"],
             "directors" : [ "Joe Dante" ],
             "writers" : [ "Chris Columbus" ],
-            "photo" : "../../photos/gremlins.jpg",
+            "photo" : "../../photos/titles/gremlins.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B00KQ9Z1SQ/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=WB9hY4tmV3w"
         },
@@ -368,7 +368,7 @@
             "genres" : ["Analog", "Eerie", "Occult"],
             "directors" : [ "Stephen Cognetti" ],
             "writers" : [ "Stephen Cognetti" ],
-            "photo" : "../../photos/hell_house_llc.jpg",
+            "photo" : "../../photos/titles/hell_house_llc.jpg",
             "prime_link" : "https://www.amazon.com/gp/video/detail/B07X3NDRZ7/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=SlIbSDNSTao"
         }

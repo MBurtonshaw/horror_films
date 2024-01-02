@@ -17,18 +17,18 @@ export default function GenrePage( props ) {
                                     let newGenre = genre.toLowerCase();
                                     if (window.innerWidth < 1001) {
                                         if (window.innerWidth < 768) {
-                                    return(
-                                        <div key={ i }  className='w-100 p-3 m-auto'>
-                                            <div className="card">
-                                                <a href={`/genres/${ genre }`}>
-                                                    <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
-                                                    <div className="card-body">
-                                                        <h5 className="card-title">{ genre }</h5>
+                                            return(
+                                                <div key={ i }  className='w-100 p-3 m-auto'>
+                                                    <div className="card">
+                                                        <a href={`/genres/${ genre }`}>
+                                                            <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
+                                                            <div className="card-body">
+                                                                <h5 className="card-title">{ genre }</h5>
+                                                            </div>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    );
+                                                </div>
+                                            );
                                         } else {
                                             return(
                                                 <div key={ i }  className='w-75 p-3 m-auto'>

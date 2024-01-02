@@ -9,6 +9,8 @@ body {
   background-color: black;
   text-align: center;
   font-family: 'Signika Negative', sans-serif;
+  height: 100vh;
+  width: 100vw;
   background: url('../public/photos/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;

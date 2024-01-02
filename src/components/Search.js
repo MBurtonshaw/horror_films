@@ -23,10 +23,10 @@ export default function Search(props) {
 }
     const alertTrigger = document.getElementById('searchBar');
     if (alertTrigger) {
-    alertTrigger.addEventListener('click', () => {
-        appendAlert(
-            `Please limit searches for movie titles to one word, or part of a word`, 'dark')
-    })
+        alertTrigger.addEventListener('click', () => {
+            appendAlert(
+                `Please limit searches for movie titles to one word, or part of a word`, 'dark')
+        })
     }
 
     //sorting movies by title
@@ -38,13 +38,11 @@ export default function Search(props) {
             try {
                 for ( let i = 0; i < waiter.length; i++ ) {
                     titleArray.push( waiter[i] );
-                    
                 }
             } catch(err) {
                 console.log(err.message);
             }
         }
-        
     }
 
     //logging search value and setting to uppercase

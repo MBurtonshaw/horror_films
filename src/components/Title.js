@@ -130,8 +130,7 @@ export default function Title( props ) {
                     </div>
                 );
             }
-        }
-         
+        }  
     }
     
     if (!url) {
@@ -320,9 +319,7 @@ export default function Title( props ) {
                             <div id='title_div' className='container'>
                                 <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                                 <div className='row align-items-start container'>
-
                                     <div className="accordion col w-25">
-
                                         <div className="accordion-item">
                                             <h2 className="accordion-header">
                                                 <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

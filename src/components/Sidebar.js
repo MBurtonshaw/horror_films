@@ -3,11 +3,8 @@ import { React } from 'react';
 export default function Sidebar(props) {
 
     if ( props.genres.length < 1 ) {
-
         return null;
-
     } else {
-            
         return(
             <div id='Sidebar' className='d-none d-xl-block sticky-top'>
                 <ul className="nav flex-column float-lg-start list-group list-group-flush text-start">
@@ -29,5 +26,4 @@ export default function Sidebar(props) {
             </div>
         );
     }
-
 }

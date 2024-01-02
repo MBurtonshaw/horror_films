@@ -20,7 +20,6 @@ export default function Decades(props) {
     //sets category and sorts films based on url and film year
     async function getData() {
         try {
-            
             let pictures = [];
             let films = await props.movies;
 
@@ -99,7 +98,6 @@ export default function Decades(props) {
                     <h1 className='my-4 mx-1'>
                         { namer() }
                     </h1>
-                    {}
                     <div className='container pb-4 mb-4 w-75'>
                         <ul className="list-group list-group-flush">
                             { fill_in() }

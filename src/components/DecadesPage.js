@@ -56,7 +56,6 @@ export default function DecadesPage(props) {
                                         </div>
                                     );
                                 }
-                                
                             })
                         }
                     </div>

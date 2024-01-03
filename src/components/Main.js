@@ -3,11 +3,17 @@ import { React } from 'react';
 export default function Main( props ) {
 
     let first;
+    let first_memo;
     let second;
+    let second_memo;
     let third;
+    let third_memo;
     let fourth;
+    let fourth_memo;
     let fifth;
+    let fifth_memo;
     let sixth;
+    let sixth_memo;
     let season;
 
     let month = props.month;
@@ -15,44 +21,68 @@ export default function Main( props ) {
     if ( month === 9 || month === 10 || month === 11 ) { 
     
         first = 'halloween';
+        first_memo = 'An escaped mental patient stalks high school girls on Halloween night.';
         second = 'ginger_snaps';
+        second_memo = 'Two sisters suddenly have to learn to deal with some physical changes.';
         third = 'curse_of_frankenstein';
+        third_memo = 'A scientist devotes his studies to raising the dead, regardless of consequences.';
         fourth = 'it_follows';
+        fourth_memo = 'A woman is cursed to be followed by an entity until her death.';
         fifth = 'the_vvitch';
+        fifth_memo = 'In Colonial America, a baby is stolen from an outcast family and taken to the woods.';
         sixth = 're_animator';
+        sixth_memo = 'Herbert West has concocted a formula to bring the recently dead back to life.';
         season = 'Autumn';
     }
 
     if ( month === 12 || month === 1 || month === 2 ) {   
     
         first = 'black_christmas';
+        first_memo = 'It\'s Christmas, and people are celebrating; but a sorority house is receiving disturbing phone calls.';
         second = 'ravenous';
+        second_memo = 'Following the Mexican-American War, a military regiment takes in a stranger on a snowy night.';
         third = 'gremlins';
+        third_memo = 'A father buys his son a rare pet as a Christmas present from a mysterious shop in Chinatown.';
         fourth = 'the_thing';
+        fourth_memo = 'Somewhere in Antarctica, American researchers rescue a dog and take it back to camp.';
         fifth = 'pontypool';
+        fifth_memo = 'A local Canadian radio host finds himself reporting on strange stories during a snowstorm.';
         sixth = 'hell_house_llc';
+        sixth_memo = 'A group of people record their life in an abandoned hotel while converting it into a haunted house attraction.';
         season = 'Winter';
     }
     
     if ( month === 3 || month === 4 || month === 5 ) {  
     
         first = 'the_mist';
+        first_memo = 'Something\'s in the mist that\'s descended upon a small town in Maine.';
         second = 'evil_dead';
+        second_memo = 'In a cabin in the woods, someone reads from an ancient book and causes the Deadites to rise.';
         third = 'the_lighthouse';
+        third_memo = 'Things become strange between two lighthouse keepers while alone on an island.';
         fourth = 'hereditary';
+        fourth_memo = 'A grandmother\'s death causes problems to surface in her daughter\'s family.';
         fifth = 'Pearl';
-        sixth = '';
+        fifth_memo = 'A woman yearns for fame while working on a farm, waiting for her husband to return from war.';
+        sixth = 'black_phone';
+        sixth_memo = 'Boys around town are being kidnapped by a man with a black van.';
         season = 'Spring';
     }
 
     if ( month === 6 || month === 7 || month === 8 ) {  
     
         first = 'the_sitter';
+        first_memo = 'A teenage babysitter receives disturbing phone calls while watching some children.';
         second = 'dusk_till_dawn';
+        second_memo = 'Two criminal brothers take a family hostage in order to find safety over the Mexican border.';
         third = 'pumpkinhead';
+        third_memo = 'A man calls on a vengeful creature to punish those that wronged him.';
         fourth = 'scream';
-        fifth = 'black_phone';
+        fourth_memo = 'High school students are being murdered by a killer who loves horror movies.';
+        fifth = 'planet_terror';
+        fifth_memo = 'A group of people band together as a virus causes everyone else to mutate and attack.';
         sixth = 'texas_chainsaw_massacre';
+        sixth_memo = 'Local graves are being desecrated, and a van full of people has just stumbled onto the wrong property.';
         season = 'Summer';
     }
 
@@ -66,7 +96,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ first }`}>
                                 <img id={ first } className='smaller_img py-3' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>It's Christmas, and people are celebrating; but a sorority house is receiving disturbing phone calls.</p>
+                            <p className='main_text py-3 m-0'>{first_memo}</p>
                         </div>
                     </div>
                     <div className='py-3 flashcard'>
@@ -74,7 +104,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ second }`}>
                                 <img id={ second } className='smaller_img py-3' src={ `../../photos/titles/${ second }.jpg` } alt={`a movie poster for ${second}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>Following the Mexican-American War, a military regiment takes in a stranger on a snowy night.</p>
+                            <p className='main_text py-3 m-0'>{second_memo}</p>
                         </div>
                     </div>
                     <div className='py-3 flashcard'>
@@ -82,7 +112,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ third }`}>
                                 <img id={ third } className='smaller_img py-3' src={ `../../photos/titles/${ third }.jpg` } alt={`a movie poster for ${third}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>A father buys his son a rare pet as a Christmas present from a mysterious shop in Chinatown.</p>
+                            <p className='main_text py-3 m-0'>{third_memo}</p>
                         </div>
                     </div>
                     <div className='py-3 flashcard'>
@@ -90,7 +120,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ fourth }`}>
                                 <img id={ fourth } className='smaller_img py-3' src={ `../../photos/titles/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>Somewhere in Antarctica, American researchers rescue a dog and take it back to camp.</p>
+                            <p className='main_text py-3 m-0'>{fourth_memo}</p>
                         </div>
                     </div>
                     <div className='py-3 flashcard'>
@@ -98,7 +128,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ fifth }`}>
                                 <img id={ fifth } className='smaller_img py-3' src={ `../../photos/titles/${ fifth }.jpg` } alt={`a movie poster for ${fifth}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>A local Canadian radio host finds himself reporting on strange stories during a snowstorm.</p>
+                            <p className='main_text py-3 m-0'>{fifth_memo}</p>
                         </div>
                     </div>
                     <div className='py-3 flashcard'>
@@ -106,7 +136,7 @@ export default function Main( props ) {
                             <a href={`/titles/${ sixth }`}>
                                 <img id={ sixth } className='smaller_img py-3' src={ `../../photos/titles/${ sixth }.jpg` } alt={`a movie poster for ${sixth}`} />
                             </a>
-                            <p className='main_text py-3 m-0'>A group of people record their life in an abandoned hotel while converting it into a haunted house attraction.</p>
+                            <p className='main_text py-3 m-0'>{sixth_memo}</p>
                         </div>
                     </div>
                 </div>
@@ -122,12 +152,12 @@ export default function Main( props ) {
                             <a href={`/titles/${ first }`} className='col'>
                                 <img id={ first } className='smaller_img py-1' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
                             </a>
-                            <p className='col m-auto main_text'>It's Christmas, and people are celebrating; but a sorority house is receiving disturbing phone calls.</p>
+                            <p className='col m-auto main_text'>{first_memo}</p>
                         </div>
                     </div>
                     <div className='py-3'>
                         <div className='container row align-items-start background_box p-5 mb-5'>
-                            <p className='col m-auto main_text'>Following the Mexican-American War, a military regiment takes in a stranger on a snowy night.</p>
+                            <p className='col m-auto main_text'>{second_memo}</p>
                             <a href={`/titles/${ second }`} className='col'>
                                 <img id={ second } className='smaller_img py-1' src={ `../../photos/titles/${ second }.jpg` } alt={`a movie poster for ${second}`} />
                             </a>
@@ -138,12 +168,12 @@ export default function Main( props ) {
                             <a href={`/titles/${ third }`} className='col'>
                                 <img id={ third } className='smaller_img py-1' src={ `../../photos/titles/${ third }.jpg` } alt={`a movie poster for ${third}`} />
                             </a>
-                            <p className='col m-auto main_text'>A father buys his son a rare pet as a Christmas present from a mysterious shop in Chinatown.</p>
+                            <p className='col m-auto main_text'>{third_memo}</p>
                         </div>
                     </div>
                     <div className='py-3'>
                         <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <p className='col m-auto main_text'>Somewhere in Antarctica, American researchers rescue a dog and take it back to camp.</p>
+                            <p className='col m-auto main_text'>{fourth_memo}</p>
                             <a href={`/titles/${ fourth }`} className='col'>
                                 <img id={ fourth } className='smaller_img py-1' src={ `../../photos/titles/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} />
                             </a>
@@ -154,12 +184,12 @@ export default function Main( props ) {
                             <a href={`/titles/${ fifth }`} className='col'>
                                 <img id={ fifth } className='smaller_img py-1' src={ `../../photos/titles/${ fifth }.jpg` } alt={`a movie poster for ${fifth}`} />
                             </a>
-                            <p className='col m-auto main_text'>A local Canadian radio host finds himself reporting on strange stories during a snowstorm.</p>
+                            <p className='col m-auto main_text'>{fifth_memo}</p>
                         </div>
                     </div>
                     <div className='py-3'>
                         <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <p className='col m-auto main_text'>A group of people record their life in an abandoned hotel while converting it into a haunted house attraction.</p>
+                            <p className='col m-auto main_text'>{sixth_memo}</p>
                             <a href={`/titles/${ sixth }`} className='col'>
                                 <img id={ sixth } className='smaller_img py-1' src={ `../../photos/titles/${ sixth }.jpg` } alt={`a movie poster for ${sixth}`} />
                             </a>

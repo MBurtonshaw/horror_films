@@ -24,6 +24,8 @@ export default function Home( props ) {
         }
     }
     
+    console.log(props.context)
+
     return(
         <div id='home_div'>
             <Sidebar genres={ props.genres }/> 

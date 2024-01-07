@@ -1,3 +1,7 @@
+import { React, useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { myValue } from './contexts/context';
+import withContext, { Provider } from './contexts/context';
 import Home from './components/Home';
 import Title from './components/Title';
 import TitlePage from './components/TitlePage';
@@ -8,9 +12,9 @@ import Results from './components/Results';
 import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
 import NotFound from './components/NotFound';
-import { React, useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import movies from './movies.json';
+
+const HomeWithContext = withContext(Home);
 
 function App() {
 
@@ -109,82 +113,83 @@ async function getData() {
 useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
 
   return (
-
     // Routing and passing props
     <div id='app_div' className="App">
       <Header genres={ types } />
-      <BrowserRouter>
-        <Routes>
-          <Route 
-            strict path = '/' 
-            element = {
-              <Home month = { month } movies={ films } genres={ types } />
-            } 
-          />
-          <Route
-            path = '/titles/:url'
-            element = {
-              <Title movies = { films } />
-            }
-          />
-          <Route
-            path = '/titles'
-            element = {
-              <TitlePage movies = { films } />
-            }
-          />
-          <Route
-            path = '/genres/:genre'
-            element = {
-              <Genre movies = { films } genres={ types }/>
-            }
-          />
-          <Route
-            path='/genres'
-            element = {
-              <GenrePage genres = { types }/>
-            }
-          />
-          <Route
-            path='/results/*'
-            element = {
-              <Results movies = { films }/>
-            }
-          />
-          <Route
-            path='/decades'
-            element = {
-              <DecadesPage
-                movies = { films }
-                decades = {
-                  [
-                    {'name': 'Classics', 'url' : 'classics'},
-                    {'name': '1970s', 'url' : '70s'},
-                    {'name': '1980s', 'url' : '80s'},
-                    {'name': '1990s', 'url' : '90s'},
-                    {'name': '2000s', 'url' : '00s'},
-                    {'name': '2010s', 'url' : '10s'},
-                    {'name': '2020s', 'url' : '20s'}
-                  ]
-                }
-              />
-            }
-          />
-          <Route
-            path='/decades/:url'
-            element = {
-              <Decades
-                movies = { films }
-              />
-            }
-          />
-          <Route
-            path='*'
-            element = {
-              <NotFound />
-            }
-          />
-        </Routes>
+        <BrowserRouter>
+        <Provider>
+          <Routes>
+            <Route 
+              strict path = '/' 
+              element = {
+                <HomeWithContext month = { month } movies={ films } genres={ types } />
+              } 
+            />
+            <Route
+              path = '/titles/:url'
+              element = {
+                <Title movies = { films } />
+              }
+            />
+            <Route
+              path = '/titles'
+              element = {
+                <TitlePage movies = { films } />
+              }
+            />
+            <Route
+              path = '/genres/:genre'
+              element = {
+                <Genre movies = { films } genres={ types }/>
+              }
+            />
+            <Route
+              path='/genres'
+              element = {
+                <GenrePage genres = { types }/>
+              }
+            />
+            <Route
+              path='/results/*'
+              element = {
+                <Results movies = { films }/>
+              }
+            />
+            <Route
+              path='/decades'
+              element = {
+                <DecadesPage
+                  movies = { films }
+                  decades = {
+                    [
+                      {'name': 'Classics', 'url' : 'classics'},
+                      {'name': '1970s', 'url' : '70s'},
+                      {'name': '1980s', 'url' : '80s'},
+                      {'name': '1990s', 'url' : '90s'},
+                      {'name': '2000s', 'url' : '00s'},
+                      {'name': '2010s', 'url' : '10s'},
+                      {'name': '2020s', 'url' : '20s'}
+                    ]
+                  }
+                />
+              }
+            />
+            <Route
+              path='/decades/:url'
+              element = {
+                <Decades
+                  movies = { films }
+                />
+              }
+            />
+            <Route
+              path='*'
+              element = {
+                <NotFound />
+              }
+            />
+          </Routes>
+        </Provider>
       </BrowserRouter>
     </div>
   );

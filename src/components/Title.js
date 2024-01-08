@@ -10,128 +10,126 @@ export default function Title( props ) {
     let genres;
     let filmMakers;
 
-    function fill_in() {
-        if (window.innerWidth > 1400) {
-            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div className='px-4'>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-4' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-4' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
-                return(
-                    <div className='px-4'>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div className='px-4'>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            }
-        }
-        if (window.innerWidth > 1000) {
-            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            }
-        }
-        if (window.innerWidth < 1001) {
-            if (window.innerWidth < 500) {
-                if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
-                    return(
-                        <div>
-                            <a href={ movie.prime_link }>
-                                <img className='w-50 px-3' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                            </a>
-                            <a href={ movie.youtube_link }>
-                                <img className='w-50 px-3' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                            </a>
+    function accordion_fill() {
+        return(
+            <div className="accordion col w-25">
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Writer(s)
+                        </button>
+                    </h2>
+                    <div id="collapseOne" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            { authors }
                         </div>
-                    );
-                } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
-                    return(
-                        <div>
-                            <a href={ movie.prime_link }>
-                                <img className='w-50 px-3' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                            </a>
+                    </div>
+                </div>
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Director(s)
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            { filmMakers }                  
                         </div>
-                    );
-                } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                    return(
-                        <div className=''>
-                            <a href={ movie.youtube_link }>
-                                <img className='w-50 px-3' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                            </a>
+                    </div>
+                </div>
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Release Year
+                        </button>
+                    </h2>
+                    <div id="collapseThree" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            { movie.year }                   
                         </div>
-                    );
-                }
-            }
-            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
                     </div>
-                );
-            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
-                return(
-                    <div>
-                        <a href={ movie.prime_link }>
-                            <img className='w-50 px-4' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
+                </div>
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Genres
+                        </button>
+                    </h2>
+                    <div id="collapseFour" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            { genres }                 
+                        </div>
+                    </div>                     
+                </div>
+                <div className="accordion-item">
+                    <h2 className="accordion-header">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Links
+                        </button>
+                    </h2>
+                    <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            <div className='w-100'>
+                                <div className='m-auto'>
+                                    {link_fill_in()}
+                                </div>
+                            </div> 
+                        </div>
                     </div>
-                );
-            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div>
-                        <a href={ movie.youtube_link }>
-                            <img className='w-50 px-4' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
-                    </div>
-                );
-            }
-        }  
+                </div>
+            </div>
+        );
     }
+
+    function link_fill_in() {
+            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
+                return(
+                    <div id ='movie_link_div' className='px-5'>
+                        <a href={ movie.prime_link }>
+                            <img id='movie_link_1' className='small_link px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                        </a>
+                        <a href={ movie.youtube_link }>
+                            <img id='movie_link_2' className='small_link px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                        </a>
+                    </div>
+                );
+            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
+                return(
+                    <div id ='movie_link_div' className='px-5'>
+                        <a href={ movie.prime_link }>
+                            <img id='movie_link_1' className='small_link px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                        </a>
+                    </div>
+                );
+            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
+                return(
+                    <div id ='movie_link_div' className='px-5'>
+                        <a href={ movie.youtube_link }>
+                            <img id='movie_link_2' className='small_link px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                        </a>
+                    </div>
+                );
+            }
+        
+        let movie_link_1 = document.getElementById('movie_link_1');
+        let movie_link_2 = document.getElementById('movie_link_2');
+
+        if (window.innerWidth > 1200) {
+
+        }
+        if (window.innerWidth < 1200) {
+
+        }
+        if (window.innerWidth < 992) {
+
+        }
+        if (window.innerWidth < 768) {
+
+        }
+        if (window.innerWidth < 576) {
+
+        }
+    } 
     
     if (!url) {
         return(
@@ -150,8 +148,8 @@ export default function Title( props ) {
                     genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
                     filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
 
-                    if (window.innerWidth < 1201) {
-                        if (window.innerWidth < 1001) {
+                    if (window.innerWidth < 992) {
+                        if (window.innerWidth < 576) {
                             return(
                                 <div id='title_div' className='container'>
                                     <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
@@ -159,72 +157,7 @@ export default function Title( props ) {
                                         <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
                                     </div>
                                     <div className='row align-items-start pt-3 pb-5'>
-                                        <div className="accordion col w-25">
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Writer(s)
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { authors }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Director(s)
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseTwo" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { filmMakers }                  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Release Year
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseThree" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { movie.year }                   
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                        Genres
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseFour" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { genres }                 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                        Links
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        <div className='w-100'>
-                                                            <div className='w-75 px-2 m-auto'>
-                                                                {fill_in()}
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {accordion_fill()}
                                     </div>
                                 </div>
                             );
@@ -240,76 +173,7 @@ export default function Title( props ) {
                                         <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
                                     </div>
                                     <div className='row align-items-start pt-3 pb-5'>
-                                        <div className="accordion col w-25">
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Writer(s)
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { authors }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Director(s)
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseTwo" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { filmMakers }                  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Release Year
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseThree" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { movie.year }                   
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                        Genres
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseFour" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                        { genres }                 
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                            <div className="accordion-item">
-                                                <h2 className="accordion-header">
-                                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                        Links
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                    <div className="accordion-body">
-                                                    <div className='w-100'>
-                                                            <div className='w-50 px-5 m-auto'>
-                                                                {
-                                                                fill_in()
-                                                            }
-                                                                
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {accordion_fill()}
                                     </div>
                                 </div>
                             );
@@ -319,72 +183,7 @@ export default function Title( props ) {
                             <div id='title_div' className='container'>
                                 <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                                 <div className='row align-items-start container'>
-                                    <div className="accordion col w-25">
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Writer(s)
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                <div className="accordion-body">
-                                                    { authors }
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Director(s)
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                <div className="accordion-body">
-                                                    { filmMakers }                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    Release Year
-                                                </button>
-                                            </h2>
-                                            <div id="collapseThree" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                <div className="accordion-body">
-                                                    { movie.year }                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                    Genres
-                                                </button>
-                                            </h2>
-                                            <div id="collapseFour" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                <div className="accordion-body">
-                                                    { genres }                 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="accordion-item">
-                                            <h2 className="accordion-header">
-                                                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                    Links
-                                                </button>
-                                            </h2>
-                                            <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
-                                                <div className="accordion-body">
-                                                    <div className='w-50 m-auto'>
-                                                        <div className='w-100 m-auto'>
-                                                            {fill_in()}
-                                                        </div>
-                                                    </div> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {accordion_fill()}
                                     <div id='title_photo' className='container w-50'>
                                         <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
                                     </div>

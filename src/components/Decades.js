@@ -72,11 +72,11 @@ export default function Decades(props) {
                     return(
                         <li className='list-group-item pt-3 mb-3 flashcard' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
                     );
-                } else {
+                } 
                     return(
                         <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
                     );
-                }}
+                }
             )
         );
     }
@@ -91,8 +91,7 @@ export default function Decades(props) {
     }
 
     //combines previous two functions and returns formatting based on screen size
-    function fill_in_2() {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768) { 
             return(      
                 <div id='DecadePage' className='container m-auto my-5 pb-2'>
                     <h1 className='my-4 mx-1'>
@@ -105,7 +104,7 @@ export default function Decades(props) {
                     </div>
                 </div>
             );
-        } else {
+        } 
             return(      
                 <div id='DecadePage' className='container m-auto mt-5 w-50'>
                     <h1 className='m-5'>
@@ -118,9 +117,6 @@ export default function Decades(props) {
                     </div>
                 </div>
             );
-        }
-    }
 
     //
-    return(fill_in_2());
 }

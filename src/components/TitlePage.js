@@ -7,11 +7,11 @@ export default function TitlePage(props) {
         for ( let i = 0; i < props.movies.length; i++ ) {
             if (window.innerWidth < 768) {
                 return(
-                    <div id='TitlePage' className='container m-auto pb-2 my-5'>
+                    <div id='TitlePage' className='container m-auto pb-2 my-5 w-75'>
                         <h1 className='mt-5 mb-5 pt-1'>
                             Titles
                         </h1>
-                        <div className='container w-75'>
+                        <div className='container'>
                             <ul className="list-group list-group-flush">
                                 { 
                                     props.movies.map(( movie, i ) => {

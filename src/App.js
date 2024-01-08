@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { myValue } from './contexts/context';
 import withContext, { Provider } from './contexts/context';
 import Home from './components/Home';
 import Title from './components/Title';

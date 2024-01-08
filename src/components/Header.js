@@ -1,21 +1,43 @@
 import { React } from 'react';
 
 export default function Header() {
+    function home() {
+        return(
+            <li className="nav-item header-nav">
+                <a className="nav-link" href="/"> Home </a>
+            </li>
+        );
+    }
+    function titles() {
+        return(
+            <li className="nav-item header-nav">
+                <a className="nav-link" href="/titles"> Titles </a>
+            </li>
+        );
+    }
+    function genres() {
+        return(
+            <li className="nav-item header-nav">
+                <a className="nav-link" href="/genres"> Genres </a>
+            </li>
+        );
+    }
+    function decades() {
+        return(
+            <li className="nav-item header-nav">
+                <a className="nav-link" href="/decades"> Decades </a>
+            </li>
+        );
+    }
     //conditional statements will return data based on path
     if (window.innerWidth > 767) {
         if (window.location.pathname === '/') {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/titles"> Titles </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/genres"> Genres </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/decades"> Decades </a>
-                        </li>
+                        {titles()}
+                        {genres()}
+                        {decades()}
                     </ul>
                 </div>
             );
@@ -23,15 +45,9 @@ export default function Header() {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/"> Home </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/genres"> Genres </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/decades"> Decades </a>
-                        </li>
+                        {home()}
+                        {genres()}
+                        {decades()}
                     </ul>
                 </div>
             );
@@ -39,15 +55,9 @@ export default function Header() {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/"> Home </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/titles"> Titles </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/decades"> Decades </a>
-                        </li>
+                        {home()}
+                        {titles()}
+                        {decades()}
                     </ul>
                 </div>
             );
@@ -55,15 +65,9 @@ export default function Header() {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/"> Home </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/titles"> Titles </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/genres"> Genres </a>
-                        </li>
+                        {home()}
+                        {titles()}
+                        {genres()}
                     </ul>
                 </div>
             );
@@ -71,18 +75,10 @@ export default function Header() {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/"> Home </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/titles"> Titles </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/genres"> Genres </a>
-                        </li>
-                        <li className="nav-item header-nav">
-                            <a className="nav-link" href="/decades"> Decades </a>
-                        </li>
+                        {home()}
+                        {titles()}
+                        {genres()}
+                        {decades()}
                     </ul>
                 </div>
             );

@@ -1,9 +1,30 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 
 export default function Title( props ) {
-
     let { url }= useParams();
+
+    let [ sizeClass, setSizeClass ] = useState('');
+
+    //Sets the screen width to state which is used later in the social media icons' classLists
+    function getScreenSize() {
+        if (window.innerWidth < 500) {
+            setSizeClass('lg_socials');
+        } else if (window.innerWidth < 768) {
+            setSizeClass('md_socials');
+        } else if (window.innerWidth < 992) {
+            setSizeClass('xs_socials');
+        } else if (window.innerWidth < 1200) {
+            setSizeClass('lg_socials');
+        } else if (window.innerWidth < 1400) {
+            setSizeClass('md_socials');
+        } else {
+            setSizeClass('sm_socials');
+        }
+    }
+
+    useEffect( () => { getScreenSize() }, [ setSizeClass ] );
 
     let movie;
     let authors;
@@ -86,10 +107,10 @@ export default function Title( props ) {
                 return(
                     <div id ='movie_link_div' className='px-5'>
                         <a href={ movie.prime_link }>
-                            <img id='movie_link_1' className='small_link px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
                         <a href={ movie.youtube_link }>
-                            <img id='movie_link_2' className='small_link px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
                     </div>
                 );
@@ -97,7 +118,7 @@ export default function Title( props ) {
                 return(
                     <div id ='movie_link_div' className='px-5'>
                         <a href={ movie.prime_link }>
-                            <img id='movie_link_1' className='small_link px-5' src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                            <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                         </a>
                     </div>
                 );
@@ -105,39 +126,17 @@ export default function Title( props ) {
                 return(
                     <div id ='movie_link_div' className='px-5'>
                         <a href={ movie.youtube_link }>
-                            <img id='movie_link_2' className='small_link px-5' src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                            <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                         </a>
                     </div>
                 );
             }
-        
-        let movie_link_1 = document.getElementById('movie_link_1');
-        let movie_link_2 = document.getElementById('movie_link_2');
 
-        if (window.innerWidth > 1200) {
-
-        }
-        if (window.innerWidth < 1200) {
-
-        }
-        if (window.innerWidth < 992) {
-
-        }
-        if (window.innerWidth < 768) {
-
-        }
-        if (window.innerWidth < 576) {
-
-        }
     } 
     
     if (!url) {
         return(
-            <div id='not_found_div' className='container m-auto p-5 text-center'>
-                <div className='p-5 m-auto'>
-                    <h1 classname='p-5 m-auto'>Not Found</h1>
-                </div>
-            </div>
+            <NotFound />
         );
     } else {
         try {
@@ -164,11 +163,7 @@ export default function Title( props ) {
                         } else {
                             return(
                                 <div id='title_div' className='container'>
-                                    <h1 className='mt-5 mb-2 p-3 center'>
-                                        <a href='/titles' className='nonChalant'>
-                                            { movie.title }
-                                        </a>
-                                    </h1>
+                                    <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                                     <div id='title_photo' className='container w-100'>
                                         <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
                                     </div>
@@ -191,6 +186,10 @@ export default function Title( props ) {
                             </div>
                         );
                     }
+                } else {
+                    return(
+                        <NotFound />
+                    );
                 }
             }
         } catch(err) {

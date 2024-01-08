@@ -19,24 +19,20 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-.smaller_link {
-
-}
-
-.small_link {
+.lg_socials {
   width: 50%;
 }
 
-.med_link {
-  width: 50%;
+.md_socials {
+  width: 40%;
 }
 
-.big_link {
-  width: 50%;
+.sm_socials {
+  width: 35%;
 }
 
-.bigger_link {
-  width: 37.5%;
+.xs_socials {
+  width: 30%;
 }
 
 a {

@@ -86,6 +86,45 @@ export default function Main( props ) {
         season = 'Summer';
     }
 
+    function card_filler_mobile(number, number_memo) {
+        return(
+            <div className='py-3 flashcard'>
+                <div className='container background_box p-5 mb-5'>
+                    <a href={`/titles/${ number }`}>
+                        <img id={ number } className='smaller_img py-3' src={ `../../photos/titles/${ number }.jpg` } alt={`a movie poster for ${number}`} />
+                    </a>
+                    <p className='main_text py-3 m-0'>{`${number_memo}`}</p>
+                </div>
+            </div>
+        );
+    }
+
+    function card_filler_1(number, number_memo) {
+        return(
+            <div className='py-3'>
+                <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
+                    <a href={`/titles/${ number }`} className='col'>
+                        <img id={ number } className='smaller_img py-1' src={ `../../photos/titles/${ number }.jpg` } alt={`a movie poster for ${ number }`} />
+                    </a>
+                    <p className='col m-auto main_text'>{number_memo}</p>
+                </div>
+            </div>
+        );
+    }
+
+    function card_filler_2(number, number_memo) {
+        return(
+            <div className='py-3'>
+                <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
+                <p className='col m-auto main_text'>{number_memo}</p>
+                    <a href={`/titles/${ number }`} className='col'>
+                        <img id={ number } className='smaller_img py-1' src={ `../../photos/titles/${ number }.jpg` } alt={`a movie poster for ${ number }`} />
+                    </a>
+                </div>
+            </div>
+        );
+    }
+
     if (window.innerWidth < 768) {
         return(
             <div id='Main'>
@@ -99,46 +138,11 @@ export default function Main( props ) {
                             <p className='main_text py-3 m-0'>{first_memo}</p>
                         </div>
                     </div>
-                    <div className='py-3 flashcard'>
-                        <div className='container background_box p-5 mb-5'>
-                            <a href={`/titles/${ second }`}>
-                                <img id={ second } className='smaller_img py-3' src={ `../../photos/titles/${ second }.jpg` } alt={`a movie poster for ${second}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{second_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3 flashcard'>
-                        <div className='container background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ third }`}>
-                                <img id={ third } className='smaller_img py-3' src={ `../../photos/titles/${ third }.jpg` } alt={`a movie poster for ${third}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{third_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3 flashcard'>
-                        <div className='container background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ fourth }`}>
-                                <img id={ fourth } className='smaller_img py-3' src={ `../../photos/titles/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{fourth_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3 flashcard'>
-                        <div className='container background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ fifth }`}>
-                                <img id={ fifth } className='smaller_img py-3' src={ `../../photos/titles/${ fifth }.jpg` } alt={`a movie poster for ${fifth}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{fifth_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3 flashcard'>
-                        <div className='container background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ sixth }`}>
-                                <img id={ sixth } className='smaller_img py-3' src={ `../../photos/titles/${ sixth }.jpg` } alt={`a movie poster for ${sixth}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{sixth_memo}</p>
-                        </div>
-                    </div>
+                    {card_filler_mobile(second, second_memo)}
+                    {card_filler_mobile(third, third_memo)}
+                    {card_filler_mobile(fourth, fourth_memo)}
+                    {card_filler_mobile(fifth, fifth_memo)}
+                    {card_filler_mobile(sixth, sixth_memo)}
                 </div>
             </div>
         );
@@ -163,38 +167,10 @@ export default function Main( props ) {
                             </a>
                         </div>
                     </div>
-                    <div className='py-3'>
-                        <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ third }`} className='col'>
-                                <img id={ third } className='smaller_img py-1' src={ `../../photos/titles/${ third }.jpg` } alt={`a movie poster for ${third}`} />
-                            </a>
-                            <p className='col m-auto main_text'>{third_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3'>
-                        <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <p className='col m-auto main_text'>{fourth_memo}</p>
-                            <a href={`/titles/${ fourth }`} className='col'>
-                                <img id={ fourth } className='smaller_img py-1' src={ `../../photos/titles/${ fourth }.jpg` } alt={`a movie poster for ${fourth}`} />
-                            </a>
-                        </div>
-                    </div>
-                    <div className='py-3'>
-                        <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <a href={`/titles/${ fifth }`} className='col'>
-                                <img id={ fifth } className='smaller_img py-1' src={ `../../photos/titles/${ fifth }.jpg` } alt={`a movie poster for ${fifth}`} />
-                            </a>
-                            <p className='col m-auto main_text'>{fifth_memo}</p>
-                        </div>
-                    </div>
-                    <div className='py-3'>
-                        <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                            <p className='col m-auto main_text'>{sixth_memo}</p>
-                            <a href={`/titles/${ sixth }`} className='col'>
-                                <img id={ sixth } className='smaller_img py-1' src={ `../../photos/titles/${ sixth }.jpg` } alt={`a movie poster for ${sixth}`} />
-                            </a>
-                        </div>
-                    </div>
+                    {card_filler_1(third, third_memo)}
+                    {card_filler_2(fourth, fourth_memo)}
+                    {card_filler_1(fifth, fifth_memo)}
+                    {card_filler_2(sixth, sixth_memo)}
                 </div>
             </div>
         );

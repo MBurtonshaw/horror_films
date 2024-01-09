@@ -5,19 +5,12 @@ export const Context = createContext('');
 export const myValue = 'yo';
 
 export class Provider extends Component {
-  
-    constructor() {
+  /*  constructor() {
       super();
-    }
-  
-    
-  
-    state = {
-      
-    }
+    }  */
+    state = {}
   
     render() {
-
       const value = {
         data: 'You did it',
         actions: {}

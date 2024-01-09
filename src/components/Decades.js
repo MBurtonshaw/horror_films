@@ -62,25 +62,29 @@ export default function Decades(props) {
     //function to map the movies corresponding to the correct decade, to list items
     let fill_array = [];
 
-    //function to loop thru state & map films corresponding to the decade
     function fill_in() {
         for ( let f = 0; f < movies.length; f++ ) {
             fill_array.push( movies[f] );
         }
             //
         return(
-            fill_array.map( ( film, i ) => {
-                if (i > 12) {
-                    return(
-                        <li className='list-group-item pt-3 mb-3 flashcard' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
-                    );
-                } 
-                    return(
-                        <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
-                    );
-                }
+            <div className='container pb-4 mb-4 w-75'>
+                <ul className="list-group list-group-flush">
+                {fill_array.map( ( film, i ) => {
+                    if (i > 12) {
+                        return(
+                            <li className='list-group-item pt-3 mb-3 flashcard' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
+                        );
+                    } else {
+                        return(
+                            <li className='list-group-item pt-3 mb-3' key={ i }><a href={`/titles/${ film.url }`}>{ film.title }</a></li>
+                        );
+                    }
+                        
+                })}
+                </ul>
+            </div>
             )
-        );
     }
 
     //determines the decade category and sets header
@@ -112,11 +116,7 @@ export default function Decades(props) {
                 <h1 className='my-4 mx-1'>
                     { namer() }
                 </h1>
-                <div className='container pb-4 mb-4 w-75'>
-                    <ul className="list-group list-group-flush">
-                        { fill_in() }
-                    </ul>
-                </div>
+                    { fill_in() }
             </div>
         );
     } 
@@ -124,12 +124,8 @@ export default function Decades(props) {
         <div id='DecadePage' className='container m-auto mt-5 w-50 background_box'>
             <h1 className='m-5'>
                 { namer() }
-            </h1>
-            <div className='container pb-4 mb-4 w-75'>
-                <ul className="list-group list-group-flush">
-                    { fill_in() }
-                </ul>
-            </div>
+            </h1> 
+                { fill_in() }
         </div>
     );
     //

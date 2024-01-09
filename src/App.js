@@ -14,6 +14,13 @@ import NotFound from './components/NotFound';
 import movies from './movies.json';
 
 const HomeWithContext = withContext(Home);
+const DecadesWithContext = withContext(Decades);
+const GenreWithContext = withContext(Genre);
+const TitleWithContext = withContext(Title);
+const TitlePageWithContext = withContext(TitlePage);
+const GenrePageWithContext = withContext(GenrePage);
+const ResultsWithContext = withContext(Results);
+const DecadesPageWithContext = withContext(DecadesPage);
 
 function App() {
 
@@ -67,7 +74,6 @@ rgb(38, 39, 41)
 // Initializing state
 let [ month, setMonth ] = useState('');
 let [ types, setTypes ] = useState('');
-let [ films, setFilms ] = useState('');
 
 function removeDuplicates( arr ) { 
     let unique = []; 
@@ -89,9 +95,6 @@ async function getData() {
     const setter = date.getMonth();
     setMonth( setter + 1 );
 
-    //Setting movies to state as 'films'
-    setFilms( movies.movies );
-
     // First loop is to parse through individual movies
     for ( let i = 0; i < movies.movies.length; i++ ) {
     let subdata = movies.movies[i];
@@ -110,7 +113,7 @@ async function getData() {
   }
 }
 
-useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
+useEffect( () => { getData() }, [ setTypes, setMonth ] );
 
 let url = window.location.pathname;
 
@@ -124,44 +127,43 @@ let url = window.location.pathname;
             <Route 
               strict path = '/' 
               element = {
-                <HomeWithContext month = { month } movies={ films } genres={ types } />
+                <HomeWithContext month = { month } genres={ types } />
               } 
             />
             <Route
               path = '/titles/:url'
               element = {
-                <Title movies = { films } />
+                <TitleWithContext />
               }
             />
             <Route
               path = '/titles'
               element = {
-                <TitlePage movies = { films } />
+                <TitlePageWithContext />
               }
             />
             <Route
               path = '/genres/:url'
               element = {
-                <Genre movies = { films } genres={ types }/>
+                <GenreWithContext genres={ types }/>
               }
             />
             <Route
               path='/genres'
               element = {
-                <GenrePage genres = { types } movies = { films }/>
+                <GenrePageWithContext genres = { types }/>
               }
             />
             <Route
               path='/results/:url'
               element = {
-                <Results movies = { films }/>
+                <ResultsWithContext/>
               }
             />
             <Route
               path='/decades'
               element = {
-                <DecadesPage
-                  movies = { films }
+                <DecadesPageWithContext
                   decades = {
                     [
                       {'name': 'Classics', 'url' : 'classics'},
@@ -179,9 +181,7 @@ let url = window.location.pathname;
             <Route
               path='/decades/:url'
               element = {
-                <Decades
-                  movies = { films }
-                />
+                <DecadesWithContext />
               }
             />
             <Route

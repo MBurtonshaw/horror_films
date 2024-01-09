@@ -2,33 +2,23 @@ import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import NotFound from './NotFound';
 
-export default function Decades(props) {
+export default function Genres(props) {
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
 
-    //removes duplicates from an array
-    function removeDuplicates( arr ) { 
-        let unique = []; 
-        arr.forEach(element => { 
-          if ( !unique.includes(element) ) { 
-            unique.push( element ); 
-          } 
-        })
-        return unique;
-    } 
 
     //function to gather data from movies.json
     //sets category and sorts films based on url and film year
     async function getData() {
         try {
             let pictures = [];
-            let films = await props.movies;
+            let films = await props.context.data.movies.movies;
 
             for (let i = 0; i < films.length; i++) {
               for (let j = 0; j < films[i].genres.length; j++) {
                 if (films[i].genres.includes(url)) {
                     pictures.push(films[i]);
-                    setMovies(removeDuplicates(pictures));
+                    setMovies(props.context.actions.removeDuplicates(pictures));
                 }
               }
             }

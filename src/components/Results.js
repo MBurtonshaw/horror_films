@@ -9,7 +9,7 @@ export default function Results(props) {
    //function to set a term from url to state then sort movies based on that term
    async function getData() {
         setTerm(window.location.pathname.slice(9));
-        movieArray = await props.movies;
+        movieArray = await props.context.data.movies.movies;
 
         if (movieArray.length <= 1) {
             return(null)
@@ -28,10 +28,6 @@ export default function Results(props) {
    }
 
    useEffect( () => { getData() } );
-
-   function capitalizeFirstLetter( string ) {
-    return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
-}
 
    function body_fill() {
         return(
@@ -60,7 +56,7 @@ export default function Results(props) {
             return(
                 <div id='ResultsPage' className='container m-auto my-5 pb-2'>
                     <h1 className='m-5'>
-                        {capitalizeFirstLetter(term.toLowerCase())}
+                        {props.context.actions.capitalizeFirstLetter(term.toLowerCase())}
                     </h1>
                     <div className='container pb-4 mb-4 w-75'>
                         {body_fill()}
@@ -71,7 +67,7 @@ export default function Results(props) {
             return(
                 <div id='ResultsPage' className='container m-auto mt-5 w-50'>
                     <h1 className='m-5'>
-                        {capitalizeFirstLetter(term.toLowerCase())}
+                        {props.context.actions.capitalizeFirstLetter(term.toLowerCase())}
                     </h1>
                     <div className='container pb-4 mb-4 w-75'>
                         {body_fill()}

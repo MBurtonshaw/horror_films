@@ -6,23 +6,12 @@ export default function Decades(props) {
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
 
-    //removes duplicates from an array
-    function removeDuplicates( arr ) { 
-        let unique = []; 
-        arr.forEach(element => { 
-            if ( !unique.includes(element) ) { 
-                unique.push( element ); 
-            } 
-        })
-        return unique;
-    } 
-
     //function to gather data from movies.json
     //sets category and sorts films based on url and film year
     async function getData() {
         try {
             let pictures = [];
-            let films = await props.movies;
+            let films = await props.context.data.movies.movies;
 
             for (let i = 0; i < films.length; i++) {
               
@@ -47,7 +36,8 @@ export default function Decades(props) {
                 if ( url === '20s' && films[i].year > 2019 && films[i].year < 2030) {
                     pictures.push(films[i]);
                 }
-                pictures = removeDuplicates(pictures);
+                pictures = props.context.actions.removeDuplicates(pictures);
+                console.log(props)
                 setMovies(pictures);
                 
                 }

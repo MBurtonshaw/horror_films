@@ -1,19 +1,20 @@
 import { React, createContext, Component } from "react";
-
+import movies from '../movies.json';
 
 export const Context = createContext(''); 
-export const myValue = 'yo';
 
 export class Provider extends Component {
-  /*  constructor() {
-      super();
-    }  */
-    state = {}
   
     render() {
       const value = {
-        data: 'You did it',
-        actions: {}
+        data: {
+          movies
+        },
+
+        actions: {
+          removeDuplicates: this.removeDuplicates,
+          capitalizeFirstLetter: this.capitalizeFirstLetter
+        }
       }
   
       return (
@@ -22,6 +23,21 @@ export class Provider extends Component {
         </Context.Provider>  
       );
     }
+
+    removeDuplicates = ( arr ) => { 
+      let unique = []; 
+      arr.forEach(element => { 
+        if ( !unique.includes(element) ) { 
+          unique.push( element ); 
+        } 
+    })
+    return unique; 
+  } 
+
+  capitalizeFirstLetter = ( string ) => {
+    return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
+}
+
 }
 
 export const Consumer = Context.Consumer;

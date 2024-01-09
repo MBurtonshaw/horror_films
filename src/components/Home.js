@@ -10,7 +10,7 @@ export default function Home( props ) {
         if (window.innerWidth > 767) {
             return(
                 <div>
-                    <Search movies={props.movies} genres={ props.genres }/>
+                    <Search movies={props.context.movies} genres={ props.genres }/>
                     <h1 className='my-5'> Horror Films </h1>
                 </div>
             );
@@ -18,14 +18,12 @@ export default function Home( props ) {
             return(
                 <div>
                     <h1 className='my-5 pt-md-5'> Horror Films </h1>
-                    <Search movies={props.movies} genres={ props.genres }/>
+                    <Search movies={props.context.movies} genres={ props.genres }/>
                 </div>
             );
         }
     }
-    
     console.log(props.context)
-
     return(
         <div id='home_div'>
             <Sidebar genres={ props.genres }/> 

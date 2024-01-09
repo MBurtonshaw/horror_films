@@ -26,8 +26,8 @@ export default function Title( props ) {
 
     //async function to match the corresponding film with the url
     async function dataLoader() {
-        for (let i = 0; i < props.movies.length; i++) {
-            let newTypes = await props.movies;
+        for (let i = 0; i < props.context.data.movies.movies.length; i++) {
+            let newTypes = await props.context.data.movies.movies;
             if (newTypes[i].url === url) {
                 let newType = newTypes[i];
                 setCurrentFilm(newType);

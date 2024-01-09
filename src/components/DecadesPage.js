@@ -2,7 +2,7 @@ import { React } from 'react';
 
 export default function DecadesPage(props) {
     //mapping movie list based on props
-    if (props.movies.length < 1) {
+    if (props.context.data.movies.movies.length < 1) {
         return null;
     } else {
         //

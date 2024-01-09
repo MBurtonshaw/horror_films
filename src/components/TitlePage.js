@@ -1,10 +1,10 @@
 import { React } from 'react';
 
 export default function TitlePage(props) {
-    if (props.movies.length < 1) {
+    if (props.context.data.movies.movies.length < 1) {
         return null;
     } else {
-        for ( let i = 0; i < props.movies.length; i++ ) {
+        for ( let i = 0; i < props.context.data.movies.movies.length; i++ ) {
             if (window.innerWidth < 768) {
                 return(
                     <div id='TitlePage' className='container m-auto pb-2 my-5 w-100 background_box'>
@@ -14,7 +14,7 @@ export default function TitlePage(props) {
                         <div className='container'>
                             <ul className="list-group list-group-flush">
                                 { 
-                                    props.movies.map(( movie, i ) => {
+                                    props.context.data.movies.movies.map(( movie, i ) => {
                                         if (movie.id < 7) {
                                             return(
                                                 <li key={ i } className='list-group-item pt-3 mb-3'>
@@ -47,7 +47,7 @@ export default function TitlePage(props) {
                         <div className='container w-75'>
                             <ul className="list-group list-group-flush">
                                 { 
-                                    props.movies.map(( movie, i ) => {
+                                    props.context.data.movies.movies.map(( movie, i ) => {
                                         if (movie.id < 12) {
                                             return(
                                                 <li key={ i } className='list-group-item pt-3 mb-3'>

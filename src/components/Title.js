@@ -143,93 +143,86 @@ export default function Title( props ) {
     }
 
     function link_fill_in() {
-            if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
+        if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
+            return(
+                <div id ='movie_link_div' className='px-5'>
+                    <a href={ movie.prime_link }>
+                        <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                    </a>
+                    <a href={ movie.youtube_link }>
+                        <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                    </a>
+                </div>
+            );
+        } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
+            return(
+                <div id ='movie_link_div' className='px-5'>
+                    <a href={ movie.prime_link }>
+                        <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                    </a>
+                </div>
+            );
+        } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
+            return(
+                <div id ='movie_link_div' className='px-5'>
+                    <a href={ movie.youtube_link }>
+                        <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                    </a>
+                </div>
+            );
+        }
+    } 
+    
+    if ( currentFilm.url === url ) {
+        movie = currentFilm;
+        authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
+        genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
+        filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
+
+        if (window.innerWidth < 992) {
+            if (window.innerWidth < 576) {
                 return(
-                    <div id ='movie_link_div' className='px-5'>
-                        <a href={ movie.prime_link }>
-                            <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                        <a href={ movie.youtube_link }>
-                            <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
+                    <div id='title_div' className='container'>
+                        <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                        <div id='title_photo' className='container w-100'>
+                            <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
+                        </div>
+                        <div className='row align-items-start pt-3 pb-5'>
+                            {accordion_fill()}
+                        </div>
                     </div>
                 );
-            } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
+            } else {
                 return(
-                    <div id ='movie_link_div' className='px-5'>
-                        <a href={ movie.prime_link }>
-                            <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
-                        </a>
-                    </div>
-                );
-            } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
-                return(
-                    <div id ='movie_link_div' className='px-5'>
-                        <a href={ movie.youtube_link }>
-                            <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
-                        </a>
+                    <div id='title_div' className='container'>
+                        <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                        <div id='title_photo' className='container w-100'>
+                            <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
+                        </div>
+                        <div className='row align-items-start pt-3 pb-5'>
+                            {accordion_fill()}
+                        </div>
                     </div>
                 );
             }
-
-    } 
-    
-    
-        
-                if ( currentFilm.url === url ) {
-                    movie = currentFilm;
-                    authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
-                    genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
-                    filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
-
-                    if (window.innerWidth < 992) {
-                        if (window.innerWidth < 576) {
-                            return(
-                                <div id='title_div' className='container'>
-                                    <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
-                                    <div id='title_photo' className='container w-100'>
-                                        <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
-                                    </div>
-                                    <div className='row align-items-start pt-3 pb-5'>
-                                        {accordion_fill()}
-                                    </div>
-                                </div>
-                            );
-                        } else {
-                            return(
-                                <div id='title_div' className='container'>
-                                    <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
-                                    <div id='title_photo' className='container w-100'>
-                                        <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
-                                    </div>
-                                    <div className='row align-items-start pt-3 pb-5'>
-                                        {accordion_fill()}
-                                    </div>
-                                </div>
-                            );
-                        }
-                    } else {
-                        return(
-                            <div id='title_div' className='container'>
-                                <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
-                                <div className='row align-items-start container'>
-                                    {accordion_fill()}
-                                    <div id='title_photo' className='container w-50'>
-                                        <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    }
-                } else {
-                    return(
-                        <div>
-                            <h1 className='pt-5'>{url}</h1>
-                            <NotFound />
+        } else {
+            return(
+                <div id='title_div' className='container'>
+                    <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                    <div className='row align-items-start container'>
+                        {accordion_fill()}
+                        <div id='title_photo' className='container w-50'>
+                            <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
                         </div>
-                    );
-                }
-            
-        
-    
+                    </div>
+                </div>
+            );
+        }
+    } else {
+        return(
+            <div>
+                <NotFound message={url}/>
+            </div>
+        );
+    }
 }

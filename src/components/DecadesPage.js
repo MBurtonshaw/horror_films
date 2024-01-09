@@ -7,7 +7,7 @@ export default function DecadesPage(props) {
     } else {
         //
         return( 
-            <div id='GenrePage' className='container'>
+            <div id='DecadesPage' className='container'>
                 <h1 className='my-5 pt-5'> Decades </h1>
                 <div className="card-group">
                     {

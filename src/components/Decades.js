@@ -10,9 +10,9 @@ export default function Decades(props) {
     function removeDuplicates( arr ) { 
         let unique = []; 
         arr.forEach(element => { 
-          if ( !unique.includes(element) ) { 
-            unique.push( element ); 
-          } 
+            if ( !unique.includes(element) ) { 
+                unique.push( element ); 
+            } 
         })
         return unique;
     } 
@@ -99,40 +99,38 @@ export default function Decades(props) {
         } else {
             return(
                 <div>
-                    <h1 className='pt-5'>{url}</h1>
-                    <NotFound />
+                    <NotFound message={url}/>
                 </div>
             );
         }
     }
 
     //combines previous two functions and returns formatting based on screen size
-        if (window.innerWidth < 768) { 
-            return(      
-                <div id='DecadePage' className='container m-auto my-5 pb-2'>
-                    <h1 className='my-4 mx-1'>
-                        { namer() }
-                    </h1>
-                    <div className='container pb-4 mb-4 w-75'>
-                        <ul className="list-group list-group-flush">
-                            { fill_in() }
-                        </ul>
-                    </div>
+    if (window.innerWidth < 768) { 
+        return(      
+            <div id='DecadePage' className='container m-auto my-5 pb-2 background_box'>
+                <h1 className='my-4 mx-1'>
+                    { namer() }
+                </h1>
+                <div className='container pb-4 mb-4 w-75'>
+                    <ul className="list-group list-group-flush">
+                        { fill_in() }
+                    </ul>
                 </div>
-            );
-        } 
-            return(      
-                <div id='DecadePage' className='container m-auto mt-5 w-50'>
-                    <h1 className='m-5'>
-                        { namer() }
-                    </h1>
-                    <div className='container pb-4 mb-4 w-75'>
-                        <ul className="list-group list-group-flush">
-                            { fill_in() }
-                        </ul>
-                    </div>
-                </div>
-            );
-
+            </div>
+        );
+    } 
+    return(      
+        <div id='DecadePage' className='container m-auto mt-5 w-50 background_box'>
+            <h1 className='m-5'>
+                { namer() }
+            </h1>
+            <div className='container pb-4 mb-4 w-75'>
+                <ul className="list-group list-group-flush">
+                    { fill_in() }
+                </ul>
+            </div>
+        </div>
+    );
     //
 }

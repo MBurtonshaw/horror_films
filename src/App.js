@@ -112,9 +112,11 @@ async function getData() {
 
 useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
 
+let url = window.location.pathname;
+
   return (
     // Routing and passing props
-    <div id='app_div' className="App">
+    <div id='app_div'>
       <Header genres={ types } />
         <BrowserRouter>
         <Provider>
@@ -186,8 +188,7 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
               path='*'
               element = {
                 <div>
-                    <h1 className='pt-5'>{window.location.pathname}</h1>
-                    <NotFound />
+                    <NotFound message={url}/>
                 </div>
               }
             />

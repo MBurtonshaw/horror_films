@@ -56,7 +56,8 @@ export default function Results(props) {
                 </div>
             );
         } else {
-            <div id='ResultsPage' className='container m-auto mt-5 w-50'>
+            return(
+                <div id='ResultsPage' className='container m-auto mt-5 w-50'>
                 <h1 className='m-5'>
                     {capitalizeFirstLetter(term.toLowerCase())}
                 </h1>
@@ -76,6 +77,7 @@ export default function Results(props) {
                     </ul>
                 </div>
             </div>
+            );
         }
    }
 

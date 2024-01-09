@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 
 export default function Genre( props ) {
 
-    let { genre } = useParams();
+    let { url } = useParams();
     let chosen = [];
 
     //function to sort movies based on matching url
     function sort() {
         try {
             for ( let i = 0; i < props.movies.length; i++ ) {
-                if ( props.movies[i].genres.includes( genre ) ) {
+                if ( props.movies[i].genres.includes( url ) ) {
                     chosen.push( props.movies[i] );
                 }
             }
@@ -27,7 +27,7 @@ export default function Genre( props ) {
             <div id='Genre' className='container m-auto mt-5'>
                 <div className='m-5'>
                     <h1 className='my-4 mx-1'>
-                        Genre: { genre }  
+                        Genre: { url }  
                     </h1>
                 </div>
                 <div className='container pb-4 mb-4 w-75 p-2'>

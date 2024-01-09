@@ -137,7 +137,7 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
               }
             />
             <Route
-              path = '/genres/:genre'
+              path = '/genres/:url'
               element = {
                 <Genre movies = { films } genres={ types }/>
               }
@@ -149,7 +149,7 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
               }
             />
             <Route
-              path='/results/*'
+              path='/results/:url'
               element = {
                 <Results movies = { films }/>
               }

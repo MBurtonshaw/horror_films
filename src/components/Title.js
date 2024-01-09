@@ -6,6 +6,7 @@ export default function Title( props ) {
     let { url }= useParams();
 
     let [ sizeClass, setSizeClass ] = useState('');
+    let [ currentFilm, setCurrentFilm ] = useState('');
 
     //Sets the screen width to state which is used later in the social media icons' classLists
     function getScreenSize() {
@@ -22,9 +23,20 @@ export default function Title( props ) {
         } else {
             setSizeClass('sm_socials');
         }
+        
+    }
+    async function dataLoader() {
+        for (let i = 0; i < props.movies.length; i++) {
+            let newTypes = await props.movies;
+            if (newTypes[i].url === url) {
+                let newType = newTypes[i];
+                setCurrentFilm(newType);
+            }
+        }
     }
 
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
+    useEffect( () => { dataLoader() } );
 
     let movie;
     let authors;
@@ -134,15 +146,10 @@ export default function Title( props ) {
 
     } 
     
-    if (!url) {
-        return(
-            <NotFound />
-        );
-    } else {
-        try {
-            for ( let i = 0; i < props.movies.length; i++ ) {
-                if ( props.movies[i].url === url ) {
-                    movie = props.movies[i];
+    
+        
+                if ( currentFilm.url === url ) {
+                    movie = currentFilm;
                     authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
                     genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
                     filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
@@ -191,9 +198,7 @@ export default function Title( props ) {
                         <NotFound />
                     );
                 }
-            }
-        } catch(err) {
-            console.log(err.message);
-        }
-    }
+            
+        
+    
 }

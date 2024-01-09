@@ -1,9 +1,11 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import NotFound from './NotFound';
 
 export default function Decades(props) {
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
+    let [ genre, setGenre ] = useState('');
 
     //removes duplicates from an array
     function removeDuplicates( arr ) { 
@@ -48,6 +50,7 @@ export default function Decades(props) {
                 }
                 pictures = removeDuplicates(pictures);
                 setMovies(pictures);
+                
                 }
         } catch(err) {
             console.log(err.message)
@@ -85,8 +88,17 @@ export default function Decades(props) {
     function namer() {
         if (url === 'classics') {
             return('Decade: Classics');
-        } else {
+        } else if (
+                url === '70s' ||
+                url === '80s' ||
+                url === '90s' ||
+                url === '00s' ||
+                url === '10s' ||
+                url === '20s' 
+            ) {
             return(`Decade: ${url}`);
+        } else {
+            return <NotFound />
         }
     }
 

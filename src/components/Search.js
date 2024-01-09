@@ -6,7 +6,7 @@ export default function Search(props) {
     let titleArray = [];
     const searcher = document.getElementById('searchBar');
 
-    //function to append a message when the searchbar is focused upon
+    //function to append a message when the searchbar is focused upon/////////////////////////////////////
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
     const appendAlert = (message, type) => {
 
@@ -27,7 +27,7 @@ export default function Search(props) {
             appendAlert(
                 `Please limit searches for movie titles to one word, or part of a word`, 'dark')
         })
-    }
+    }  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //sorting movies by title
     async function loader() {

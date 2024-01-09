@@ -4,11 +4,10 @@ import NotFound from './NotFound';
 
 export default function Title( props ) {
     let { url }= useParams();
-
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
 
-    //Sets the screen width to state which is used later in the social media icons' classLists
+    //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
     function getScreenSize() {
         if (window.innerWidth < 500) {
             setSizeClass('lg_socials');
@@ -23,8 +22,9 @@ export default function Title( props ) {
         } else {
             setSizeClass('sm_socials');
         }
-        
     }
+
+    //async function to match the corresponding film with the url
     async function dataLoader() {
         for (let i = 0; i < props.movies.length; i++) {
             let newTypes = await props.movies;
@@ -35,6 +35,7 @@ export default function Title( props ) {
         }
     }
 
+    //function to match the film's release year with the /decades path it corresponds to
     function decade_filler() {
         let variant;
         if (movie.year < 1970) {
@@ -71,6 +72,7 @@ export default function Title( props ) {
     let genres;
     let filmMakers;
 
+    //function to create the accordion component
     function accordion_fill() {
         return(
             <div className="accordion col w-25">
@@ -142,6 +144,7 @@ export default function Title( props ) {
         );
     }
 
+    //function to handle the Amazon Prime & YouTube icons
     function link_fill_in() {
         if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
             return(
@@ -173,12 +176,14 @@ export default function Title( props ) {
         }
     } 
     
+    //matching film in state to film in url and returning the proper data
     if ( currentFilm.url === url ) {
         movie = currentFilm;
         authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
         genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
         filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
 
+        //logic to handle different screen widths
         if (window.innerWidth < 992) {
             if (window.innerWidth < 576) {
                 return(

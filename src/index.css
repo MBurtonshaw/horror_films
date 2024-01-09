@@ -55,9 +55,13 @@ li {
   padding-top: 0.5em;
 }
 
-
 .accordion-body {
   color: lightgray;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
 }
 
 .accordion-button:not(.collapsed) {
@@ -71,11 +75,6 @@ li {
 .accordion-button:is(.collapsed) {
   background-image: linear-gradient(black, black, rgb(57, 12, 12));
   color: rgb(92, 200, 137);
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-  border-color: rgba(0,0,0,.125);
 }
 
 .accordion-header {

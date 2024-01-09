@@ -29,7 +29,33 @@ export default function Results(props) {
 
    useEffect( () => { getData() } );
 
-    function fill_in() {
+   function capitalizeFirstLetter( string ) {
+    return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
+}
+
+   function body_fill() {
+        return(
+            <ul className="list-group list-group-flush">
+                {
+                    //mapping movies from state
+                    movies.map((film, i)=>{
+                        //adding the flashcard animation class to later entries on the list
+                        if (i > 10) {
+                            return(
+                                <li key={i} className='list-group-item pt-3 mb-3 flashcard'><a href={`/titles/${film.url}`}>{film.title}</a></li>
+                            );
+                        } else {
+                            return(
+                                <li key={i} className='list-group-item pt-3 mb-3'><a href={`/titles/${film.url}`}>{film.title}</a></li>
+                            );
+                        }
+                    })
+                }
+            </ul>
+        );
+    }
+
+    for (let m = 0; m < movies.length; m++) {
         if (window.innerWidth < 768) {
             return(
                 <div id='ResultsPage' className='container m-auto my-5 pb-2'>
@@ -37,61 +63,21 @@ export default function Results(props) {
                         {capitalizeFirstLetter(term.toLowerCase())}
                     </h1>
                     <div className='container pb-4 mb-4 w-75'>
-                        <ul className="list-group list-group-flush">
-                            {
-                            movies.map((film, i)=>{
-                                if (i > 10) {
-                                    return(
-                                        <li key={i} className='list-group-item pt-3 mb-3 flashcard'><a href={`/titles/${film.url}`}>{film.title}</a></li>
-                                    );
-                                } else {
-                                    return(
-                                        <li key={i} className='list-group-item pt-3 mb-3'><a href={`/titles/${film.url}`}>{film.title}</a></li>
-                                    );
-                                }
-                            })
-                            }
-                        </ul>
+                        {body_fill()}
                     </div>
                 </div>
             );
         } else {
             return(
                 <div id='ResultsPage' className='container m-auto mt-5 w-50'>
-                <h1 className='m-5'>
-                    {capitalizeFirstLetter(term.toLowerCase())}
-                </h1>
-                <div className='container pb-4 mb-4 w-75'>
-                    <ul className="list-group list-group-flush">
-                        {movies.map((film, i)=>{
-                            if (i > 10) {
-                                return(
-                                    <li key={i} className='list-group-item pt-3 mb-3 flashcard'><a href={`/titles/${film.url}`}>{film.title}</a></li>
-                                );
-                            } else {
-                                return(
-                                    <li key={i} className='list-group-item pt-3 mb-3'><a href={`/titles/${film.url}`}>{film.title}</a></li>
-                                );
-                            }
-                        })}
-                    </ul>
+                    <h1 className='m-5'>
+                        {capitalizeFirstLetter(term.toLowerCase())}
+                    </h1>
+                    <div className='container pb-4 mb-4 w-75'>
+                        {body_fill()}
+                    </div>
                 </div>
-            </div>
             );
         }
-   }
-
-    function capitalizeFirstLetter( string ) {
-        return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
-    }
-    for (let m = 0; m < movies.length; m++) {
-         //mapping movies from state
-        return(
-            <div>
-                <div>
-                    {fill_in()}
-                </div>
-            </div>
-        );
     }
 }

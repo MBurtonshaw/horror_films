@@ -86,6 +86,8 @@ export default function Main( props ) {
         season = 'Summer';
     }
 
+    //function to fill out cards with the flashcard class on smaller screens
+    //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
     function card_filler_mobile(number, number_memo) {
         return(
             <div className='py-3 flashcard'>
@@ -99,6 +101,8 @@ export default function Main( props ) {
         );
     }
 
+    //function to fill out cards with the flashcard class and the picture on the right side
+    //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
     function card_filler_1(number, number_memo) {
         return(
             <div className='py-3'>
@@ -111,7 +115,8 @@ export default function Main( props ) {
             </div>
         );
     }
-
+    //function to fill out cards with the flashcard class and the picture on the left side
+    //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
     function card_filler_2(number, number_memo) {
         return(
             <div className='py-3'>
@@ -128,8 +133,10 @@ export default function Main( props ) {
     if (window.innerWidth < 768) {
         return(
             <div id='Main'>
-                <div id='regular_carousel' className='container d-block'>
+                <div className='container d-block'>
                     <h2 className='m-2 pt-5'> { season } Recommendations </h2>
+
+                    {/* the first card doesn't use the card_filler function because it is supposed to be visible on pageload */}
                     <div className='py-3'>
                         <div className='container background_box p-5 mb-5'>
                             <a href={`/titles/${ first }`}>
@@ -149,8 +156,10 @@ export default function Main( props ) {
     } else {
         return(
             <div id='Main'>
-                <div id='regular_carousel' className='container d-block w-75 py-2'>
+                <div className='container d-block w-75 py-2'>
                     <h2 className='m-2'> { season } Recommendations </h2>
+
+                    {/* the first two cards don't use the card_filler functions because they are supposed to be visible on pageload */}
                     <div className='pt-4 pb-3'>
                         <div className='container row align-items-start background_box p-5 mb-5'>
                             <a href={`/titles/${ first }`} className='col'>

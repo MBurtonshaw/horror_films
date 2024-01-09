@@ -97,7 +97,12 @@ export default function Decades(props) {
             ) {
             return(`Decade: ${url}`);
         } else {
-            return <NotFound />
+            return(
+                <div>
+                    <h1 className='py-5'>{url}</h1>
+                    <NotFound />
+                </div>
+            );
         }
     }
 

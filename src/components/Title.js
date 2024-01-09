@@ -223,7 +223,10 @@ export default function Title( props ) {
                     }
                 } else {
                     return(
-                        <NotFound />
+                        <div>
+                            <h1 className='py-5'>{url}</h1>
+                            <NotFound />
+                        </div>
                     );
                 }
             

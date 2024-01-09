@@ -79,6 +79,7 @@ function removeDuplicates( arr ) {
   return unique; 
 } 
 
+
 async function getData() {
   try {
     let vidArray = [];
@@ -184,7 +185,10 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
             <Route
               path='*'
               element = {
-                <NotFound />
+                <div>
+                    <h1 className='pt-5'>{window.location.pathname}</h1>
+                    <NotFound />
+                </div>
               }
             />
           </Routes>

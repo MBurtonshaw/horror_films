@@ -90,7 +90,7 @@ export default function Decades(props) {
         } else {
             return(
                 <div>
-                    <h1 className='py-5'>{url}</h1>
+                    <h1 className='pt-5'>{url}</h1>
                     <NotFound />
                 </div>
             );

@@ -145,7 +145,7 @@ useEffect( () => { getData() }, [ setTypes, setFilms, setMonth ] );
             <Route
               path='/genres'
               element = {
-                <GenrePage genres = { types }/>
+                <GenrePage genres = { types } movies = { films }/>
               }
             />
             <Route

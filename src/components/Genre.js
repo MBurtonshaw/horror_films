@@ -19,6 +19,34 @@ export default function Genre( props ) {
         }
     }
 
+    function namer() {
+        if (url === 'classics') {
+            return('Genre: Classics');
+        } else if (
+                url === 'classics' ||
+                url === 'eerie' ||
+                url === 'suburban' ||
+                url === 'slasher' ||
+                url === 'indie' ||
+                url === 'short' ||
+                url === 'surreal' ||
+                url === 'creature' ||
+                url === 'body' ||
+                url === 'gore' ||
+                url === 'invasion' ||
+                url === 'rural' ||
+                url === 'occult' ||
+                url === 'cosmic' ||
+                url === 'campy' ||
+                url === 'period' ||
+                url === 'classic' ||
+                url === 'analog' ||
+                url === 'short' 
+            ) {
+            return(`Genre: ${url}`);
+        } 
+    }
+
     if (props.movies.length < 1) {
         return null;
     } else {

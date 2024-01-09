@@ -35,6 +35,34 @@ export default function Title( props ) {
         }
     }
 
+    function decade_filler() {
+        let variant;
+        if (movie.year < 1970) {
+            variant = '../decades/classics'
+        }
+        if (movie.year < 1980 && movie.year > 1969) {
+            variant = '../decades/70s'
+        }
+        if (movie.year < 1990 && movie.year > 1979) {
+            variant = '../decades/80s'
+        }
+        if (movie.year < 2000 && movie.year > 1989) {
+            variant = '../decades/90s'
+        }
+        if (movie.year < 2010 && movie.year > 1999) {
+            variant = '../decades/00s'
+        }
+        if (movie.year < 2020 && movie.year > 2009) {
+            variant = '../decades/10s'
+        }
+        if (movie.year < 2030 && movie.year > 2019) {
+            variant = '../decades/20s'
+        }
+        return(
+            <a href={variant}>{movie.year}</a>
+        );
+    }
+
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
     useEffect( () => { dataLoader() } );
 
@@ -78,7 +106,7 @@ export default function Title( props ) {
                     </h2>
                     <div id="collapseThree" className="accordion-collapse show" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            { movie.year }                   
+                            { decade_filler() }                   
                         </div>
                     </div>
                 </div>

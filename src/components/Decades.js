@@ -5,7 +5,6 @@ import NotFound from './NotFound';
 export default function Decades(props) {
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
-    let [ genre, setGenre ] = useState('');
 
     //removes duplicates from an array
     function removeDuplicates( arr ) { 

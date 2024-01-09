@@ -19,22 +19,6 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-.lg_socials {
-  width: 50%;
-}
-
-.md_socials {
-  width: 40%;
-}
-
-.sm_socials {
-  width: 35%;
-}
-
-.xs_socials {
-  width: 30%;
-}
-
 a {
   text-decoration: none;
   color: rgb(152, 248, 192);
@@ -154,6 +138,10 @@ li {
   font-size: 1.2em;
 }
 
+.lg_socials {
+  width: 50%;
+}
+
 .list-group {
   background: transparent;
 }
@@ -165,6 +153,10 @@ li {
 .main_text {
   letter-spacing: .5px;
   word-spacing: 3px;
+}
+
+.md_socials {
+  width: 40%;
 }
 
 .nav {
@@ -198,6 +190,10 @@ li {
   opacity: 100%;
 }
 
+.sm_socials {
+  width: 35%;
+}
+
 .thinner {
   text-shadow: none;
 }
@@ -215,3 +211,6 @@ li {
   color: white;
 }
 
+.xs_socials {
+  width: 30%;
+}

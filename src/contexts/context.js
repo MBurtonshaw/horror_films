@@ -10,13 +10,12 @@ export class Provider extends Component {
         data: {
           movies
         },
-
         actions: {
           removeDuplicates: this.removeDuplicates,
           capitalizeFirstLetter: this.capitalizeFirstLetter
         }
       }
-  
+      
       return (
         <Context.Provider value={ value }>
           { this.props.children }
@@ -36,7 +35,7 @@ export class Provider extends Component {
 
   capitalizeFirstLetter = ( string ) => {
     return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
-}
+  }
 
 }
 

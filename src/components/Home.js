@@ -5,7 +5,6 @@ import Footer from './Footer';
 import Search from './Search';
 
 export default function Home( props ) {
-    
     function searchbar() {
         if (window.innerWidth > 767) {
             return(
@@ -23,7 +22,6 @@ export default function Home( props ) {
             );
         }
     }
-    console.log(props.context)
     return(
         <div id='home_div'>
             <Sidebar genres={ props.genres }/> 

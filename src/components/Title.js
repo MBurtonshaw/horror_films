@@ -225,7 +225,7 @@ export default function Title( props ) {
         }
     } else {
         return(
-            <div>
+            <div className='background_box py-5 my-5 w-50 mx-auto'>
                 <NotFound message={url}/>
             </div>
         );

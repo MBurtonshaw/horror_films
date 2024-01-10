@@ -25,7 +25,6 @@ export default function GenrePage( props ) {
                                     </div>
                                 );
                             }
-
                             //optimizing widths for different screen sizes
                             if (window.innerWidth < 768) {
                                 return(

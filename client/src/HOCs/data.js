@@ -30,5 +30,5 @@ export default class Data {
       return response.json().then( data => data );
     }
   }
-  
+
 }

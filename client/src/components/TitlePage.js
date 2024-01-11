@@ -1,10 +1,13 @@
 import { React } from 'react';
 
 export default function TitlePage(props) {
+
     if (props.context.data.movies.movies.length < 1) {
         return null;
     } else {
+        
         for ( let i = 0; i < props.context.data.movies.movies.length; i++ ) {
+            
             if (window.innerWidth < 768) {
                 return(
                     <div id='TitlePage' className='container m-auto pb-2 my-5 w-100 background_box'>

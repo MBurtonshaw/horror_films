@@ -11,6 +11,7 @@ import Results from './components/Results';
 import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
 import NotFound from './components/NotFound';
+import List from './components/List';
 import movies from './movies.json';
 
 const HomeWithContext = withContext(Home);
@@ -21,6 +22,7 @@ const TitlePageWithContext = withContext(TitlePage);
 const GenrePageWithContext = withContext(GenrePage);
 const ResultsWithContext = withContext(Results);
 const DecadesPageWithContext = withContext(DecadesPage);
+const ListWithContext = withContext(List);
 
 function App() {
 
@@ -182,6 +184,12 @@ let url = window.location.pathname;
               path='/decades/:url'
               element = {
                 <DecadesWithContext />
+              }
+            />
+            <Route
+              path='/list'
+              element = {
+                <ListWithContext />
               }
             />
             <Route

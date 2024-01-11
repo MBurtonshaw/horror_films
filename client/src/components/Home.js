@@ -5,6 +5,9 @@ import Footer from './Footer';
 import Search from './Search';
 
 export default function Home( props ) {
+
+    props.context.actions.getMessage().then(res => { console.log( res.message ) });
+
     function searchbar() {
         if (window.innerWidth > 767) {
             return(

@@ -8,6 +8,9 @@ app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: false }));
 
+const cors = require('cors');
+app.use(cors());
+
 const titlesRouter = require('./routes/titles.js');
 const genresRouter = require('./routes/genres.js');
 const decadesRouter = require('./routes/decades.js');

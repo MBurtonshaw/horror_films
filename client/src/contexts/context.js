@@ -1,18 +1,30 @@
 import { React, createContext, Component } from "react";
 import movies from '../movies.json';
+import Data from '../HOCs/data';
 
 export const Context = createContext(''); 
 
 export class Provider extends Component {
-  
+
+  constructor() {
+    super();
+    // variable to initialize a new function imported from /HOCS/data
+    this.data = new Data();
+
+  }
+
+    state = {}
+
     render() {
+      // any of these values will be available to components connected to context
       const value = {
         data: {
           movies
         },
         actions: {
           removeDuplicates: this.removeDuplicates,
-          capitalizeFirstLetter: this.capitalizeFirstLetter
+          capitalizeFirstLetter: this.capitalizeFirstLetter,
+          getMessage: this.getMessage
         }
       }
       
@@ -35,6 +47,19 @@ export class Provider extends Component {
 
   capitalizeFirstLetter = ( string ) => {
     return string.charAt( 0 ).toUpperCase() + string.slice( 1 );
+  }
+
+  getMessage = async() => {
+    try {
+      // using the getMessage function from /HOCs/data
+      let note = await this.data.getMessage();
+      //setting the response to state (Provider component)
+      return note;
+    } catch(error) {
+      this.setState({
+        error
+      });
+    }
   }
 
 }

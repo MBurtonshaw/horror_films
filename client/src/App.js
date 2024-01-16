@@ -14,6 +14,7 @@ import NotFound from './components/NotFound';
 import List from './components/List';
 import Register from './components/Register';
 import Login from './components/Login';
+import Footer from './components/Footer';
 
 const HomeWithContext = withContext(Home);
 const DecadesWithContext = withContext(Decades);
@@ -128,6 +129,7 @@ let url = window.location.pathname;
           </Routes>
         </Provider>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

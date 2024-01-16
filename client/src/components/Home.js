@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import Main from './Main';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
 import Search from './Search';
 
 export default function Home( props ) {
@@ -46,7 +45,6 @@ export default function Home( props ) {
             <div id='Home' className='container'>
                 {searchbar()}
                 <Main />
-                <Footer />
             </div>
         </div>
     );

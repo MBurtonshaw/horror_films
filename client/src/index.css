@@ -50,6 +50,16 @@ li {
   padding: 1em;
 }
 
+#searchBar {
+  border: 1px solid rgb(14, 26, 19);
+  background-color: rgb(238, 238, 238);
+}
+
+#searchButton {
+  border: 1px solid rgb(14, 26, 19);
+  background-color: rgb(199, 206, 202);
+}
+
 #TitlePage {
   background-color: rgba(14, 26, 19, 0.3);
   padding-top: 0.5em;

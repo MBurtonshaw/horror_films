@@ -36,6 +36,13 @@ export default function Header() {
             </li>
         );
     }
+    function login() {
+        return(
+            <li className="nav-item header-nav">
+                <a className="nav-link" href="/login"> Login </a>
+            </li>
+        );
+    }
     //conditional statements will return data based on path
     if (window.innerWidth > 767) {
         if (window.location.pathname === '/') {
@@ -45,7 +52,7 @@ export default function Header() {
                         {titles()}
                         {genres()}
                         {decades()}
-                        {my_list()}
+                        {login()}
                     </ul>
                 </div>
             );
@@ -56,7 +63,7 @@ export default function Header() {
                         {home()}
                         {genres()}
                         {decades()}
-                        {my_list()}
+                        {login()}
                     </ul>
                 </div>
             );
@@ -67,7 +74,7 @@ export default function Header() {
                         {home()}
                         {titles()}
                         {decades()}
-                        {my_list()}
+                        {login()}
                     </ul>
                 </div>
             );
@@ -78,11 +85,34 @@ export default function Header() {
                         {home()}
                         {titles()}
                         {genres()}
-                        {my_list()}
+                        {login()}
                     </ul>
                 </div>
             );
         } else if (window.location.pathname === '/list') {
+            return(
+                <div id='Header' className='container d-none d-md-block'>
+                    <ul className="nav nav-fill justify-content-center">
+                        {home()}
+                        {titles()}
+                        {genres()}
+                        {decades()}
+                        {login()}
+                    </ul>
+                </div>
+            );
+        } else if (window.location.pathname === '/login') {
+            return(
+                <div id='Header' className='container d-none d-md-block'>
+                    <ul className="nav nav-fill justify-content-center">
+                        {home()}
+                        {titles()}
+                        {genres()}
+                        {decades()}
+                    </ul>
+                </div>
+            );
+        } else if (window.location.pathname === '/register') {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
@@ -101,7 +131,7 @@ export default function Header() {
                         {titles()}
                         {genres()}
                         {decades()}
-                        {my_list()}
+                        {login()}
                     </ul>
                 </div>
             );
@@ -137,7 +167,7 @@ export default function Header() {
                         </li>
                         <li>
                             <button className="dropdown-item" type="button">
-                                <a href='/list'>My List</a>
+                                <a href='/login'>Login</a>
                             </button>
                         </li>
                     </ul>

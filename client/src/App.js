@@ -12,6 +12,8 @@ import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
 import NotFound from './components/NotFound';
 import List from './components/List';
+import Register from './components/Register';
+import Login from './components/Login';
 
 const HomeWithContext = withContext(Home);
 const DecadesWithContext = withContext(Decades);
@@ -22,6 +24,8 @@ const GenrePageWithContext = withContext(GenrePage);
 const ResultsWithContext = withContext(Results);
 const DecadesPageWithContext = withContext(DecadesPage);
 const ListWithContext = withContext(List);
+const RegisterWithContext = withContext(Register);
+const LoginWithContext = withContext(Login);
 
 function App() {
 
@@ -99,6 +103,18 @@ let url = window.location.pathname;
               path='/list'
               element = {
                 <ListWithContext />
+              }
+            />
+            <Route
+              path='/register'
+              element = {
+                <RegisterWithContext />
+              }
+            />
+            <Route
+              path='/login'
+              element = {
+                <LoginWithContext />
               }
             />
             <Route

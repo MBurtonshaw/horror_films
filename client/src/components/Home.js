@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
@@ -6,13 +6,28 @@ import Search from './Search';
 
 export default function Home( props ) {
 
-    props.context.actions.getMessage().then(res => { console.log( res.message ) });
+    let [ types, setTypes] = useState('');
+
+    //props.context.actions.getMessage().then(res => { console.log( res.message ) });
+
+    async function getData() {
+        let genres = await props.context.data.movies.genres;
+        let genreArray = [];
+        for ( let i = 0; i < genres.length; i++ ) {
+                if ( !genreArray.includes( genres[i].name ) ) {
+                    genreArray.push( genres[i].name );
+                    setTypes( genreArray );
+                }
+        }
+    }
+
+    useEffect( () => { getData() }, [ setTypes ] );
 
     function searchbar() {
         if (window.innerWidth > 767) {
             return(
                 <div>
-                    <Search movies={props.context.movies} genres={ props.genres }/>
+                    <Search movies={props.context.movies} genres={ types }/>
                     <h1 className='my-5'> Horror Films </h1>
                 </div>
             );
@@ -20,17 +35,17 @@ export default function Home( props ) {
             return(
                 <div>
                     <h1 className='my-5 pt-md-5'> Horror Films </h1>
-                    <Search movies={props.context.movies} genres={ props.genres }/>
+                    <Search movies={props.context.movies} genres={ types }/>
                 </div>
             );
         }
     }
     return(
         <div id='home_div'>
-            <Sidebar genres={ props.genres }/> 
+            <Sidebar genres={ types }/> 
             <div id='Home' className='container'>
                 {searchbar()}
-                <Main month={ props.month }/>
+                <Main />
                 <Footer />
             </div>
         </div>

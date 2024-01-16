@@ -1,7 +1,23 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 
 export default function GenrePage( props ) {
-    if (props.genres.length < 1) {
+
+    let [ types, setTypes ] = useState('');
+
+    async function getData() {
+        let genres = await props.context.data.movies.genres;
+        let genreArray = [];
+        for ( let i = 0; i < genres.length; i++ ) {
+                if ( !genreArray.includes( genres[i].name ) ) {
+                    genreArray.push( genres[i].name );
+                    setTypes( genreArray );
+                }
+        }
+    }
+    
+    useEffect( () => { getData() }, [ setTypes ] );
+
+    if (types.length < 1) {
         return null;
     } else {
         return(
@@ -9,15 +25,15 @@ export default function GenrePage( props ) {
                 <h1 className='my-5 pt-5'> Genres </h1>
                 <div className="card-group">
                     { 
-                        props.genres.map(( genre, i ) => {
-                            let newGenre = genre.toLowerCase();
+                        types.map(( genre, i ) => {
+                           
                                     
                             //function to return contents of the cards and leave the innderWidth conditons below more concise
                             function fill_in() {
                                 return(
                                     <div className="card">
                                         <a href={`/genres/${ genre }`}>
-                                            <img src={ `../../photos/genres/${ newGenre }.jpg` } className="card-img-top" alt="..." />
+                                            <img src={ `../../photos/genres/${ genre.toLowerCase() }.jpg` } className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">{ genre }</h5>
                                             </div>

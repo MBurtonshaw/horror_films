@@ -372,5 +372,81 @@
             "prime_link" : "https://www.amazon.com/gp/video/detail/B07X3NDRZ7/ref=atv_dp_share_cu_r",
             "youtube_link" : "https://www.youtube.com/watch?v=SlIbSDNSTao"
         }
+    ],
+    "genres" : [
+        { 
+            "id" : 1,
+            "name" : "Eerie" 
+        },
+        { 
+            "id" : 2,
+            "name" : "Suburban" 
+        },
+        { 
+            "id" : 3,
+            "name" : "Slasher" 
+        },
+        { 
+            "id" : 4,
+            "name" : "Indie" 
+        },
+        { 
+            "id" : 5,
+            "name" : "Short" 
+        },
+        { 
+            "id" : 6,
+            "name" : "Surreal" 
+        },
+        { 
+            "id" : 7,
+            "name" : "Creature" 
+        },
+        { 
+            "id" : 8,
+            "name" : "Body" 
+        },
+        { 
+            "id" : 9,
+            "name" : "Gore" 
+        },
+        { 
+            "id" : 10,
+            "name" : "Invasion" 
+        },
+
+        { 
+            "id" : 11,
+            "name" : "Rural" 
+        },
+        { 
+            "id" : 12,
+            "name" : "Occult" 
+        },
+        { 
+            "id" : 13,
+            "name" : "Cosmic" 
+        },
+        { 
+            "id" : 14,
+            "name" : "Campy" 
+        },
+        { 
+            "id" : 15,
+            "name" : "Period" 
+        },
+        { 
+            "id" : 16,
+            "name" : "Classic" 
+        },
+        { 
+            "id" : 17,
+            "name" : "Analog" 
+        },
+
+        { 
+            "id" : 18,
+            "name" : "Anthology" 
+        }
     ]
 }

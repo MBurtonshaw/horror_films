@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-export default function Main( props ) {
+export default function Main() {
 
     let first;
     let first_memo;
@@ -16,7 +16,8 @@ export default function Main( props ) {
     let sixth_memo;
     let season;
 
-    let month = props.month;
+    const setter = new Date();
+    const month = setter.getMonth() + 1;
     
     if ( month === 9 || month === 10 || month === 11 ) { 
     

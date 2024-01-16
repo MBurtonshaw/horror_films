@@ -10,6 +10,8 @@ app.use(express.urlencoded({ extended: false }));
 
 const cors = require('cors');
 app.use(cors());
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 const titlesRouter = require('./routes/titles.js');
 const genresRouter = require('./routes/genres.js');
@@ -20,7 +22,9 @@ app.use('/genres', genresRouter);
 app.use('/decades', decadesRouter);
 
 app.get('/', (req, res) => {
-    res.send({"message" : "Hi!"})
+    res.send({"message" : "Hi!"});
+    //res.cookie('firstCookie', 'geeksforgeeks').send('cookie set');
+    //console.log('Cookies: ', req.cookies);
 });
-
+ 
 app.listen(5000, ()=>console.log('server is running'));

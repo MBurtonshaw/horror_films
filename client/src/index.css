@@ -94,6 +94,11 @@ li {
   background-image: linear-gradient(black, black, rgb(20, 20, 20), black);
 }
 
+.alert {
+  width: 90%;
+  margin: auto;
+}
+
 .background_box {
   background-color: rgba(8, 15, 11, 0.5);
   border-style: solid;

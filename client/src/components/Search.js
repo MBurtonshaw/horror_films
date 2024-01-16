@@ -25,7 +25,7 @@ export default function Search(props) {
     if (alertTrigger) {
         alertTrigger.addEventListener('click', () => {
             appendAlert(
-                `Please limit searches for movie titles to one word, or part of a word`, 'dark')
+                `Please replace any spaces in your search term with an underscore ( _ )`, 'dark')
         })
     }  //////////////////////////////////////////////////////////////////////////////////////////////////////
 

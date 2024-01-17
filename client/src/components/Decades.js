@@ -102,7 +102,7 @@ export default function Decades(props) {
     //combines previous two functions and returns formatting based on screen size
     if (window.innerWidth < 768) { 
         return(      
-            <div id='DecadePage' className='container m-auto my-5 pb-2 background_box'>
+            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box'>
                 <h1 className='my-4 mx-1'>
                     { namer() }
                 </h1>
@@ -111,7 +111,7 @@ export default function Decades(props) {
         );
     } 
     return(      
-        <div id='DecadePage' className='container m-auto mt-5 w-50 background_box'>
+        <div id='DecadePage' className='container p-1 m-auto mt-5 w-50 background_box'>
             <h1 className='m-5'>
                 { namer() }
             </h1> 

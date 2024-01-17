@@ -88,11 +88,11 @@ export default function Genres(props) {
     //combines previous two functions and returns formatting based on screen size
     if (window.innerWidth < 768) { 
         return(      
-            <div id='Genre' className='container m-auto my-5 pb-2 background_box'>
+            <div id='Genre' className='container p-1 m-auto my-5 pb-2 background_box'>
                 <h1 className='my-4 mx-1'>
                     { namer() }
                 </h1>
-                <div className='container pb-4 mb-4 w-75'>
+                <div className='container p-1 pb-4 mb-4 w-75'>
                     <ul className="list-group list-group-flush">
                         { fill_in() }
                     </ul>
@@ -102,7 +102,7 @@ export default function Genres(props) {
     } 
     
     return(      
-        <div id='Genre' className='container m-auto mt-5 w-50 background_box'>
+        <div id='Genre' className='container p-1 m-auto mt-5 w-50 background_box'>
             <h1 className='m-5'>
                 { namer() }
             </h1>

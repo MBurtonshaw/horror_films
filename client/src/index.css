@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background: url('../public/photos/background.jpg') no-repeat center center fixed; 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,9 +13,6 @@ body {
   background-color: black;
   text-align: center;
   font-family: 'Signika Negative', sans-serif;
-  height: 100vh;
-  width: 100vw;
-  background: url('../public/photos/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,21 +35,6 @@ li {
   list-style: none;
 }
 
-#DecadePage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-#Genre {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
-#ResultsPage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding: 1em;
-}
-
 #searchBar {
   border: 1px solid rgb(14, 26, 19);
   background-color: rgb(238, 238, 238);
@@ -58,11 +43,6 @@ li {
 #searchButton {
   border: 1px solid rgb(14, 26, 19);
   background-color: rgb(199, 206, 202);
-}
-
-#TitlePage {
-  background-color: rgba(14, 26, 19, 0.3);
-  padding-top: 0.5em;
 }
 
 .accordion-body {

@@ -36,11 +36,18 @@ function App() {
 let [ user, setUser ] = useState('');
 
 async function getData() {
-  let cookie = Cookies.get('signedIn?');
-  if (!cookie === undefined) {
-    setUser(JSON.parse(cookie));
+  console.log(document.cookie)
+  if (!document.cookie) {
+    setUser('');
+  } else {
+    let logger = await JSON.parse(Cookies.get('signedIn?'));
+    if(logger === '') {
+      setUser('');
+    } else {
+      setUser(logger);
+    }
   }
-
+  
 }
 
 useEffect(()=> { getData() }, [ setUser ]);

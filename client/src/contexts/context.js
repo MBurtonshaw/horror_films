@@ -92,7 +92,7 @@ export class Provider extends Component {
         password: passphrase
       }
       this.setState({user});
-      Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: false} );
+      Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );
     //}
   }
 
@@ -113,7 +113,7 @@ export class Provider extends Component {
         password: ''
       }
       this.setState({user});
-      Cookies.set( 'signedIn?', JSON.stringify( '' ), { expires: false} );
+      Cookies.set( 'signedIn?', JSON.stringify( '' ), { expires: 7} );
     //}
   }
 

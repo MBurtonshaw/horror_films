@@ -1,11 +1,10 @@
 import { React } from 'react';
-import Cookies from 'js-cookie';
 
 export default function Header(props) {
     function login() {
-        let logger = Cookies.get('signedIn?');
+        let logger = props.user;
         if (window.innerWidth > 767) {
-            if (JSON.parse(logger) === '') {
+            if (logger === '') {
                 return(
                     <li className="nav-item header-nav">
                         <a className="nav-link" href="/login"> Login </a>
@@ -19,7 +18,7 @@ export default function Header(props) {
                 );
             }
         } else {
-            if (JSON.parse(logger) === '') {
+            if (logger === '') {
                 return(
                     <li>
                         <button className="dropdown-item" type="button">

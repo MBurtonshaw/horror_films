@@ -1,14 +1,24 @@
 import { React, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
 
     let [data, setData] = useState({
         email: '',
         password: ''
     })
 
+    const navigate = useNavigate();
+
+
     function loginUser(e) {
         e.preventDefault();
+        props.context.actions.signIn( data.email, data.password );
+        setData({
+            email: data.email,
+            password: data.password
+        });
+        navigate(-1);
     }
 
     return(
@@ -24,7 +34,7 @@ export default function Login() {
                         <label htmlFor='password' className='w-100'>Password</label>
                         <input type='password' id='password' name='password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})}></input>
                     </div>
-                    <button type='submit'>Login</button>
+                    <button type='submit' onSubmit={loginUser}>Login</button>
                 </div>
             </form>
             <div className='py-5'>

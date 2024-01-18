@@ -1,47 +1,42 @@
 import { React } from 'react';
+import Cookies from 'js-cookie';
 
-export default function Header() {
-    function home() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/"> Home </a>
-            </li>
-        );
-    }
-    function titles() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/titles"> Titles </a>
-            </li>
-        );
-    }
-    function genres() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/genres"> Genres </a>
-            </li>
-        );
-    }
-    function decades() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/decades"> Decades </a>
-            </li>
-        );
-    }
-    function my_list() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/list"> My List </a>
-            </li>
-        );
-    }
+export default function Header(props) {
     function login() {
-        return(
-            <li className="nav-item header-nav">
-                <a className="nav-link" href="/login"> Login </a>
-            </li>
-        );
+        let logger = Cookies.get('signedIn?');
+        if (window.innerWidth > 767) {
+            if (JSON.parse(logger) === '') {
+                return(
+                    <li className="nav-item header-nav">
+                        <a className="nav-link" href="/login"> Login </a>
+                    </li>
+                );
+            } else {
+                return(
+                    <li className="nav-item header-nav">
+                        <a className="nav-link" href="/logout"> Logout </a>
+                    </li>
+                );
+            }
+        } else {
+            if (JSON.parse(logger) === '') {
+                return(
+                    <li>
+                        <button className="dropdown-item" type="button">
+                            <a href='/login'>Login</a>
+                        </button>
+                    </li>
+                );
+            } else {
+                return(
+                    <li>
+                        <button className="dropdown-item" type="button">
+                            <a href='/logout'>Logout</a>
+                        </button>
+                    </li>
+                );
+            }
+        }
     }
     //conditional statements will return data based on path
     if (window.innerWidth > 767) {
@@ -49,88 +44,18 @@ export default function Header() {
             return(
                 <div id='Header' className='container d-none d-md-block'>
                     <ul className="nav nav-fill justify-content-center">
-                        {titles()}
-                        {genres()}
-                        {decades()}
-                        {login()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/titles') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {genres()}
-                        {decades()}
-                        {login()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/genres') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {decades()}
-                        {login()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/decades') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {genres()}
-                        {login()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/list') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {genres()}
-                        {decades()}
-                        {login()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/login') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {genres()}
-                        {decades()}
-                    </ul>
-                </div>
-            );
-        } else if (window.location.pathname === '/register') {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {genres()}
-                        {decades()}
-                    </ul>
-                </div>
-            );
-        } else {
-            return(
-                <div id='Header' className='container d-none d-md-block'>
-                    <ul className="nav nav-fill justify-content-center">
-                        {home()}
-                        {titles()}
-                        {genres()}
-                        {decades()}
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/"> Home </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/titles"> Titles </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/genres"> Genres </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href="/decades"> Decades </a>
+                        </li>
                         {login()}
                     </ul>
                 </div>
@@ -165,11 +90,7 @@ export default function Header() {
                                 <a href='/decades'>Decades</a>
                             </button>
                         </li>
-                        <li>
-                            <button className="dropdown-item" type="button">
-                                <a href='/login'>Login</a>
-                            </button>
-                        </li>
+                        {login()}
                     </ul>
                 </div>
             </div>

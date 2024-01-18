@@ -1,6 +1,7 @@
 import { React, createContext, Component } from "react";
 import movies from '../movies.json';
 import Data from '../HOCs/data';
+import Cookies from 'js-cookie';
 
 export const Context = createContext(''); 
 
@@ -10,23 +11,32 @@ export class Provider extends Component {
     super();
     // variable to initialize a new function imported from /HOCS/data
     this.data = new Data();
-
+    this.cookie = Cookies.get( 'signedin?' );
+    this.state = {
+      user: this.cookie ? JSON.parse( this.cookie ) : null
+    }
   }
-
-    state = {}
+    
+    state = {
+      user: null
+    }
     
 
 
     render() {
+      const { user } = this.state;
       // any of these values will be available to components connected to context
       const value = {
+        user,
         data: {
           movies
         },
         actions: {
           removeDuplicates: this.removeDuplicates,
           capitalizeFirstLetter: this.capitalizeFirstLetter,
-          getMessage: this.getMessage
+          getMessage: this.getMessage,
+          signIn: this.signIn,
+          signOut: this.signOut
         }
       }
       
@@ -62,6 +72,49 @@ export class Provider extends Component {
         error
       });
     }
+  }
+
+  signIn = async ( emailAddress, passphrase ) => {
+    //Fetching user data
+    /*const user = await this.data.getUser( emailAddress, password );
+    
+    if ( user !== null ) {
+      this.setState(() => {
+        //If not null, set authenticatedUser
+        return {
+          authenticatedUser: user
+        };
+      });
+      user.user.password = password;*/
+      //Set user credentials and save to a cookie
+      let user = {
+        email: emailAddress,
+        password: passphrase
+      }
+      this.setState({user});
+      Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: false} );
+    //}
+  }
+
+  signOut = async () => {
+    //Fetching user data
+    /*const user = await this.data.getUser( emailAddress, password );
+    
+    if ( user !== null ) {
+      this.setState(() => {
+        //If not null, set authenticatedUser
+        return {
+          authenticatedUser: user
+        };
+      });
+      user.user.password = password;*/
+      let user = {
+        email: '',
+        password: ''
+      }
+      this.setState({user});
+      Cookies.set( 'signedIn?', JSON.stringify( '' ), { expires: false} );
+    //}
   }
 
 }

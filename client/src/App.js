@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import withContext, { Provider } from './contexts/context';
 import Home from './components/Home';
@@ -14,7 +14,9 @@ import NotFound from './components/NotFound';
 import List from './components/List';
 import Register from './components/Register';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import Footer from './components/Footer';
+import Cookies from 'js-cookie';
 
 const HomeWithContext = withContext(Home);
 const DecadesWithContext = withContext(Decades);
@@ -27,8 +29,21 @@ const DecadesPageWithContext = withContext(DecadesPage);
 const ListWithContext = withContext(List);
 const RegisterWithContext = withContext(Register);
 const LoginWithContext = withContext(Login);
+const LogoutWithContext = withContext(Logout);
 
 function App() {
+
+let [ user, setUser ] = useState('');
+
+async function getData() {
+  let cookie = Cookies.get('signedIn?');
+  if (!cookie === undefined) {
+    setUser(JSON.parse(cookie));
+  }
+
+}
+
+useEffect(()=> { getData() }, [ setUser ]);
 
 // used below in the NotFound component
 let url = window.location.pathname;
@@ -36,7 +51,7 @@ let url = window.location.pathname;
   return (
     // Routing and passing props
     <div id='app_div'>
-      <Header />
+      <Header user={ user }/>
         <BrowserRouter>
         <Provider>
           <Routes>
@@ -116,6 +131,12 @@ let url = window.location.pathname;
               path='/login'
               element = {
                 <LoginWithContext />
+              }
+            />
+            <Route
+              path='/logout'
+              element = {
+                <LogoutWithContext />
               }
             />
             <Route

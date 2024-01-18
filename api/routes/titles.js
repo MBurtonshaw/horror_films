@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 
 app.get('/', (req, res) => {
-    console.log('titles');
+    res.send({"message" : "Titles!"})
 });
 
 module.exports = app;

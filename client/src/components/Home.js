@@ -3,11 +3,10 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Search from './Search';
 
+
 export default function Home( props ) {
 
     let [ types, setTypes] = useState('');
-
-    //props.context.actions.getMessage().then(res => { console.log( res.message ) });
 
     async function getData() {
         let genres = await props.context.data.movies.genres;

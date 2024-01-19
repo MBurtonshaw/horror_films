@@ -35,8 +35,13 @@ function App() {
 
 let [ user, setUser ] = useState('');
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //getData() checks if there is are any cookies present, if not, the user state is set to empty
+                //otherwise, the data in cookie is set to the user state
+                ////from there, if the cookie is present but doesn't have user data, the user state is set to empty
+                ////if the cookie does have user data, that data is set to the user state
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 async function getData() {
-  console.log(document.cookie)
   if (!document.cookie) {
     setUser('');
   } else {
@@ -56,8 +61,8 @@ useEffect(()=> { getData() }, [ setUser ]);
 let url = window.location.pathname;
 
   return (
-    // Routing and passing props
     <div id='app_div'>
+      {/* passing user state to Header as props */}
       <Header user={ user }/>
         <BrowserRouter>
         <Provider>

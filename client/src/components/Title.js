@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import NotFound from './NotFound';
+import Cookies from 'js-cookie';
 
 export default function Title( props ) {
     let { url }= useParams();
@@ -213,6 +214,7 @@ export default function Title( props ) {
         } else {
             return(
                 <div id='title_div' className='container'>
+                    <input type='checkbox' onClick={()=>Cookies.set(`myList`, `${movie.title}`, { expires: 7 })}></input>
                     <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                     <div className='row align-items-start container'>
                         {accordion_fill()}

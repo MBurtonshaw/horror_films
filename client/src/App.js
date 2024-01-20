@@ -136,7 +136,7 @@ let url = window.location.pathname;
             <Route
               path='/list'
               element = {
-                <ListWithContext />
+                <ListWithContext user={user}/>
               }
             />
             <Route

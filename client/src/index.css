@@ -31,6 +31,13 @@ a:hover {
   text-shadow: 2px 2px 4px black;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  vertical-align: middle;
+}
+
 li {
   list-style: none;
 }

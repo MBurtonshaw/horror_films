@@ -30,8 +30,7 @@ export default function Login(props) {
                 </div>
             </form>
             <div className='py-5'>
-                <p className='w-100'>Go back to home page</p>
-                <a href='/'>Back</a>
+                <a href={'/'}>Home</a>
             </div>
         </div>
     );

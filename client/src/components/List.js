@@ -1,10 +1,12 @@
 import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 export default function List(props) {
 
     let [ filmList, setFilmList ] = useState('');
     let finalArray = [];
+    const navigate = useNavigate();
 
     async function getData() {
         let filmArray = [];
@@ -40,31 +42,63 @@ export default function List(props) {
         }
     }
 
-        //function to avoid an error and check if there are no films in state on pageload
-        //if there are films present, it will return them as list items
-        function mapper() {
-            if (filmList.length < 1) {
-                return null;
-            } else {
-                return(
-                    filmList.map(
-                        (item, i) => 
-                            <li key={i} className='p-2' >
-                                <a href={`/titles/${item.url}`}> { item.title } </a>
-                            </li>
-                    )
-                );
-            }
+    //function to avoid an error and check if there are no films in state on pageload
+    //if there are films present, it will return them as list items
+    function mapper() {
+        if (filmList.length < 1) {
+            return null;
+        } else {
+            return(
+                filmList.map((item, i) => 
+                    <li key={i} className='p-2' >
+                        <a href={`/titles/${item.url}`}> { item.title } </a>
+                    </li>
+                )
+            );
         }
+    }
 
     useEffect(()=>{ getData() }, [ setFilmList ]);
 
-    return(
-        <div id='List' className='container w-50 p-5 mt-5 background_box'>
-            <h1> My List </h1>
-            <ul className='p-0 pt-3'>
-                { mapper() }
-            </ul>
-        </div>
-    );
-}
+    if (!document.cookie) {
+        return(
+            <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                <h1> My List </h1>
+                <div className='py-5'>
+                    <h2>Please login first</h2>
+                    <div className='py-5'>
+                        <a href='/login'>Login</a>
+                    </div>
+                    <div >
+                        <a href='/'>Home</a>
+                    </div>
+                </div>
+            </div>
+        );
+    } else if (JSON.parse(Cookies.get('signedIn?')) === '' || JSON.parse(Cookies.get('signedIn?')) === undefined) {
+        return(
+            <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                <h1> My List </h1>
+                <div className='py-5'>
+                    <h2>Please login first</h2>
+                    <div className='py-5'>
+                        <a href='/login'>Login</a>
+                    </div>
+                    <div >
+                        <a href='/'>Home</a>
+                    </div>
+                </div>
+            </div>
+        );
+        } else {
+            return(
+                <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                    <h1> My List </h1>
+                    <ul className='p-0 pt-3'>
+                        { mapper() }
+                    </ul>
+                </div>
+            );
+        }
+    }
+    

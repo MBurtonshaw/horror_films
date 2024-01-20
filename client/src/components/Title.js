@@ -7,6 +7,7 @@ export default function Title( props ) {
     let { url }= useParams();
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
+    let [ isChecked, setIsChecked ] = useState();
 
     //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
     function getScreenSize() {
@@ -32,6 +33,17 @@ export default function Title( props ) {
             if (newTypes[i].url === url) {
                 let newType = newTypes[i];
                 setCurrentFilm(newType);
+                if (document.cookie) {
+                    let cookie = await Cookies.get(`myList-${newType.id}`);
+                    if (cookie === undefined) {
+                        setIsChecked(false);
+                    } else {
+                        if (cookie === currentFilm.title) {
+                            setIsChecked(true);
+                        }
+                    }
+                }
+                
             }
         }
     }
@@ -145,6 +157,8 @@ export default function Title( props ) {
         );
     }
 
+    
+
     //function to handle the Amazon Prime & YouTube icons
     function link_fill_in() {
         if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
@@ -184,6 +198,26 @@ export default function Title( props ) {
         genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
         filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
 
+        function cookie_handler() {
+            if (props.user === '' || props.user === undefined) {
+                return null;
+            } else {
+                if (isChecked === true) {
+                    return(
+                        <p>added to list</p>
+                    );
+                } else {
+                    return(
+                        <input type='checkbox' onClick={()=>{
+                            //needs logic to determine what to do when cookie doesn't exist yet
+                            Cookies.set(`myList-${movie.id}`, `${movie.title}`, { expires: 7 });
+                            setIsChecked(true);
+                        }}></input>
+                    );
+                }
+            }
+        }
+
         //logic to handle different screen widths
         if (window.innerWidth < 992) {
             if (window.innerWidth < 576) {
@@ -214,7 +248,10 @@ export default function Title( props ) {
         } else {
             return(
                 <div id='title_div' className='container'>
-                    <input type='checkbox' onClick={()=>Cookies.set(`myList`, `${movie.title}`, { expires: 7 })}></input>
+                    {
+                        cookie_handler()
+                    }
+                    
                     <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                     <div className='row align-items-start container'>
                         {accordion_fill()}

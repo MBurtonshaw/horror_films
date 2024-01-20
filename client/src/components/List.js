@@ -11,7 +11,10 @@ export default function List(props) {
             setFilmList('');
         } else {
             for (let i = 0; i < props.context.data.movies.movies.length; i++) {
-                setFilmList(Cookies.get('myList'));
+                return null;
+                
+                
+                
             }
             
         }

@@ -45,12 +45,18 @@ async function getData() {
   if (!document.cookie) {
     setUser('');
   } else {
-    let logger = await JSON.parse(Cookies.get('signedIn?'));
-    if(logger === '') {
-      setUser('');
+    let logger = await Cookies.get('signedIn?');
+    if (logger === undefined) {
+      return null;
     } else {
-      setUser(logger);
+      let newLogger = await JSON.parse(logger);
+      if(newLogger === '') {
+        setUser('');
+      } else {
+        setUser(newLogger);
+      }
     }
+    
   }
   
 }
@@ -76,7 +82,7 @@ let url = window.location.pathname;
             <Route
               path = '/titles/:url'
               element = {
-                <TitleWithContext />
+                <TitleWithContext user={ user }/>
               }
             />
             <Route

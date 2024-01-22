@@ -10,14 +10,14 @@ export default function DecadesPage(props) {
         return( 
             <div id='DecadesPage' className='container'>
                 <h1 className='my-5 pt-5'> Decades </h1>
-                <div className="card-group">
+                <div className="card-group animate">
                     {
                         props.decades.map(( item, i ) => {
 
                             //function to fill in card data below
                             function fill_in() {
                                 return(
-                                    <div className="card animate">
+                                    <div className="card animate_slow">
                                         <a href={`/decades/${ item.url }`}>
                                             <img src={ `../../photos/decades/${ item.name }.jpg` } className="card-img-top" alt={`a description of ${item.name} horror`} />
                                             <div className="card-body">

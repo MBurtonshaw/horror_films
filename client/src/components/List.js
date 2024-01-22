@@ -3,8 +3,20 @@ import Cookies from 'js-cookie';
 
 export default function List(props) {
 
+    /************************************************************************************************************************
+    *************************************************************************************************************************
+            STATE
+     ************************************************************************************************************************
+     ***********************************************************************************************************************/
+
     let [ filmList, setFilmList ] = useState('');
     let finalArray = [];
+
+    /************************************************************************************************************************
+    *************************************************************************************************************************
+            ASYNC FUNCTIONS
+     ************************************************************************************************************************
+     ***********************************************************************************************************************/
 
     async function getData() {
         let filmArray = [];
@@ -40,6 +52,14 @@ export default function List(props) {
         }
     }
 
+    /************************************************************************************************************************
+    *************************************************************************************************************************
+            USEEFFECT AND FUNCTIONS
+     ************************************************************************************************************************
+     ***********************************************************************************************************************/
+
+    useEffect(()=>{ getData() }, [ setFilmList ]);
+
     //function to avoid an error and check if there are no films in state on pageload
     //if there are films present, it will return them as list items
     function mapper() {
@@ -60,8 +80,13 @@ export default function List(props) {
         }
     }
 
-    useEffect(()=>{ getData() }, [ setFilmList ]);
+    /************************************************************************************************************************
+    *************************************************************************************************************************
+            RENDER
+     ************************************************************************************************************************
+     ***********************************************************************************************************************/
 
+     //checking if there are any cookies present. It not, this is returned
     if (!document.cookie) {
         return(
             <div id='List' className='container w-50 p-5 mt-5 background_box'>
@@ -77,6 +102,8 @@ export default function List(props) {
                 </div>
             </div>
         );
+        //checks if there is a 'signedIn?' cookie present, and checking if it is empty
+        //if it's empty, that means the user is currently signed out, and returns the following
     } else if (JSON.parse(Cookies.get('signedIn?')) === '' || JSON.parse(Cookies.get('signedIn?')) === undefined) {
         return(
             <div id='List' className='container w-50 p-5 mt-5 background_box'>
@@ -92,15 +119,16 @@ export default function List(props) {
                 </div>
             </div>
         );
-        } else {
-            return(
-                <div id='List' className='container w-50 p-5 mt-5 background_box'>
-                    <h1> My List </h1>
-                    <ul className='p-0 pt-3'>
-                        { mapper() }
-                    </ul>
-                </div>
-            );
-        }
+    } else {
+        //else, the cookie has user data present, and the following is returned
+        return(
+            <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                <h1> My List </h1>
+                <ul className='p-0 pt-3'>
+                    { mapper() }
+                </ul>
+            </div>
+        );
     }
+}
     

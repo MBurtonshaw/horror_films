@@ -4,30 +4,27 @@ import NotFound from './NotFound';
 import Cookies from 'js-cookie';
 
 export default function Title( props ) {
+
+/************************************************************************************************************************
+*************************************************************************************************************************
+    STATE
+*************************************************************************************************************************
+************************************************************************************************************************/
     let { url }= useParams();
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
     let [ isChecked, setIsChecked ] = useState();
 
-    //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
-    function getScreenSize() {
-        if (window.innerWidth < 500) {
-            setSizeClass('lg_socials');
-        } else if (window.innerWidth < 768) {
-            setSizeClass('md_socials');
-        } else if (window.innerWidth < 992) {
-            setSizeClass('xs_socials');
-        } else if (window.innerWidth < 1200) {
-            setSizeClass('lg_socials');
-        } else if (window.innerWidth < 1400) {
-            setSizeClass('md_socials');
-        } else {
-            setSizeClass('sm_socials');
-        }
-    }
+    
+
+/************************************************************************************************************************
+*************************************************************************************************************************
+    ASYNC FUNCTIONS
+*************************************************************************************************************************
+************************************************************************************************************************/
 
     //async function to match the corresponding film with the url
-    async function dataLoader() {
+    async function getData() {
         for (let i = 0; i < props.context.data.movies.movies.length; i++) {
             let newTypes = await props.context.data.movies.movies;
             if (newTypes[i].url === url) {
@@ -48,38 +45,69 @@ export default function Title( props ) {
         }
     }
 
-    //function to match the film's release year with the /decades path it corresponds to
-    function decade_filler() {
-        let variant;
-        if (movie.year < 1970) {
-            variant = '../decades/classics'
-        }
-        if (movie.year < 1980 && movie.year > 1969) {
-            variant = '../decades/70s'
-        }
-        if (movie.year < 1990 && movie.year > 1979) {
-            variant = '../decades/80s'
-        }
-        if (movie.year < 2000 && movie.year > 1989) {
-            variant = '../decades/90s'
-        }
-        if (movie.year < 2010 && movie.year > 1999) {
-            variant = '../decades/00s'
-        }
-        if (movie.year < 2020 && movie.year > 2009) {
-            variant = '../decades/10s'
-        }
-        if (movie.year < 2030 && movie.year > 2019) {
-            variant = '../decades/20s'
-        }
-        return(
-            <a href={variant}>{movie.year}</a>
-        );
+    
+
+/************************************************************************************************************************
+*************************************************************************************************************************
+    USEEFFECT AND INITIAL FUNCTIONS
+*************************************************************************************************************************
+************************************************************************************************************************/
+
+//function to match the film's release year with the /decades path it corresponds to
+function decade_filler() {
+    let variant;
+    if (movie.year < 1970) {
+        variant = '../decades/classics'
     }
+    if (movie.year < 1980 && movie.year > 1969) {
+        variant = '../decades/70s'
+    }
+    if (movie.year < 1990 && movie.year > 1979) {
+        variant = '../decades/80s'
+    }
+    if (movie.year < 2000 && movie.year > 1989) {
+        variant = '../decades/90s'
+    }
+    if (movie.year < 2010 && movie.year > 1999) {
+        variant = '../decades/00s'
+    }
+    if (movie.year < 2020 && movie.year > 2009) {
+        variant = '../decades/10s'
+    }
+    if (movie.year < 2030 && movie.year > 2019) {
+        variant = '../decades/20s'
+    }
+    return(
+        <a href={variant}>{movie.year}</a>
+    );
+}
+
+//Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
+function getScreenSize() {
+    if (window.innerWidth < 500) {
+        setSizeClass('lg_socials');
+    } else if (window.innerWidth < 768) {
+        setSizeClass('md_socials');
+    } else if (window.innerWidth < 992) {
+        setSizeClass('xs_socials');
+    } else if (window.innerWidth < 1200) {
+        setSizeClass('lg_socials');
+    } else if (window.innerWidth < 1400) {
+        setSizeClass('md_socials');
+    } else {
+        setSizeClass('sm_socials');
+    }
+}
 
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
-    useEffect( () => { dataLoader() } );
+    useEffect( () => { getData() } );
 
+/************************************************************************************************************************
+*************************************************************************************************************************
+    MORE FUNCTIONS
+*************************************************************************************************************************
+************************************************************************************************************************/
+    
     let movie;
     let authors;
     let genres;
@@ -191,6 +219,11 @@ export default function Title( props ) {
         }
     } 
     
+/************************************************************************************************************************
+*************************************************************************************************************************
+    RENDER
+*************************************************************************************************************************
+************************************************************************************************************************/
     //matching film in state to film in url and returning the proper data
     if ( currentFilm.url === url ) {
         movie = currentFilm;

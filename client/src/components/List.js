@@ -1,12 +1,10 @@
 import { React, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 export default function List(props) {
 
     let [ filmList, setFilmList ] = useState('');
     let finalArray = [];
-    const navigate = useNavigate();
 
     async function getData() {
         let filmArray = [];
@@ -52,6 +50,10 @@ export default function List(props) {
                 filmList.map((item, i) => 
                     <li key={i} className='p-2' >
                         <a href={`/titles/${item.url}`}> { item.title } </a>
+                        <button onClick={()=>{
+                            Cookies.remove(`myList-${item.id}`, {path: `/`});
+                            window.location.reload();
+                        }}>remove</button>
                     </li>
                 )
             );

@@ -6,7 +6,7 @@ export default function Sidebar(props) {
         return null;
     } else {
         return(
-            <div id='Sidebar' className='d-none d-xl-block sticky-top'>
+            <div id='Sidebar' className='d-none d-xl-block sticky-top animate'>
                 <ul className="nav flex-column float-lg-start list-group list-group-flush text-start">
                     { 
                         props.genres.map(( genre, i ) => {

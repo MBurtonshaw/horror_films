@@ -20,7 +20,7 @@ export default function TitlePage(props) {
                                     props.context.data.movies.movies.map(( movie, i ) => {
                                         if (movie.id < 7) {
                                             return(
-                                                <li key={ i } className='list-group-item pt-3 mb-3'>
+                                                <li key={ i } className='list-group-item pt-3 mb-3 animate'>
                                                     <a href={ `/titles/${movie.url}` }>
                                                         { movie.title }
                                                     </a>
@@ -53,7 +53,7 @@ export default function TitlePage(props) {
                                     props.context.data.movies.movies.map(( movie, i ) => {
                                         if (movie.id < 12) {
                                             return(
-                                                <li key={ i } className='list-group-item pt-3 mb-3'>
+                                                <li key={ i } className='list-group-item pt-3 mb-3 animate'>
                                                     <a href={ `/titles/${movie.url}` }>
                                                         { movie.title }
                                                     </a>

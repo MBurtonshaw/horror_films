@@ -7,21 +7,13 @@ export default function Title( props ) {
 
 /************************************************************************************************************************
 *************************************************************************************************************************
-    STATE
+    STATE AND ASYNC FUNCTIONS
 *************************************************************************************************************************
 ************************************************************************************************************************/
     let { url }= useParams();
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
     let [ isChecked, setIsChecked ] = useState();
-
-    
-
-/************************************************************************************************************************
-*************************************************************************************************************************
-    ASYNC FUNCTIONS
-*************************************************************************************************************************
-************************************************************************************************************************/
 
     //async function to match the corresponding film with the url
     async function getData() {
@@ -31,7 +23,8 @@ export default function Title( props ) {
                 let newType = newTypes[i];
                 setCurrentFilm(newType);
                 if (document.cookie) {
-                    let cookie = await Cookies.get(`myList-${newType.id}`);
+                    let cookie = Cookies.get(`myList-${newType.id}`);
+                    
                     if (cookie === undefined) {
                         setIsChecked(false);
                     } else {
@@ -45,11 +38,12 @@ export default function Title( props ) {
         }
     }
 
-    
+    useEffect( () => { getScreenSize() }, [ setSizeClass ] );
+    useEffect( () => { getData() } );
 
 /************************************************************************************************************************
 *************************************************************************************************************************
-    USEEFFECT AND INITIAL FUNCTIONS
+    FUNCTIONS
 *************************************************************************************************************************
 ************************************************************************************************************************/
 
@@ -98,15 +92,6 @@ function getScreenSize() {
         setSizeClass('sm_socials');
     }
 }
-
-    useEffect( () => { getScreenSize() }, [ setSizeClass ] );
-    useEffect( () => { getData() } );
-
-/************************************************************************************************************************
-*************************************************************************************************************************
-    MORE FUNCTIONS
-*************************************************************************************************************************
-************************************************************************************************************************/
     
     let movie;
     let authors;
@@ -116,7 +101,7 @@ function getScreenSize() {
     //function to create the accordion component
     function accordion_fill() {
         return(
-            <div className="accordion col w-25">
+            <div className="accordion col w-25 fly_up">
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -185,8 +170,6 @@ function getScreenSize() {
         );
     }
 
-    
-
     //function to handle the Amazon Prime & YouTube icons
     function link_fill_in() {
         if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
@@ -233,19 +216,29 @@ function getScreenSize() {
 
         function cookie_handler() {
             if (props.user === '' || props.user === undefined) {
-                return null;
+                return(
+                    <div>
+                        <h1 className='mt-5 mb-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                    </div>
+                );
             } else {
                 if (isChecked === true) {
                     return(
-                        <p>added to list</p>
+                        <div>
+                            <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                            <p className='mb-5 p-2 animate'>added to list</p>
+                        </div>
                     );
                 } else {
                     return(
-                        <input type='checkbox' onClick={()=>{
-                            //needs logic to determine what to do when cookie doesn't exist yet
-                            Cookies.set(`myList-${movie.id}`, `${movie.title}`, { expires: 7 });
-                            setIsChecked(true);
-                        }}></input>
+                        <div>
+                            <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                            <button className='mb-5 px-4' onClick={()=>{
+                                //needs logic to determine what to do when cookie doesn't exist yet
+                                Cookies.set(`myList-${movie.id}`, `${movie.title}`, { expires: 7 });
+                                setIsChecked(true);
+                            }}>Add to My List</button>
+                        </div>
                     );
                 }
             }
@@ -256,7 +249,7 @@ function getScreenSize() {
             if (window.innerWidth < 576) {
                 return(
                     <div id='title_div' className='container'>
-                        <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                        {cookie_handler()}
                         <div id='title_photo' className='container w-100'>
                             <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
                         </div>
@@ -268,7 +261,7 @@ function getScreenSize() {
             } else {
                 return(
                     <div id='title_div' className='container'>
-                        <h1 className='mt-5 mb-2 p-3 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
+                        {cookie_handler()}
                         <div id='title_photo' className='container w-100'>
                             <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
                         </div>
@@ -284,11 +277,9 @@ function getScreenSize() {
                     {
                         cookie_handler()
                     }
-                    
-                    <h1 className='m-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                     <div className='row align-items-start container'>
                         {accordion_fill()}
-                        <div id='title_photo' className='container w-50'>
+                        <div id='title_photo' className='container w-50 fly_left'>
                             <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
                         </div>
                     </div>

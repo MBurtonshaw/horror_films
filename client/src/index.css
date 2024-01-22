@@ -3,14 +3,11 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
+  background-color: black;
   background: url('../public/photos/background.jpg') no-repeat center center fixed; 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
-  background-color: black;
   text-align: center;
   font-family: 'Signika Negative', sans-serif;
   -webkit-background-size: cover;
@@ -42,12 +39,49 @@ li {
   list-style: none;
 }
 
+.fly_left {
+  animation: fly-left ease-in-out .7s forwards;
+}
+
+@keyframes fly-left {
+  from {
+      transform: translateX(35vw);
+  }
+  to {
+      transform: translateX(0vw);
+  }
+}
+
+.fly_up {
+  animation: fly-up ease-in-out .7s forwards;
+}
+
+@keyframes fly-up {
+  from {
+      transform: translateY(50vh);
+  }
+  to {
+      transform: translateY(0vh);
+  }
+}
+
+.animate {
+  animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 #searchBar {
   border: 1px solid rgb(14, 26, 19);
   background-color: rgb(238, 238, 238);
 }
 
-#searchButton {
+button {
   border: 1px solid rgb(14, 26, 19);
   background-color: rgb(199, 206, 202);
 }

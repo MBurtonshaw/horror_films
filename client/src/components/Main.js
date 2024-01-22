@@ -2,23 +2,10 @@ import { React } from 'react';
 
 export default function Main() {
 
-/************************************************************************************************************************
-*************************************************************************************************************************
-    VARIABLES
-*************************************************************************************************************************
-************************************************************************************************************************/
-    let first;
-    let first_memo;
-    let second;
-    let second_memo;
-    let third;
-    let third_memo;
-    let fourth;
-    let fourth_memo;
-    let fifth;
-    let fifth_memo;
-    let sixth;
-    let sixth_memo;
+    let first, second, third, fourth, fifth, sixth;
+    
+    let first_memo, second_memo, third_memo, fourth_memo, fifth_memo, sixth_memo;
+    
     let season;
 
     const setter = new Date();
@@ -39,9 +26,7 @@ export default function Main() {
         sixth = 're_animator';
         sixth_memo = 'Herbert West has concocted a formula to bring the recently dead back to life.';
         season = 'Autumn';
-    }
-
-    if ( month === 12 || month === 1 || month === 2 ) {   
+    } else if ( month === 12 || month === 1 || month === 2 ) {   
     
         first = 'black_christmas';
         first_memo = 'It\'s Christmas, and people are celebrating; but a sorority house is receiving disturbing phone calls.';
@@ -56,9 +41,7 @@ export default function Main() {
         sixth = 'hell_house_llc';
         sixth_memo = 'A group of people record their life in an abandoned hotel while converting it into a haunted house attraction.';
         season = 'Winter';
-    }
-    
-    if ( month === 3 || month === 4 || month === 5 ) {  
+    } else if ( month === 3 || month === 4 || month === 5 ) {  
     
         first = 'the_mist';
         first_memo = 'Something\'s in the mist that\'s descended upon a small town in Maine.';
@@ -73,9 +56,7 @@ export default function Main() {
         sixth = 'black_phone';
         sixth_memo = 'Boys around town are being kidnapped by a man with a black van.';
         season = 'Spring';
-    }
-
-    if ( month === 6 || month === 7 || month === 8 ) {  
+    } else {  
     
         first = 'the_sitter';
         first_memo = 'A teenage babysitter receives disturbing phone calls while watching some children.';
@@ -132,7 +113,7 @@ export default function Main() {
         return(
             <div className='py-3'>
                 <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                <p className='col m-auto main_text'>{number_memo}</p>
+                    <p className='col m-auto main_text'>{number_memo}</p>
                     <a href={`/titles/${ number }`} className='col'>
                         <img id={ number } className='smaller_img py-1' src={ `../../photos/titles/${ number }.jpg` } alt={`a movie poster for ${ number }`} />
                     </a>
@@ -148,17 +129,19 @@ export default function Main() {
 ************************************************************************************************************************/
     if (window.innerWidth < 768) {
         return(
-            <div id='Main'>
+            <div id='Main' className='animate'>
                 <div className='container d-block'>
                     <h2 className='m-2 pt-5'> { season } Recommendations </h2>
 
                     {/* the first card doesn't use the card_filler function because it is supposed to be visible on pageload */}
                     <div className='py-3'>
                         <div className='container background_box p-5 mb-5'>
-                            <a href={`/titles/${ first }`}>
-                                <img id={ first } className='smaller_img py-3' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
-                            </a>
-                            <p className='main_text py-3 m-0'>{first_memo}</p>
+                            <div>
+                                <a href={`/titles/${ first }`}>
+                                    <img id={ first } className='smaller_img py-3' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
+                                </a>
+                                <p className='main_text py-3 m-0'>{first_memo}</p>
+                            </div>
                         </div>
                     </div>
                     {card_filler_mobile(second, second_memo)}
@@ -171,25 +154,29 @@ export default function Main() {
         );
     } else {
         return(
-            <div id='Main'>
+            <div id='Main' className='animate'>
                 <div className='container d-block w-75 py-2'>
                     <h2 className='m-2'> { season } Recommendations </h2>
 
                     {/* the first two cards don't use the card_filler functions because they are supposed to be visible on pageload */}
                     <div className='pt-4 pb-3'>
                         <div className='container row align-items-start background_box p-5 mb-5'>
-                            <a href={`/titles/${ first }`} className='col'>
-                                <img id={ first } className='smaller_img py-1' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
-                            </a>
-                            <p className='col m-auto main_text'>{first_memo}</p>
+                           
+                                <a href={`/titles/${ first }`} className='col'>
+                                    <img id={ first } className='smaller_img py-1 animate' src={ `../../photos/titles/${ first }.jpg` } alt={`a movie poster for ${first}`} />
+                                </a>
+                                <p className='col m-auto main_text animate'>{first_memo}</p>
+                           
                         </div>
                     </div>
                     <div className='py-3'>
                         <div className='container row align-items-start background_box p-5 mb-5'>
-                            <p className='col m-auto main_text'>{second_memo}</p>
-                            <a href={`/titles/${ second }`} className='col'>
-                                <img id={ second } className='smaller_img py-1' src={ `../../photos/titles/${ second }.jpg` } alt={`a movie poster for ${second}`} />
-                            </a>
+                            
+                                <p className='col m-auto main_text animate'>{second_memo}</p>
+                                <a href={`/titles/${ second }`} className='col'>
+                                    <img id={ second } className='smaller_img py-1 animate' src={ `../../photos/titles/${ second }.jpg` } alt={`a movie poster for ${second}`} />
+                                </a>
+                         
                         </div>
                     </div>
                     {card_filler_1(third, third_memo)}

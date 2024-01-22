@@ -17,7 +17,7 @@ export default function DecadesPage(props) {
                             //function to fill in card data below
                             function fill_in() {
                                 return(
-                                    <div className="card">
+                                    <div className="card animate">
                                         <a href={`/decades/${ item.url }`}>
                                             <img src={ `../../photos/decades/${ item.name }.jpg` } className="card-img-top" alt={`a description of ${item.name} horror`} />
                                             <div className="card-body">

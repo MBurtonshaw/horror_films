@@ -62,7 +62,7 @@ async function getData() {
   if (!document.cookie) {
     setUser('');
   } else {
-    let logger = await Cookies.get('signedIn?');
+    let logger = Cookies.get('signedIn?');
     if (logger === undefined) {
       return null;
     } else {

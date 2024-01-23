@@ -233,7 +233,7 @@ function getScreenSize() {
                     return(
                         <div>
                             <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
-                            <button className='mb-5 px-4' onClick={()=>{
+                            <button className='mb-5 px-4 button-81' onClick={()=>{
                                 //needs logic to determine what to do when cookie doesn't exist yet
                                 Cookies.set(`myList-${movie.id}`, `${movie.title}`, { expires: 7 });
                                 setIsChecked(true);

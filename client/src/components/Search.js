@@ -80,7 +80,7 @@ export default function Search(props) {
     return(
         <div id='Search' className='container pt-md-3'>
             <input id='searchBar' name='searchInput' type='text' onBlur={( e ) => logger( e )}></input>
-            <button id='searchButton' htmlFor='searchInput' onClick={( e ) => clicker( e )}> Find </button>
+            <button id='searchButton' className='button-81' htmlFor='searchInput' onClick={( e ) => clicker( e )}> Find </button>
             <div id="liveAlertPlaceholder"></div>
         </div>
     );

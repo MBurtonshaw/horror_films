@@ -68,7 +68,7 @@ export default function List(props) {
                                     <a href={`/titles/${item.url}`}> { item.title } </a>
                                 </div>
                                 <div className='w-100'>
-                                    <button onClick={()=>{
+                                    <button className='button-81' onClick={()=>{
                                         Cookies.remove(`myList-${item.id}`, {path: `/`});
                                         window.location.reload();
                                     }}>remove</button>
@@ -87,7 +87,7 @@ export default function List(props) {
                                     <a href={`/titles/${item.url}`}> { item.title } </a>
                                 </div>
                                 <div className='col'>
-                                    <button onClick={()=>{
+                                    <button className='button-81' onClick={()=>{
                                         Cookies.remove(`myList-${item.id}`, {path: `/`});
                                         window.location.reload();
                                     }}>remove</button>

@@ -1,3 +1,8 @@
+/*******************************************************************************************
+********************************************************************************************
+                                    MAIN
+********************************************************************************************
+*******************************************************************************************/
 body {
   margin: 0;
   padding: 0;
@@ -35,45 +40,55 @@ img {
   vertical-align: middle;
 }
 
+
+
+/* CSS */
+.button-81 {
+  background-color: rgb(199, 206, 202);
+  border: 0 solid #e2e8f0;
+  border-radius: 0.1rem;
+  box-sizing: border-box;
+  color: rgb(8, 14, 10);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.26rem 1rem 0.4rem 1rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-81:hover {
+  background-color: rgb(14, 26, 19);
+  color: rgb(225, 234, 229);
+}
+
+@media (min-width: 768px) {
+  .button-81 {
+    font-size: 1rem;
+    
+  }
+}
+
 li {
   list-style: none;
 }
 
-.fly_left {
-  animation: fly-left ease-in-out .7s forwards;
+button {
+  border: 1px solid rgb(14, 26, 19);
+  background-color: rgb(199, 206, 202);
 }
 
-@keyframes fly-left {
-  from {
-      transform: translateX(35vw);
-  }
-  to {
-      transform: translateX(0vw);
-  }
-}
-
-.fly_up {
-  animation: fly-up ease-in-out .7s forwards;
-}
-
-@keyframes fly-up {
-  from {
-      transform: translateY(50vh);
-  }
-  to {
-      transform: translateY(0vh);
-  }
-}
-
-.animate {
-  animation-duration: 1s;
-  animation-name: animate-fade;
-  animation-fill-mode: backwards;
-}
-
-@keyframes animate-fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+#footer {
+  background-color: none;
 }
 
 #searchBar {
@@ -81,10 +96,11 @@ li {
   background-color: rgb(238, 238, 238);
 }
 
-button {
-  border: 1px solid rgb(14, 26, 19);
-  background-color: rgb(199, 206, 202);
-}
+/*******************************************************************************************
+********************************************************************************************
+                                    CLASSES
+********************************************************************************************
+*******************************************************************************************/
 
 .accordion-body {
   color: lightgray;
@@ -164,10 +180,6 @@ button {
 .flashcard.visible {
   opacity: 1;
   transform: translate(0, 0);
-}
-
-#footer {
-  background-color: none;
 }
 
 .header-nav a {
@@ -250,4 +262,47 @@ button {
 
 .xs_socials {
   width: 30%;
+}
+
+/*******************************************************************************************
+********************************************************************************************
+                                    ANIMATION
+********************************************************************************************
+*******************************************************************************************/
+
+.fly_left {
+  animation: fly-left ease-in-out .7s forwards;
+}
+
+@keyframes fly-left {
+  from {
+      transform: translateX(35vw);
+  }
+  to {
+      transform: translateX(0vw);
+  }
+}
+
+.fly_up {
+  animation: fly-up ease-in-out .7s forwards;
+}
+
+@keyframes fly-up {
+  from {
+      transform: translateY(50vh);
+  }
+  to {
+      transform: translateY(0vh);
+  }
+}
+
+.animate {
+  animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

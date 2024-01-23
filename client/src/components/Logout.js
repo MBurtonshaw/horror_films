@@ -32,7 +32,7 @@ export default function Login(props) {
                 <form action='/login' method='POST' onSubmit={logoutUser}>
                     <div className='m-auto'>
                         <h1>Are you sure?</h1>
-                        <button type='' onClick={logoutUser}>Logout</button>
+                        <button type='' className='button-81 mt-4' onClick={logoutUser}>Logout</button>
                     </div>
                 </form>
                 <div className='py-5'>

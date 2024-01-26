@@ -61,11 +61,11 @@ export default function Login(props) {
                 {content_filler()}
             </div>
         );
-    } else {
+    } 
         return(
             <div id='Login' className='container my-5 py-5 background_box w-50 m-auto'>
                 {content_filler()}
             </div>
         );
-    }  
+    
 }

@@ -28,7 +28,13 @@ export default function GenrePage( props ) {
 *************************************************************************************************************************
 ************************************************************************************************************************/
     if (types.length < 1) {
-        return null;
+        return(
+            <div id='DecadesPage' className='container'>
+                <h1 className='my-5 pt-5'> Loading... </h1>
+                <div className="background_box decades_loader">
+                </div>
+            </div>
+        );
     } else {
         return(
             <div id='GenrePage' className='container'>

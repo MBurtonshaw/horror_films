@@ -1,23 +1,27 @@
 import { React } from 'react';
 
 export default function DecadesPage(props) {
-    //mapping movie list based on props
-    if (props.context.data.movies.movies.length < 1) {
-        return null;
-    } else {
-        //
 
+    if (props.context.data.movies.movies.length < 1) {
+        return(
+            <div id='DecadesPage' className='container'>
+                <h1 className='my-5 pt-5'> Loading... </h1>
+                <div className="background_box decades_loader">
+                </div>
+            </div>
+        );
+    } else {
         return( 
             <div id='DecadesPage' className='container'>
                 <h1 className='my-5 pt-5'> Decades </h1>
-                <div className="card-group animate">
+                <div className="card-group">
                     {
                         props.decades.map(( item, i ) => {
 
                             //function to fill in card data below
                             function fill_in() {
                                 return(
-                                    <div className="card animate_slow">
+                                    <div className="card">
                                         <a href={`/decades/${ item.url }`}>
                                             <img src={ `../../photos/decades/${ item.name }.jpg` } className="card-img-top" alt={`a description of ${item.name} horror`} />
                                             <div className="card-body">

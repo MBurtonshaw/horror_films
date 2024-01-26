@@ -14,6 +14,7 @@ export default function Title( props ) {
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
     let [ isChecked, setIsChecked ] = useState();
+    let [ isLoading, setIsLoading ] = useState(true);
 
     //async function to match the corresponding film with the url
     async function getData() {
@@ -33,9 +34,9 @@ export default function Title( props ) {
                         }
                     }
                 }
-                
             }
         }
+        setIsLoading(false);
     }
 
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
@@ -47,51 +48,51 @@ export default function Title( props ) {
 *************************************************************************************************************************
 ************************************************************************************************************************/
 
-//function to match the film's release year with the /decades path it corresponds to
-function decade_filler() {
-    let variant;
-    if (movie.year < 1970) {
-        variant = '../decades/classics'
+    //function to match the film's release year with the /decades path it corresponds to
+    function decade_filler() {
+        let variant;
+        if (movie.year < 1970) {
+            variant = '../decades/classics'
+        }
+        if (movie.year < 1980 && movie.year > 1969) {
+            variant = '../decades/70s'
+        }
+        if (movie.year < 1990 && movie.year > 1979) {
+            variant = '../decades/80s'
+        }
+        if (movie.year < 2000 && movie.year > 1989) {
+            variant = '../decades/90s'
+        }
+        if (movie.year < 2010 && movie.year > 1999) {
+            variant = '../decades/00s'
+        }
+        if (movie.year < 2020 && movie.year > 2009) {
+            variant = '../decades/10s'
+        }
+        if (movie.year < 2030 && movie.year > 2019) {
+            variant = '../decades/20s'
+        }
+        return(
+            <a href={variant}>{movie.year}</a>
+        );
     }
-    if (movie.year < 1980 && movie.year > 1969) {
-        variant = '../decades/70s'
-    }
-    if (movie.year < 1990 && movie.year > 1979) {
-        variant = '../decades/80s'
-    }
-    if (movie.year < 2000 && movie.year > 1989) {
-        variant = '../decades/90s'
-    }
-    if (movie.year < 2010 && movie.year > 1999) {
-        variant = '../decades/00s'
-    }
-    if (movie.year < 2020 && movie.year > 2009) {
-        variant = '../decades/10s'
-    }
-    if (movie.year < 2030 && movie.year > 2019) {
-        variant = '../decades/20s'
-    }
-    return(
-        <a href={variant}>{movie.year}</a>
-    );
-}
 
-//Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
-function getScreenSize() {
-    if (window.innerWidth < 500) {
-        setSizeClass('lg_socials');
-    } else if (window.innerWidth < 768) {
-        setSizeClass('md_socials');
-    } else if (window.innerWidth < 992) {
-        setSizeClass('xs_socials');
-    } else if (window.innerWidth < 1200) {
-        setSizeClass('lg_socials');
-    } else if (window.innerWidth < 1400) {
-        setSizeClass('md_socials');
-    } else {
-        setSizeClass('sm_socials');
+    //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
+    function getScreenSize() {
+        if (window.innerWidth < 500) {
+            setSizeClass('lg_socials');
+        } else if (window.innerWidth < 768) {
+            setSizeClass('md_socials');
+        } else if (window.innerWidth < 992) {
+            setSizeClass('xs_socials');
+        } else if (window.innerWidth < 1200) {
+            setSizeClass('lg_socials');
+        } else if (window.innerWidth < 1400) {
+            setSizeClass('md_socials');
+        } else {
+            setSizeClass('sm_socials');
+        }
     }
-}
     
     let movie;
     let authors;
@@ -201,14 +202,52 @@ function getScreenSize() {
             );
         }
     } 
+
+    function loader_fill_in() {
+        if (window.innerWidth < 992) {
+            return(
+                <div id='title_loader' className='px-5'>
+                    <div>
+                        <h1 className='my-5 pt-4'>Loading...</h1>
+                    </div>
+                    <div className=''>
+                        <div className='background_box title_filler_sm_tall p-5'></div>
+                        <div className='background_box title_filler_sm_wide p-5'></div>
+                    </div>
+                </div>
+            );
+        }
+        return(
+            <div id='title_loader' className='px-5'>
+                <div>
+                    <h1 className='my-5 pt-4'>Loading...</h1>
+                </div>
+                <div className='row'>
+                    <div className='col background_box title_filler_lg px-5'></div>
+                    <div className='col background_box title_filler_lg px-5'></div>
+                </div>
+            </div>
+        );
+    }
     
 /************************************************************************************************************************
 *************************************************************************************************************************
     RENDER
 *************************************************************************************************************************
 ************************************************************************************************************************/
-    //matching film in state to film in url and returning the proper data
-    if ( currentFilm.url === url ) {
+    if (isLoading === true) {
+
+        return(loader_fill_in());
+
+    } else if ( isLoading === false && currentFilm.url !== url) {
+
+        return(
+            <div className='background_box py-5 my-5 w-50 mx-auto'>
+                <NotFound message={url}/>
+            </div>)
+
+    } else if ( currentFilm.url === url && isLoading === false ) {
+
         movie = currentFilm;
         authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
         genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
@@ -286,11 +325,5 @@ function getScreenSize() {
                 </div>
             );
         }
-    } else {
-        return(
-            <div className='background_box py-5 my-5 w-50 mx-auto'>
-                <NotFound message={url}/>
-            </div>
-        );
-    }
+    } 
 }

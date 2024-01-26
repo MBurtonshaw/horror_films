@@ -38,7 +38,7 @@ export default function Title( props ) {
     }
 
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
-    useEffect( () => { getData() } );
+    useEffect( () => { getData() }, [ setIsLoading ] );
 
 /**************************************************************************************
     FUNCTIONS

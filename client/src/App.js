@@ -12,7 +12,6 @@ import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
 import NotFound from './components/NotFound';
 import List from './components/List';
-import Register from './components/Register';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Footer from './components/Footer';
@@ -31,21 +30,14 @@ const GenrePageWithContext = withContext(GenrePage);
 const ResultsWithContext = withContext(Results);
 const DecadesPageWithContext = withContext(DecadesPage);
 const ListWithContext = withContext(List);
-const RegisterWithContext = withContext(Register);
 const LoginWithContext = withContext(Login);
 const LogoutWithContext = withContext(Logout);
 
 function App() {
-
 /**************************************************************************************
-    FUNCTIONS
+    STATE AND ASYNC FUNCTIONS
 ***************************************************************************************/
-
 let [ user, setUser ] = useState('');
-
-/**************************************************************************************
-    ASYNC FUNCTIONS
-***************************************************************************************/
 
 async function getData() {
   if (!document.cookie) {
@@ -62,14 +54,8 @@ async function getData() {
         setUser(newLogger);
       }
     }
-    
   }
-  
 }
-
-/**************************************************************************************
-    USEEFFECT
-***************************************************************************************/
 
 useEffect(()=> { getData() }, [ setUser ]);
 
@@ -151,12 +137,6 @@ let url = window.location.pathname;
               path='/list'
               element = {
                 <ListWithContext user={user}/>
-              }
-            />
-            <Route
-              path='/register'
-              element = {
-                <RegisterWithContext />
               }
             />
             <Route

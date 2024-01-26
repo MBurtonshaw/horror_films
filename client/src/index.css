@@ -144,6 +144,10 @@ button {
   transform: translate(0, 0);
 }
 
+.genre_loader {
+  min-height: 20em;
+}
+
 .header-nav a {
   color: rgb(152, 248, 192);
   font-size: 1.2em;
@@ -195,6 +199,7 @@ button {
   max-width: 50%;
   max-height: auto;
   opacity: 90%;
+  border: 1px solid rgb(138, 226, 175);
 }
 
 .smaller_img:hover {
@@ -316,10 +321,4 @@ button {
 @keyframes animate-fade {
   0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-@media (max-width: 992px) {
-  body {
-    background: url('../public/photos/background_med.jpg') no-repeat center center fixed; 
-  }
 }

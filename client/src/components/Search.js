@@ -1,11 +1,10 @@
-import { React, useState } from 'react';
+import { React, useEffect } from 'react';
 
 export default function Search(props) {
 
 /************************************************************************************************************************
     STATE AND ASYNC FUNCTIONS
 ************************************************************************************************************************/
-    const [ search, setSearch ] = useState('');
 
      //sorting movies by title
     async function loader() {
@@ -32,6 +31,8 @@ export default function Search(props) {
             console.log(err.message);
         }
     }
+
+    useEffect(() => { loader() }, []);
 
 /************************************************************************************************************************
     FUNCTIONS
@@ -63,7 +64,6 @@ export default function Search(props) {
 
     //logging search value and setting to uppercase
 
-    loader();
 
 /************************************************************************************************************************
     RENDER

@@ -48,7 +48,7 @@ export default function Decades(props) {
         }
     }
 
-    useEffect( () => { getData() } );
+    useEffect( () => { getData() }, [ setMovies ] );
 
 /**************************************************************************************
     fUNCTIONS

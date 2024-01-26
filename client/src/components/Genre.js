@@ -9,9 +9,10 @@ export default function Genres(props) {
 ***************************************************************************************/
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
+    let [ genre, setGenre ] = useState('');
+    let [ isLoading, setIsLoading ] = useState(true);
 
     //function to gather data from movies.json
-    //sets category and sorts films based on url and film year
     async function getData() {
         try {
             let pictures = [];
@@ -20,17 +21,20 @@ export default function Genres(props) {
             for (let i = 0; i < films.length; i++) {
               for (let j = 0; j < films[i].genres.length; j++) {
                 if (films[i].genres.includes(url)) {
+                    console.log(films[i].genres)
                     pictures.push(films[i]);
                     setMovies(props.context.actions.removeDuplicates(pictures));
+                    setGenre(url);
                 }
               }
             }
+            setIsLoading(false);
         } catch(err) {
             console.log(err.message)
         }
     }
 
-    useEffect( () => { getData() } );
+    useEffect( () => { getData() }, [ setGenre ] );
 
 /**************************************************************************************
     FUNCTIONS
@@ -58,68 +62,67 @@ export default function Genres(props) {
         );
     }
 
-    //determines the decade category and sets header
-    function namer() {
-        if (
-                url === 'Eerie' ||
-                url === 'Suburban' ||
-                url === 'Slasher' ||
-                url === 'Indie' ||
-                url === 'Short' ||
-                url === 'Surreal' ||
-                url === 'Creature' ||
-                url === 'Body' ||
-                url === 'Gore' ||
-                url === 'Invasion' ||
-                url === 'Rural' ||
-                url === 'Occult' ||
-                url === 'Cosmic' ||
-                url === 'Campy' ||
-                url === 'Period' ||
-                url === 'Classic' ||
-                url === 'Analog' ||
-                url === 'Anthology' 
-            ) {
-            return(`Genre: ${url}`);
-        } else {
-            return(
-                <div>
-                    <NotFound message={url}/>
-                </div>
-            );
-        }
-    }
+    
 
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    //combines previous two functions and returns formatting based on screen size
-    if (window.innerWidth < 768) { 
+    if (isLoading === true) {
+        if (window.innerWidth < 768) {
+            return(
+                <div className='background_box genre_loader w-100 mx-auto my-5'>
+                    <h1 className='p-4'>Loading...</h1>
+                </div>
+            );
+        }
+        return(
+            <div className='background_box genre_loader w-50 mx-auto my-5'>
+                <h1 className='p-4'>Loading...</h1>
+            </div>
+        );
+    } else if (isLoading === false && genre === '') {
+        if (window.innerWidth < 768) {
+            return(
+                <div className='background_box w-100 mx-auto my-5'>
+                    <NotFound message={url} />
+                </div>
+            );
+        }
+        return(
+            <div className='background_box w-50 mx-auto my-5'>
+                <NotFound message={url} />
+            </div>
+        );
+    } else {
+        //combines previous two functions and returns formatting based on screen size
+        if (window.innerWidth < 768) { 
+            return(      
+                <div id='Genre' className='container p-1 m-auto my-5 pb-2 background_box'>
+                    <h1 className='my-4 mx-1'>
+                        Genre: { genre }
+                    </h1>
+                    <div className='container p-1 pb-4 mb-4 w-75'>
+                        <ul className="list-group list-group-flush">
+                            { fill_in() }
+                        </ul>
+                    </div>
+                </div>
+            );
+        } 
+
         return(      
-            <div id='Genre' className='container p-1 m-auto my-5 pb-2 background_box'>
-                <h1 className='my-4 mx-1'>
-                    { namer() }
+            <div id='Genre' className='container p-1 m-auto mt-5 w-50 background_box'>
+                <h1 className='m-5'>
+                    Genre: { genre }
                 </h1>
-                <div className='container p-1 pb-4 mb-4 w-75'>
+                <div className='container pb-4 mb-4 w-75'>
                     <ul className="list-group list-group-flush">
                         { fill_in() }
                     </ul>
                 </div>
             </div>
         );
-    } 
-    
-    return(      
-        <div id='Genre' className='container p-1 m-auto mt-5 w-50 background_box'>
-            <h1 className='m-5'>
-                { namer() }
-            </h1>
-            <div className='container pb-4 mb-4 w-75'>
-                <ul className="list-group list-group-flush">
-                    { fill_in() }
-                </ul>
-            </div>
-        </div>
-    );
+    }
+   
     //
 }

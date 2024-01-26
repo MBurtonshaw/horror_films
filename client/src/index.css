@@ -170,9 +170,7 @@ button {
   word-spacing: 3px;
 }
 
-.md_socials {
-  width: 40%;
-}
+
 
 .nav {
   background: transparent;
@@ -205,8 +203,44 @@ button {
   opacity: 100%;
 }
 
+.xxxs_socials {
+  min-width: 45%;
+  max-width: 50%;
+}
+
+.xxs_socials {
+  min-width: 40%;
+  max-width: 45%;
+}
+
+.xs_socials {
+  min-width: 35%;
+  max-width: 40%;
+}
+
+.xl_socials {
+  min-width: 30%;
+  max-width: 35%;
+}
+
+.lg_socials {
+  min-width: 38%;
+  max-width: 43%;
+}
+
+.md_socials {
+  min-width: 22%;
+  max-width: 27%;
+}
+
 .sm_socials {
-  width: 35%;
+  min-width: 30%;
+  max-width: 35%;
+}
+
+.socials {
+  min-width: 25%;
+  max-width: 30%;
 }
 
 .thinner {
@@ -243,6 +277,10 @@ button {
 .undercover {
   text-shadow: none;
   color: white;
+}
+
+.xl_socials {
+  width: 60%;
 }
 
 .xs_socials {

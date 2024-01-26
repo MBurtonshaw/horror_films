@@ -79,18 +79,22 @@ export default function Title( props ) {
 
     //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
     function getScreenSize() {
-        if (window.innerWidth < 500) {
-            setSizeClass('lg_socials');
-        } else if (window.innerWidth < 768) {
-            setSizeClass('md_socials');
-        } else if (window.innerWidth < 992) {
+        if (window.innerWidth < 380) {
+            setSizeClass('xxxs_socials');
+        } else if (window.innerWidth < 500) {
+            setSizeClass('xxs_socials');
+        } else if (window.innerWidth < 576) {
             setSizeClass('xs_socials');
+        } else if (window.innerWidth < 768) {
+            setSizeClass('sm_socials');
+        } else if (window.innerWidth < 992) {
+            setSizeClass('md_socials');
         } else if (window.innerWidth < 1200) {
             setSizeClass('lg_socials');
         } else if (window.innerWidth < 1400) {
-            setSizeClass('md_socials');
+            setSizeClass('xl_socials');
         } else {
-            setSizeClass('sm_socials');
+            setSizeClass('socials');
         }
     }
     
@@ -159,10 +163,8 @@ export default function Title( props ) {
                     </h2>
                     <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <div className='w-100'>
-                                <div className='m-auto'>
+                            <div className='w-100 m-auto'>
                                     {link_fill_in()}
-                                </div>
                             </div> 
                         </div>
                     </div>
@@ -175,7 +177,7 @@ export default function Title( props ) {
     function link_fill_in() {
         if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
             return(
-                <div id ='movie_link_div' className='px-5'>
+                <div id ='movie_link_div' className=''>
                     <a href={ movie.prime_link }>
                         <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                     </a>
@@ -186,7 +188,7 @@ export default function Title( props ) {
             );
         } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
             return(
-                <div id ='movie_link_div' className='px-5'>
+                <div id ='movie_link_div' className=''>
                     <a href={ movie.prime_link }>
                         <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                     </a>
@@ -194,7 +196,7 @@ export default function Title( props ) {
             );
         } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
             return(
-                <div id ='movie_link_div' className='px-5'>
+                <div id ='movie_link_div' className=''>
                     <a href={ movie.youtube_link }>
                         <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                     </a>
@@ -205,17 +207,7 @@ export default function Title( props ) {
 
     function loader_fill_in() {
         if (window.innerWidth < 992) {
-            return(
-                <div id='title_loader' className='px-5'>
-                    <div>
-                        <h1 className='my-5 pt-4'>Loading...</h1>
-                    </div>
-                    <div className=''>
-                        <div className='background_box title_filler_sm_tall p-5'></div>
-                        <div className='background_box title_filler_sm_wide p-5'></div>
-                    </div>
-                </div>
-            );
+            return null;
         }
         return(
             <div id='title_loader' className='px-5'>

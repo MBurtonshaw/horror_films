@@ -8,15 +8,14 @@ body {
   width: 100%;
   background-color: black;
   background: url('../public/photos/background.jpg') no-repeat center center fixed; 
+  position: relative;
+  background-repeat:no-repeat;
+  background-size:100% 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
   text-align: center;
   font-family: 'Signika Negative', sans-serif;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   text-shadow: 1px 1px 2px black;
 }
 
@@ -321,4 +320,20 @@ button {
 @keyframes animate-fade {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: none; 
+    background-color: rgb(154, 187, 167);
+  }
+
+  body {
+    background: url('../public/photos/background_mini.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 }

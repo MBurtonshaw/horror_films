@@ -3,9 +3,7 @@ import { React, useState } from 'react';
 export default function Search(props) {
 
 /************************************************************************************************************************
-*************************************************************************************************************************
     STATE AND ASYNC FUNCTIONS
-*************************************************************************************************************************
 ************************************************************************************************************************/
     const [ search, setSearch ] = useState('');
 
@@ -26,18 +24,17 @@ export default function Search(props) {
     }
 
     //function to change url based on search term from state
-    async function clicker( e ) {
+    async function clicker( ) {
+        const searcher = document.getElementById('searchBar');
         try {
-            window.location.href = `/results/${search}`;
+            window.location.href = `/results/${searcher.value}`;
         } catch(err) {
             console.log(err.message);
         }
     }
 
 /************************************************************************************************************************
-*************************************************************************************************************************
     FUNCTIONS
-*************************************************************************************************************************
 ************************************************************************************************************************/
     //function to append a message when the searchbar is focused upon/////////////////////////////////////
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
@@ -63,24 +60,18 @@ export default function Search(props) {
     }  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     let titleArray = [];
-    const searcher = document.getElementById('searchBar');
 
     //logging search value and setting to uppercase
-    function logger( e ) {
-        setSearch( searcher.value.toUpperCase() );
-    }
 
     loader();
 
 /************************************************************************************************************************
-*************************************************************************************************************************
     RENDER
-*************************************************************************************************************************
 ************************************************************************************************************************/
     return(
         <div id='Search' className='container pt-md-3'>
-            <input id='searchBar' name='searchInput' type='text' onBlur={( e ) => logger( e )}></input>
-            <button id='searchButton' className='button-81' htmlFor='searchInput' onClick={( e ) => clicker( e )}> Find </button>
+            <input id='searchBar' name='searchInput' type='text' ></input>
+            <button id='searchButton' htmlFor='searchInput' onClick={() => clicker()}> Find </button>
             <div id="liveAlertPlaceholder"></div>
         </div>
     );

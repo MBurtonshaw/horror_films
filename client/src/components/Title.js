@@ -5,11 +5,9 @@ import Cookies from 'js-cookie';
 
 export default function Title( props ) {
 
-/************************************************************************************************************************
-*************************************************************************************************************************
+/**************************************************************************************
     STATE AND ASYNC FUNCTIONS
-*************************************************************************************************************************
-************************************************************************************************************************/
+***************************************************************************************/
     let { url }= useParams();
     let [ sizeClass, setSizeClass ] = useState('');
     let [ currentFilm, setCurrentFilm ] = useState('');
@@ -42,11 +40,9 @@ export default function Title( props ) {
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
     useEffect( () => { getData() } );
 
-/************************************************************************************************************************
-*************************************************************************************************************************
+/**************************************************************************************
     FUNCTIONS
-*************************************************************************************************************************
-************************************************************************************************************************/
+***************************************************************************************/
 
     //function to match the film's release year with the /decades path it corresponds to
     function decade_filler() {
@@ -222,11 +218,9 @@ export default function Title( props ) {
         );
     }
     
-/************************************************************************************************************************
-*************************************************************************************************************************
+/**************************************************************************************
     RENDER
-*************************************************************************************************************************
-************************************************************************************************************************/
+***************************************************************************************/
     if (isLoading === true) {
 
         return(loader_fill_in());
@@ -282,7 +276,7 @@ export default function Title( props ) {
                     <div id='title_div' className='container'>
                         {cookie_handler()}
                         <div id='title_photo' className='container w-100'>
-                            <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
+                            <a href='/titles'><img src={ `${movie.photo}_mini.jpg` } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
                         </div>
                         <div className='row align-items-start pt-3 pb-5'>
                             {accordion_fill()}
@@ -294,7 +288,7 @@ export default function Title( props ) {
                     <div id='title_div' className='container'>
                         {cookie_handler()}
                         <div id='title_photo' className='container w-100'>
-                            <a href='/titles'><img src={ movie.photo }  alt={`Film art for ${movie.title}`} className='w-50'></img></a>
+                            <a href='/titles'><img src={`${ movie.photo }.jpg`} alt={`Film art for ${movie.title}`} className='w-50'></img></a>
                         </div>
                         <div className='row align-items-start pt-3 pb-5'>
                             {accordion_fill()}
@@ -311,7 +305,7 @@ export default function Title( props ) {
                     <div className='row align-items-start container'>
                         {accordion_fill()}
                         <div id='title_photo' className='container w-50 fly_left'>
-                            <a href='/titles'><img src={ movie.photo } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
+                            <a href='/titles'><img src={`${movie.photo}.jpg` } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+const bcrypt = require('bcryptjs');
 
 export default function Register(props) {
 
@@ -23,7 +24,7 @@ function registerUser(e) {
     setData({
         name: data.name,
         email: data.email,
-        password: data.password
+        password: bcrypt.hash(data.password)
     });
     navigate(-1);
 }

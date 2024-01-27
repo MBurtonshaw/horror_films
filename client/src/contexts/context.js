@@ -2,6 +2,7 @@ import { React, createContext, Component } from "react";
 import movies from '../movies.json';
 import Data from '../HOCs/data';
 import Cookies from 'js-cookie';
+const bcrypt = require('bcryptjs');
 
 export const Context = createContext(''); 
 
@@ -91,10 +92,11 @@ export class Provider extends Component {
       let applicant = Cookies.get(`user: ${emailAddress}`);
       if (applicant) {
         let newType = JSON.parse(applicant);
-        if (passphrase === newType.password) {
+        let newPass = bcrypt.hash(passphrase);
+        if (bcrypt.compare(newPass, newType.password)) {
           let user = {
             email: emailAddress,
-            password: passphrase
+            password: newPass
           }
           this.setState({user});
           Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );

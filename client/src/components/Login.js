@@ -41,7 +41,7 @@ export default function Login(props) {
                     </div>
                 </form>
                 <div className='py-5'>
-                    <a href={'/'}>Home</a>
+                    <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
                 </div>
             </div>
         );

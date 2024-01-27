@@ -36,7 +36,8 @@ export class Provider extends Component {
           capitalizeFirstLetter: this.capitalizeFirstLetter,
           getMessage: this.getMessage,
           signIn: this.signIn,
-          signOut: this.signOut
+          signOut: this.signOut,
+          registerUser: this.registerUser
         }
       }
       
@@ -74,18 +75,19 @@ export class Provider extends Component {
     }
   }
 
+  registerUser = async ( firstName, emailAddress, passphrase ) => {
+      //Set user credentials and save to a cookie
+      let user = {
+        name: firstName,
+        email: emailAddress,
+        password: passphrase
+      }
+      this.setState({user});
+      Cookies.set(`user: ${emailAddress}`, JSON.stringify( user ), { expires: 7} );
+    //}
+  }
+
   signIn = async ( emailAddress, passphrase ) => {
-    //Fetching user data
-    /*const user = await this.data.getUser( emailAddress, password );
-    
-    if ( user !== null ) {
-      this.setState(() => {
-        //If not null, set authenticatedUser
-        return {
-          authenticatedUser: user
-        };
-      });
-      user.user.password = password;*/
       //Set user credentials and save to a cookie
       let user = {
         email: emailAddress,
@@ -97,17 +99,6 @@ export class Provider extends Component {
   }
 
   signOut = async () => {
-    //Fetching user data
-    /*const user = await this.data.getUser( emailAddress, password );
-    
-    if ( user !== null ) {
-      this.setState(() => {
-        //If not null, set authenticatedUser
-        return {
-          authenticatedUser: user
-        };
-      });
-      user.user.password = password;*/
       let user = {
         email: '',
         password: ''

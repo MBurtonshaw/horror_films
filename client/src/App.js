@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Results from './components/Results';
 import Decades from './components/Decades';
 import DecadesPage from './components/DecadesPage';
+import Register from './components/Register';
 import NotFound from './components/NotFound';
 import List from './components/List';
 import Login from './components/Login';
@@ -32,6 +33,7 @@ const DecadesPageWithContext = withContext(DecadesPage);
 const ListWithContext = withContext(List);
 const LoginWithContext = withContext(Login);
 const LogoutWithContext = withContext(Logout);
+const RegisterWithContext = withContext(Register);
 
 function App() {
 /**************************************************************************************
@@ -149,6 +151,12 @@ let url = window.location.pathname;
               path='/logout'
               element = {
                 <LogoutWithContext />
+              }
+            />
+            <Route
+              path='/register'
+              element = {
+                <RegisterWithContext />
               }
             />
             <Route

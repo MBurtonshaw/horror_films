@@ -74,15 +74,15 @@
         },
         {
             "id" : 7,
-            "title" : "Jeepers Creepers",
-            "url" : "jeepers_creepers",
-            "year" : 2001,
-            "genres" : ["Creature", "Rural", "Body"],
-            "directors" : [ "An actual creeper" ],
-            "writers" : [ "An actual creeper" ],
-            "photo" : "../../photos/titles/jeepers_creepers",
-            "prime_link" : "https://www.amazon.com/gp/video/detail/B00AKUNMH8/ref=atv_dp_share_cu_r",
-            "youtube_link" : "https://www.youtube.com/watch?v=jSLxeCWOoN8"
+            "title" : "Prince of Darkness",
+            "url" : "prince_of_darkness",
+            "year" : 1987,
+            "genres" : ["Occult", "Invasion", "Urban", "Cosmic", "Eerie"],
+            "directors" : [ "John Carpenter" ],
+            "writers" : [ "John Carpenter" ],
+            "photo" : "../../photos/titles/prince_of_darkness",
+            "prime_link" : "https://www.amazon.com/gp/video/detail/B000I9WWEA/ref=atv_dp_share_cu_r",
+            "youtube_link" : "https://youtu.be/SbxxUe9C0n4?si=WcE3Nr3MSOzhamQa"
         },
         {
             "id" : 8,

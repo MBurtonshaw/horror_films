@@ -18,7 +18,8 @@ export class Provider extends Component {
   }
     
     state = {
-      user: null
+      user: null,
+      error: null
     }
     
 
@@ -82,19 +83,30 @@ export class Provider extends Component {
         email: emailAddress,
         password: passphrase
       }
-      this.setState({user});
       Cookies.set(`user: ${emailAddress}`, JSON.stringify( user ), { expires: 7} );
     //}
   }
 
   signIn = async ( emailAddress, passphrase ) => {
-      //Set user credentials and save to a cookie
-      let user = {
-        email: emailAddress,
-        password: passphrase
+      let applicant = Cookies.get(`user: ${emailAddress}`);
+      if (applicant) {
+        let newType = JSON.parse(applicant);
+        if (passphrase === newType.password) {
+          let user = {
+            email: emailAddress,
+            password: passphrase
+          }
+          this.setState({user});
+          Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );
+        } else {
+          console.log('Invalid Password')
+        }
+      } else {
+        console.log('Not Found')
       }
-      this.setState({user});
-      Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );
+      //Set user credentials and save to a cookie
+      
+    
     //}
   }
 

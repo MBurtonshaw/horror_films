@@ -16,10 +16,6 @@ export default function Login(props) {
     function loginUser(e) {
         e.preventDefault();
         props.context.actions.signIn( data.email, data.password );
-        setData({
-            email: data.email,
-            password: data.password
-        });
         navigate(-1);
     }
 

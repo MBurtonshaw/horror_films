@@ -191,7 +191,7 @@ button {
 }
 
 .purple {
-  color: rgb(206, 119, 206)
+  color: rgb(206, 119, 206);
 }
 
 .smaller_img {
@@ -323,17 +323,22 @@ button {
 }
 
 @media (max-width: 768px) {
-  body {
-    background: none; 
-    background-color: rgb(154, 187, 167);
-  }
+
 
   body {
-    background: url('../public/photos/background_mini.jpg') no-repeat center center fixed; 
+    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175));
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  span {
+    color: black;
+  }
+
+  span:hover {
+    color: pink;
   }
 
 }

@@ -326,7 +326,7 @@ button {
 
 
   body {
-    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175), rgb(94, 153, 119), black);
+    background-image: linear-gradient(black,  rgb(138, 226, 175));
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

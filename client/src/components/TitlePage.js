@@ -10,7 +10,7 @@ export default function TitlePage(props) {
             
             if (window.innerWidth < 768) {
                 return(
-                    <div id='TitlePage' className='container p-1 m-auto pb-2 my-5 w-100 background_box'>
+                    <div id='TitlePage' className='container p-1 m-auto pb-2 my-5 w-100'>
                         <h1 className='m-5'>
                             Titles
                         </h1>

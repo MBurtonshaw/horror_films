@@ -326,15 +326,11 @@ button {
 
 
   body {
-    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175), rgb(94, 153, 119));
+    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175), rgb(94, 153, 119), black);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
-
-  span {
-    color: black;
   }
 
   span:hover {

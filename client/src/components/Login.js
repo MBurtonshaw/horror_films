@@ -21,7 +21,7 @@ export default function Login(props) {
 
     function content_filler() {
         return(
-            <div className='animate'>
+            <div>
                 <h1 className='pb-5'>Login</h1>
                 <form action='/login' method='POST' onSubmit={loginUser}>
                     <div className='m-auto'>
@@ -36,9 +36,7 @@ export default function Login(props) {
                         <button type='submit' className='button-81' onSubmit={loginUser}>Login</button>
                     </div>
                 </form>
-                <div className='py-5'>
-                    <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
-                </div>
+                
             </div>
         );
     }
@@ -48,14 +46,24 @@ export default function Login(props) {
 ***************************************************************************************/
     if (window.innerWidth < 992) {
         return(
-            <div id='Login' className='container my-5 py-5 background_box w-100 m-auto'>
+            <div id='Login' className='container my-5 py-5 w-100 m-auto'>
+                <div className='animate'>
                 {content_filler()}
+                <div className='py-3 my-5 background_box'>
+                    <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
+                </div>
+                </div>
             </div>
         );
     } 
         return(
             <div id='Login' className='container my-5 py-5 background_box w-50 m-auto'>
+                <div className='animate'>
                 {content_filler()}
+                </div>
+                <div className='py-3 my-5 background_box'>
+                    <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
+                </div>
             </div>
         );
     

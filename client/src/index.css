@@ -326,7 +326,7 @@ button {
 
 
   body {
-    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175));
+    background-image: linear-gradient(black, rgb(94, 153, 119), rgb(138, 226, 175), rgb(94, 153, 119));
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -339,6 +339,10 @@ button {
 
   span:hover {
     color: pink;
+  }
+
+  a {
+    color: rgb(232, 143, 143);
   }
 
 }

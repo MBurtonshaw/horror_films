@@ -39,7 +39,6 @@ export default function Home( props ) {
         } else if (window.innerWidth < 768) {
             return(
                 <div className='animate'>
-                    <h1 className='my-5 pt-md-5'> Horror Films </h1>
                     <Search movies={props.context.movies} genres={ types }/>
                 </div>
             );

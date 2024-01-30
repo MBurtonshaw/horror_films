@@ -83,21 +83,21 @@ export default function Genres(props) {
     } else if (isLoading === false && genre === '') {
         if (window.innerWidth < 768) {
             return(
-                <div className='background_box w-100 mx-auto my-5'>
-                    <NotFound message={url} />
+                <div className='py-5 my-5 mx-auto w-50'>
+                    <NotFound message={ url }/>
                 </div>
             );
         }
         return(
-            <div className='background_box w-50 mx-auto my-5'>
-                <NotFound message={url} />
-            </div>
+            <div className='py-5 my-5 mx-auto w-50'>
+                    <NotFound message={ url }/>
+                </div>
         );
     } else {
         //combines previous two functions and returns formatting based on screen size
         if (window.innerWidth < 768) { 
             return(      
-                <div id='Genre' className='container p-1 m-auto my-5 pb-2 background_box'>
+                <div id='Genre' className='container p-1 m-auto my-5 pb-2'>
                     <h1 className='my-4 mx-1'>
                         Genre: { genre }
                     </h1>

@@ -61,7 +61,7 @@ export default function Login(props) {
                 <div className='animate'>
                 {content_filler()}
                 </div>
-                <div className='py-3 my-5 background_box'>
+                <div className='py-3 my-5'>
                     <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
                 </div>
             </div>

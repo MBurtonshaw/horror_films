@@ -33,9 +33,7 @@ export default function Login(props) {
                         <button type='' className='button-81 mt-4' onClick={logoutUser}>Logout</button>
                     </div>
                 </form>
-                <div className='py-3 my-5 background_box'>
-                    <a href={'/'}>Home</a>
-                </div>
+                
             </div>
         );
     }
@@ -47,12 +45,18 @@ export default function Login(props) {
         return(
             <div id='Logout' className='container my-5 py-5 w-100 m-auto'>
                 {content_filler()}
+                <div className='py-3 my-5 background_box'>
+                    <a href={'/'}>Home</a>
+                </div>
             </div>
         );
     } else {
         return(
             <div id='Logout' className='container my-5 py-5 background_box w-50 m-auto'>
                 {content_filler()}
+                <div className='py-3 my-5'>
+                    <a href={'/'}>Home</a>
+                </div>
             </div>
         );
     }

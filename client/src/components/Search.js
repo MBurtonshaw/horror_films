@@ -69,7 +69,7 @@ export default function Search(props) {
     RENDER
 ************************************************************************************************************************/
     return(
-        <div id='Search' className='container pt-md-3'>
+        <div id='Search' className='container pt-3'>
             <input id='searchBar' name='searchInput' type='text' ></input>
             <button id='searchButton' htmlFor='searchInput' onClick={() => clicker()}> Find </button>
             <div id="liveAlertPlaceholder"></div>

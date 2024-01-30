@@ -97,8 +97,8 @@ export default function Decades(props) {
             return(`Decade: ${url}`);
         } else {
             return(
-                <div>
-                    <NotFound message={url}/>
+                <div className='py-5 my-5 mx-auto w-50'>
+                    <NotFound message={ url }/>
                 </div>
             );
         }
@@ -107,24 +107,55 @@ export default function Decades(props) {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    //combines previous two functions and returns formatting based on screen size
-    if (window.innerWidth < 768) { 
-        return(      
+if (url === 'classics') {
+    if (window.innerWidth < 768) {
+        return(
             <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box'>
                 <h1 className='my-4 mx-1'>
-                    { namer() }
+                    Decade: Classics
                 </h1>
                     { fill_in() }
             </div>
         );
-    } 
-    return(      
-        <div id='DecadePage' className='container p-1 m-auto mt-5 w-50 background_box'>
+    } else {
+        return(
+            <div id='DecadePage' className='container p-1 m-auto mt-5 w-50 background_box'>
             <h1 className='m-5'>
-                { namer() }
+                Decade: Classics
             </h1> 
                 { fill_in() }
         </div>
-    );
+        );
+    }
+
+} else if ( url === '70s' || url === '80s' || url === '90s' || url === '00s' || url === '10s' || url === '20s' ) {
+    if (window.innerWidth < 768) {
+        return(
+            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box'>
+                <h1 className='my-4 mx-1'>
+                    Decades: {url}
+                </h1>
+                    { fill_in() }
+            </div>
+        );
+    } else {
+        return(
+            <div id='DecadePage' className='container p-1 m-auto mt-5 w-50 background_box'>
+            <h1 className='m-5'>
+                Decades: {url}
+            </h1> 
+                { fill_in() }
+        </div>
+        );
+    }
+} else {
+    return(
+        <div className='py-5 my-5 mx-auto'>
+            <NotFound message={ url }/>
+        </div>
+    )
+}
+    //combines previous two functions and returns formatting based on screen size
+
     //
 }

@@ -62,6 +62,13 @@ export default function Results(props) {
     RENDER
 ***************************************************************************************/
     if (isLoading === true) {
+        if (window.innerWidth < 768) {
+            return(
+                <div id="ResultsPage" className="container p-1 m-auto my-5 pb-2">
+                    <h1 className="m-5">Loading...</h1>
+                </div>
+            );
+        }
         return(
             <div id="ResultsPage" className="container p-1 m-auto my-5 pb-2 w-50 background_box">
                 <h1 className="m-5">Loading...</h1>
@@ -70,7 +77,7 @@ export default function Results(props) {
     } else {
         if (movies.length < 1) {
             return(
-                <div className='container p-1 my-5 w-50 mx-auto background_box'>
+                <div className='container my-5 w-50 mx-auto'>
                     <NotFound message={url}/>
                 </div>
             ); 
@@ -78,11 +85,11 @@ export default function Results(props) {
             for (let m = 0; m < movies.length; m++) {
                 if (window.innerWidth < 768) {
                     return(
-                        <div id='ResultsPage' className='container p-1 m-auto my-5 pb-2 background_box'>
+                        <div id='ResultsPage' className='container p-1 m-auto my-5 pb-2'>
                             <h1 className='m-5'>
                                 {props.context.actions.capitalizeFirstLetter(term.toLowerCase())}
                             </h1>
-                            <div className='container pb-4 mb-4 w-75'>
+                            <div className='container pb-4 mb-4 w-75 m-auto'>
                                 {body_fill()}
                             </div>
                         </div>

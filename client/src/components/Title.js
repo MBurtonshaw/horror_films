@@ -13,28 +13,33 @@ export default function Title( props ) {
     let [ currentFilm, setCurrentFilm ] = useState('');
     let [ isChecked, setIsChecked ] = useState();
     let [ isLoading, setIsLoading ] = useState(true);
+    let [ error, setError ] = useState('');
 
     //async function to match the corresponding film with the url
     async function getData() {
-        for (let i = 0; i < props.context.data.movies.movies.length; i++) {
-            let newTypes = await props.context.data.movies.movies;
-            if (newTypes[i].url === url) {
-                let newType = newTypes[i];
-                setCurrentFilm(newType);
-                if (document.cookie) {
-                    let cookie = Cookies.get(`myList-${newType.id}`);
-                    
-                    if (cookie === undefined) {
-                        setIsChecked(false);
-                    } else {
-                        if (cookie === currentFilm.title) {
-                            setIsChecked(true);
+        try {
+            for ( let i = 0; i < props.context.data.movies.movies.length; i++ ) {
+                let newTypes = await props.context.data.movies.movies;
+                if ( newTypes[i].url === url ) {
+                    let newType = newTypes[i];
+                    setCurrentFilm( newType );
+                    if ( document.cookie ) {
+                        let cookie = Cookies.get( `myList-${ newType.id }` );
+                        
+                        if ( cookie === undefined ) {
+                            setIsChecked( false );
+                        } else {
+                            if ( cookie === currentFilm.title ) {
+                                setIsChecked( true );
+                            }
                         }
                     }
                 }
             }
+        } catch(err) {
+            setError( err.message );
         }
-        setIsLoading(false);
+        setIsLoading( false );
     }
 
     useEffect( () => { getScreenSize() }, [ setSizeClass ] );
@@ -47,50 +52,50 @@ export default function Title( props ) {
     //function to match the film's release year with the /decades path it corresponds to
     function decade_filler() {
         let variant;
-        if (movie.year < 1970) {
+        if ( movie.year < 1970 ) {
             variant = '../decades/classics'
         }
-        if (movie.year < 1980 && movie.year > 1969) {
+        if ( movie.year < 1980 && movie.year > 1969 ) {
             variant = '../decades/70s'
         }
-        if (movie.year < 1990 && movie.year > 1979) {
+        if ( movie.year < 1990 && movie.year > 1979 ) {
             variant = '../decades/80s'
         }
-        if (movie.year < 2000 && movie.year > 1989) {
+        if ( movie.year < 2000 && movie.year > 1989 ) {
             variant = '../decades/90s'
         }
-        if (movie.year < 2010 && movie.year > 1999) {
+        if ( movie.year < 2010 && movie.year > 1999 ) {
             variant = '../decades/00s'
         }
-        if (movie.year < 2020 && movie.year > 2009) {
+        if ( movie.year < 2020 && movie.year > 2009 ) {
             variant = '../decades/10s'
         }
-        if (movie.year < 2030 && movie.year > 2019) {
+        if ( movie.year < 2030 && movie.year > 2019 ) {
             variant = '../decades/20s'
         }
         return(
-            <a href={variant}>{movie.year}</a>
+            <a href={ variant }>{ movie.year }</a>
         );
     }
 
     //Sets the screen width to state which is used later in the Amazon Prime & YouTube icons' classLists
     function getScreenSize() {
-        if (window.innerWidth < 380) {
-            setSizeClass('xxxs_socials');
-        } else if (window.innerWidth < 500) {
-            setSizeClass('xxs_socials');
-        } else if (window.innerWidth < 576) {
-            setSizeClass('xs_socials');
-        } else if (window.innerWidth < 768) {
-            setSizeClass('sm_socials');
-        } else if (window.innerWidth < 992) {
-            setSizeClass('md_socials');
-        } else if (window.innerWidth < 1200) {
-            setSizeClass('lg_socials');
-        } else if (window.innerWidth < 1400) {
-            setSizeClass('xl_socials');
+        if ( window.innerWidth < 380 ) {
+            setSizeClass( 'xxxs_socials' );
+        } else if ( window.innerWidth < 500 ) {
+            setSizeClass( 'xxs_socials' );
+        } else if ( window.innerWidth < 576 ) {
+            setSizeClass( 'xs_socials' );
+        } else if ( window.innerWidth < 768 ) {
+            setSizeClass( 'sm_socials' );
+        } else if ( window.innerWidth < 992 ) {
+            setSizeClass( 'md_socials' );
+        } else if ( window.innerWidth < 1200 ) {
+            setSizeClass( 'lg_socials' );
+        } else if ( window.innerWidth < 1400 ) {
+            setSizeClass( 'xl_socials' );
         } else {
-            setSizeClass('socials');
+            setSizeClass( 'socials' );
         }
     }
     
@@ -160,7 +165,7 @@ export default function Title( props ) {
                     <div id="collapseFive" className="accordion-collapse show" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
                             <div className='w-100 m-auto'>
-                                    {link_fill_in()}
+                                    { link_fill_in() }
                             </div> 
                         </div>
                     </div>
@@ -171,30 +176,30 @@ export default function Title( props ) {
 
     //function to handle the Amazon Prime & YouTube icons
     function link_fill_in() {
-        if (movie.prime_link.length > 2 && movie.youtube_link.length > 2) {
+        if ( movie.prime_link.length > 2 && movie.youtube_link.length > 2 ) {
             return(
                 <div id ='movie_link_div' className=''>
                     <a href={ movie.prime_link }>
-                        <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                        <img className={ `px-5 ${ sizeClass }` } src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                     </a>
                     <a href={ movie.youtube_link }>
-                        <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                        <img className={ `px-5 ${ sizeClass }` } src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                     </a>
                 </div>
             );
-        } else if (movie.prime_link.length > 2 && movie.youtube_link.length < 2) {
+        } else if ( movie.prime_link.length > 2 && movie.youtube_link.length < 2 ) {
             return(
                 <div id ='movie_link_div' className=''>
                     <a href={ movie.prime_link }>
-                        <img className={`px-5 ${sizeClass}`} src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
+                        <img className={ `px-5 ${ sizeClass }` } src='../../photos/prime_icon.jpg' alt='icon for a link to Amazon Prime Video'></img>
                     </a>
                 </div>
             );
-        } else if (movie.prime_link.length < 2 && movie.youtube_link.length > 2) {
+        } else if ( movie.prime_link.length < 2 && movie.youtube_link.length > 2 ) {
             return(
                 <div id ='movie_link_div' className=''>
                     <a href={ movie.youtube_link }>
-                        <img className={`px-5 ${sizeClass}`} src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
+                        <img className={ `px-5 ${ sizeClass }` } src='../../photos/youtube_icon.jpg' alt='icon for a link to YouTube'></img>
                     </a>
                 </div>
             );
@@ -202,7 +207,7 @@ export default function Title( props ) {
     } 
 
     function loader_fill_in() {
-        if (window.innerWidth < 992) {
+        if ( window.innerWidth < 992 ) {
             return null;
         }
         return(
@@ -221,11 +226,11 @@ export default function Title( props ) {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    if (isLoading === true) {
+    if ( isLoading === true ) {
 
-        return(loader_fill_in());
+        return( loader_fill_in() );
 
-    } else if ( isLoading === false && currentFilm.url !== url) {
+    } else if ( isLoading === false && currentFilm.url !== url ) {
 
         return(
             <div className='background_box py-5 my-5 w-50 mx-auto'>
@@ -236,18 +241,18 @@ export default function Title( props ) {
 
         movie = currentFilm;
         authors = movie.writers.map( (artist, i) => <li key={ i }>{ artist }</li>);
-        genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${type}` }>{ type }</a></li>);
+        genres = movie.genres.map( (type, i) => <li key={ i }><a href={ `/genres/${ type }` }>{ type }</a></li>);
         filmMakers = movie.directors.map(( person, i ) => <li key={ i }>{ person }</li>);
 
         function cookie_handler() {
-            if (props.user === '' || props.user === undefined) {
+            if ( props.user === '' || props.user === undefined ) {
                 return(
                     <div>
                         <h1 className='mt-5 mb-5 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                     </div>
                 );
             } else {
-                if (isChecked === true) {
+                if ( isChecked === true ) {
                     return(
                         <div>
                             <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
@@ -260,8 +265,8 @@ export default function Title( props ) {
                             <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{ movie.title }</a></h1>
                             <button className='mb-5 px-4 button-81' onClick={()=>{
                                 //needs logic to determine what to do when cookie doesn't exist yet
-                                Cookies.set(`myList-${movie.id}`, `${movie.title}`, { expires: 7 });
-                                setIsChecked(true);
+                                Cookies.set( `myList-${ movie.id }`, `${ movie.title }`, { expires: 7 } );
+                                setIsChecked( true );
                             }}>Add to My List</button>
                         </div>
                     );
@@ -270,28 +275,28 @@ export default function Title( props ) {
         }
 
         //logic to handle different screen widths
-        if (window.innerWidth < 992) {
-            if (window.innerWidth < 576) {
+        if ( window.innerWidth < 992 ) {
+            if ( window.innerWidth < 576 ) {
                 return(
                     <div id='title_div' className='container'>
-                        {cookie_handler()}
+                        { cookie_handler() }
                         <div id='title_photo' className='container w-100'>
-                            <a href='/titles'><img src={ `${movie.photo}_mini.jpg` } alt={`Film art for ${movie.title}`} className='w-75'></img></a>
+                            <a href='/titles'><img src={ `${ movie.photo }_mini.jpg` } alt={ `Film art for ${ movie.title }` } className='w-75'></img></a>
                         </div>
                         <div className='row align-items-start pt-3 pb-5'>
-                            {accordion_fill()}
+                            { accordion_fill() }
                         </div>
                     </div>
                 );
             } else {
                 return(
                     <div id='title_div' className='container'>
-                        {cookie_handler()}
+                        { cookie_handler() }
                         <div id='title_photo' className='container w-100'>
-                            <a href='/titles'><img src={`${ movie.photo }.jpg`} alt={`Film art for ${movie.title}`} className='w-50'></img></a>
+                            <a href='/titles'><img src={ `${ movie.photo }.jpg` } alt={ `Film art for ${ movie.title }` } className='w-50'></img></a>
                         </div>
                         <div className='row align-items-start pt-3 pb-5'>
-                            {accordion_fill()}
+                            { accordion_fill() }
                         </div>
                     </div>
                 );
@@ -303,9 +308,9 @@ export default function Title( props ) {
                         cookie_handler()
                     }
                     <div className='row align-items-start container'>
-                        {accordion_fill()}
+                        { accordion_fill() }
                         <div id='title_photo' className='container w-50 fly_left'>
-                            <a href='/titles'><img src={`${movie.photo}.jpg` } alt={`Film art for ${movie.title}`} className='w-75 transparent'></img></a>
+                            <a href='/titles'><img src={ `${ movie.photo }.jpg` } alt={ `Film art for ${ movie.title }` } className='w-75 transparent'></img></a>
                         </div>
                     </div>
                 </div>

@@ -148,14 +148,14 @@ export default function Main() {
 ***************************************************************************************/
     //function to fill out cards with the flashcard class on smaller screens
     //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
-    function card_filler_mobile(number) {
+    function card_filler_mobile( number ) {
         return(
             <div className='py-3 flashcard'>
                 <div className='container background_box_mini p-5 mb-5'>
                     <a href={`/titles/${ number.url }`}>
-                        <img id={ number.url } className='smaller_img' src={ `../../photos/titles/${ number.url }_mini.jpg` } alt={`a movie poster for ${number.title}`} />
+                        <img id={ number.url } className='smaller_img' src={ `../../photos/titles/${ number.url }_mini.jpg` } alt={`a movie poster for ${ number.title }`} />
                     </a>
-                    <p className='main_text py-3 pt-5 m-0'>{`${number.memo}`}</p>
+                    <p className='main_text py-3 pt-5 m-0'>{`${ number.memo }`}</p>
                 </div>
             </div>
         );
@@ -163,25 +163,25 @@ export default function Main() {
 
     //function to fill out cards with the flashcard class and the picture on the right side
     //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
-    function card_filler_1(number) {
+    function card_filler_1( number ) {
         return(
             <div className='py-3'>
                 <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
                     <a href={`/titles/${ number.url }`} className='col'>
                         <img id={ number.url } className='smaller_img' src={ `../../photos/titles/${ number.url }_mini.jpg` } alt={`a movie poster for ${ number.title }`} />
                     </a>
-                    <p className='col m-auto main_text'>{number.memo}</p>
+                    <p className='col m-auto main_text'>{ number.memo }</p>
                 </div>
             </div>
         );
     }
     //function to fill out cards with the flashcard class and the picture on the left side
     //number parameter is to be entered as 'first' 'second' 'third' 'fourth', etc.
-    function card_filler_2(number) {
+    function card_filler_2( number ) {
         return(
             <div className='py-3'>
                 <div className='container row align-items-start background_box p-5 mb-5 flashcard'>
-                    <p className='col m-auto main_text'>{number.memo}</p>
+                    <p className='col m-auto main_text'>{ number.memo }</p>
                     <a href={`/titles/${ number.url }`} className='col'>
                         <img id={ number.url } className='smaller_img' src={ `../../photos/titles/${ number.url }_mini.jpg` } alt={`a movie poster for ${ number.title }`} />
                     </a>
@@ -193,7 +193,7 @@ export default function Main() {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    if (window.innerWidth < 768) {
+    if ( window.innerWidth < 768 ) {
         return(
             <div id='Main' className='animate'>
                 <div className='container d-block'>
@@ -204,18 +204,18 @@ export default function Main() {
                         <div className='container background_box_mini p-5 mb-5'>
                             <div>
                                 <a href={`/titles/${ first.url }`}>
-                                    <img id={ first.url } className='smaller_img' src={ `../../photos/titles/${ first.url }_mini.jpg` } alt={`a movie poster for ${first.title}`} />
+                                    <img id={ first.url } className='smaller_img' src={ `../../photos/titles/${ first.url }_mini.jpg` } alt={`a movie poster for ${ first.title }`} />
                                 </a>
-                                <p className='main_text py-3 pt-5 m-0'>{first.memo}</p>
+                                <p className='main_text py-3 pt-5 m-0'>{ first.memo }</p>
                                 
                             </div>
                         </div>
                     </div>
-                    {card_filler_mobile(second)}
-                    {card_filler_mobile(third)}
-                    {card_filler_mobile(fourth)}
-                    {card_filler_mobile(fifth)}
-                    {card_filler_mobile(sixth)}
+                    { card_filler_mobile( second ) }
+                    { card_filler_mobile( third ) }
+                    { card_filler_mobile( fourth ) }
+                    { card_filler_mobile( fifth ) }
+                    { card_filler_mobile( sixth ) }
                 </div>
             </div>
         );
@@ -230,23 +230,23 @@ export default function Main() {
                         <div className='container row align-items-start background_box p-5 mb-5'>
                            
                                 <a href={`/titles/${ first.url }`} className='col'>
-                                    <img id={ first.url } className='smaller_img animate' src={ `../../photos/titles/${ first.url }_mini.jpg` } alt={`a movie poster for ${first.title}`} />
+                                    <img id={ first.url } className='smaller_img animate' src={ `../../photos/titles/${ first.url }_mini.jpg` } alt={`a movie poster for ${ first.title }`} />
                                 </a>
-                                <p className='col m-auto animate main_text'>{first.memo}</p>
+                                <p className='col m-auto animate main_text'>{ first.memo }</p>
                         </div>
                     </div>
                     <div className='py-3'>
                         <div className='container row align-items-start background_box p-5 mb-5'>
-                            <p className='col m-auto animate main_text'>{second.memo}</p>
+                            <p className='col m-auto animate main_text'>{ second.memo }</p>
                             <a href={`/titles/${ second.url }`} className='col'>
-                                <img id={ second.url } className='smaller_img animate' src={ `../../photos/titles/${ second.url }_mini.jpg` } alt={`a movie poster for ${second.title}`} />
+                                <img id={ second.url } className='smaller_img animate' src={ `../../photos/titles/${ second.url }_mini.jpg` } alt={`a movie poster for ${ second.title }`} />
                             </a>
                         </div>
                     </div>
-                    {card_filler_1(third)}
-                    {card_filler_2(fourth)}
-                    {card_filler_1(fifth)}
-                    {card_filler_2(sixth)}
+                    { card_filler_1( third ) }
+                    { card_filler_2( fourth ) }
+                    { card_filler_1( fifth ) }
+                    { card_filler_2( sixth ) }
                 </div>
             </div>
         );

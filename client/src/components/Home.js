@@ -10,17 +10,23 @@ export default function Home( props ) {
 ***************************************************************************************/
     let [ types, setTypes] = useState('');
     let [ isLoading, setIsLoading ] = useState(true);
+    let [ error, setError ] = useState('');
 
     async function getData() {
-        let genres = await props.context.data.movies.genres;
-        let genreArray = [];
-        for ( let i = 0; i < genres.length; i++ ) {
-            if ( !genreArray.includes( genres[i].name ) ) {
-                genreArray.push( genres[i].name );
-                setTypes( genreArray );
+        try {
+            let genres = await props.context.data.movies.genres;
+            let genreArray = [];
+            for ( let i = 0; i < genres.length; i++ ) {
+                if ( !genreArray.includes( genres[i].name ) ) {
+                    genreArray.push( genres[i].name );
+                    setTypes( genreArray );
+                }
             }
+        } catch(err) {
+            setError( err.message );
         }
-        setIsLoading(false);
+
+        setIsLoading( false );
     }
 
     useEffect( () => { getData() }, [ setTypes ] );
@@ -29,17 +35,17 @@ export default function Home( props ) {
     FUNCTIONS
 ***************************************************************************************/
     function searchbar() {
-        if (window.innerWidth > 767) {
+        if ( window.innerWidth > 767 ) {
             return(
                 <div className='animate'>
-                    <Search movies={props.context.movies} genres={ types }/>
+                    <Search movies={ props.context.movies } genres={ types }/>
                     <h1 className='my-5'> Horror Films </h1>
                 </div>
             );
-        } else if (window.innerWidth < 768) {
+        } else if ( window.innerWidth < 768 ) {
             return(
                 <div className='animate'>
-                    <Search movies={props.context.movies} genres={ types }/>
+                    <Search movies={ props.context.movies } genres={ types }/>
                 </div>
             );
         }

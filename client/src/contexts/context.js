@@ -53,7 +53,7 @@ export class Provider extends Component {
     removeDuplicates = ( arr ) => { 
       let unique = []; 
       arr.forEach(element => { 
-        if ( !unique.includes(element) ) { 
+        if ( !unique.includes( element ) ) { 
           unique.push( element ); 
         } 
     })
@@ -70,7 +70,7 @@ export class Provider extends Component {
       let note = await this.data.getMessage();
       //setting the response to state (Provider component)
       return note;
-    } catch(error) {
+    } catch( error ) {
       this.setState({
         error
       });
@@ -84,7 +84,7 @@ export class Provider extends Component {
         email: emailAddress,
         password: passphrase
       }
-      Cookies.set(`user: ${emailAddress}`, JSON.stringify( user ), { expires: 7} );
+      Cookies.set( `user: ${ emailAddress }`, JSON.stringify( user ), { expires: 7} );
     //}
   }
 
@@ -98,18 +98,15 @@ export class Provider extends Component {
             email: emailAddress,
             password: newPass
           }
-          this.setState({user});
-          Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );
+          this.setState({ user });
+          Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7 } );
         } else {
-          console.log('Invalid Password');
+          console.log( 'Invalid Password' );
         }
       } else {
-        console.log('Not Found');
+        console.log( 'Not Found' );
       }
-      //Set user credentials and save to a cookie
-      
-    
-    //}
+
   }
 
   signOut = async () => {
@@ -117,7 +114,7 @@ export class Provider extends Component {
         email: '',
         password: ''
       }
-      this.setState({user});
+      this.setState({ user });
       Cookies.set( 'signedIn?', JSON.stringify( '' ), { expires: 7} );
     //}
   }

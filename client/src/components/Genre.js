@@ -11,6 +11,7 @@ export default function Genres(props) {
     let [ movies, setMovies ] = useState('');
     let [ genre, setGenre ] = useState('');
     let [ isLoading, setIsLoading ] = useState(true);
+    let [ error, setError] = useState('');
 
     //function to gather data from movies.json
     async function getData() {
@@ -18,19 +19,19 @@ export default function Genres(props) {
             let pictures = [];
             let films = await props.context.data.movies.movies;
 
-            for (let i = 0; i < films.length; i++) {
-              for (let j = 0; j < films[i].genres.length; j++) {
-                if (films[i].genres.includes(url)) {
-                    console.log(films[i].genres)
-                    pictures.push(films[i]);
-                    setMovies(props.context.actions.removeDuplicates(pictures));
-                    setGenre(url);
+            for ( let i = 0; i < films.length; i++ ) {
+              for ( let j = 0; j < films[i].genres.length; j++ ) {
+                if ( films[i].genres.includes( url ) ) {
+                    console.log( films[i].genres )
+                    pictures.push( films[i] );
+                    setMovies( props.context.actions.removeDuplicates( pictures ) );
+                    setGenre( url );
                 }
               }
             }
-            setIsLoading(false);
-        } catch(err) {
-            console.log(err.message)
+            setIsLoading( false );
+        } catch( err ) {
+            setError( err.message );
         }
     }
 

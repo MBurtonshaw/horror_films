@@ -9,6 +9,7 @@ export default function Decades(props) {
 ***************************************************************************************/
     let { url } = useParams();
     let [ movies, setMovies ] = useState('');
+    let [ errors, setErrors ] = useState('');
 
     //function to gather data from movies.json - sets category and sorts films based on url and film year
     async function getData() {
@@ -82,27 +83,6 @@ export default function Decades(props) {
             )
     }
 
-    //determines the decade category and sets header
-    function namer() {
-        if (url === 'classics') {
-            return('Decade: Classics');
-        } else if (
-                url === '70s' ||
-                url === '80s' ||
-                url === '90s' ||
-                url === '00s' ||
-                url === '10s' ||
-                url === '20s' 
-            ) {
-            return(`Decade: ${url}`);
-        } else {
-            return(
-                <div className='py-5 my-5 mx-auto w-50'>
-                    <NotFound message={ url }/>
-                </div>
-            );
-        }
-    }
 
 /**************************************************************************************
     RENDER
@@ -155,7 +135,4 @@ if (url === 'classics') {
         </div>
     )
 }
-    //combines previous two functions and returns formatting based on screen size
-
-    //
 }

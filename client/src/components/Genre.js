@@ -83,7 +83,7 @@ export default function Genres(props) {
     } else if (isLoading === false && genre === '') {
         if (window.innerWidth < 768) {
             return(
-                <div className='py-5 my-5 mx-auto w-50'>
+                <div className='py-5 my-5 mx-auto w-100'>
                     <NotFound message={ url }/>
                 </div>
             );

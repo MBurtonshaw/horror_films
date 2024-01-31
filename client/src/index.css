@@ -30,7 +30,8 @@ body:after {
   z-index: -1;
   display: block;
   background: url('../public/photos/background.jpg') no-repeat 50% 50%;
-  background-size: cover;}
+  background-size: cover;
+}
 
 a {
   text-decoration: none;

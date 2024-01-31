@@ -101,10 +101,10 @@ export class Provider extends Component {
           this.setState({user});
           Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7} );
         } else {
-          console.log('Invalid Password')
+          console.log('Invalid Password');
         }
       } else {
-        console.log('Not Found')
+        console.log('Not Found');
       }
       //Set user credentials and save to a cookie
       

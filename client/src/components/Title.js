@@ -233,7 +233,7 @@ export default function Title( props ) {
     } else if ( isLoading === false && currentFilm.url !== url ) {
 
         return(
-            <div className='background_box py-5 my-5 w-50 mx-auto'>
+            <div className='py-5 my-5 mx-auto'>
                 <NotFound message={url}/>
             </div>)
 

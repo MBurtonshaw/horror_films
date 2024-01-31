@@ -162,7 +162,7 @@ let url = window.location.pathname;
             <Route
               path='*'
               element = {
-                <div className='py-5 my-5 mx-auto w-50'>
+                <div className='py-5 my-5 mx-auto'>
                     <NotFound message={ url }/>
                 </div>
               }

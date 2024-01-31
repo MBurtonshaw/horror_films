@@ -41,11 +41,11 @@ export default function Login(props) {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
         return(
-            <div id='Logout' className='container my-5 py-5 w-100 m-auto'>
+            <div id='Logout' className='container my-5 py-5 w-100 m-auto background_box_mini'>
                 {content_filler()}
-                <div className='py-3 my-5 background_box'>
+                <div className='py-3 my-5'>
                     <a href={'/'}>Home</a>
                 </div>
             </div>

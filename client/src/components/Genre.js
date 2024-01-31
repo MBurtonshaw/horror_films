@@ -70,7 +70,7 @@ export default function Genres(props) {
     if (isLoading === true) {
         if (window.innerWidth < 768) {
             return(
-                <div className='background_box genre_loader w-100 mx-auto my-5'>
+                <div className='background_box_mini genre_loader w-100 mx-auto my-5'>
                     <h1 className='p-4'>Loading...</h1>
                 </div>
             );
@@ -97,7 +97,7 @@ export default function Genres(props) {
         //combines previous two functions and returns formatting based on screen size
         if (window.innerWidth < 768) { 
             return(      
-                <div id='Genre' className='container p-1 m-auto my-5 pb-2'>
+                <div id='Genre' className='container p-1 m-auto my-5 pb-2 background_box_mini'>
                     <h1 className='my-4 mx-1'>
                         Genre: { genre }
                     </h1>

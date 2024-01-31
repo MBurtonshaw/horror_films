@@ -44,12 +44,12 @@ export default function Login(props) {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
         return(
-            <div id='Login' className='container my-5 py-5 w-100 m-auto'>
+            <div id='Login' className='container my-5 py-5 w-100 m-auto background_box_mini'>
                 <div className='animate'>
                 {content_filler()}
-                <div className='py-3 my-5 background_box'>
+                <div className='py-3 my-5'>
                     <p>Don't have an account yet?</p><a href={'/register'}>Register</a>
                 </div>
                 </div>

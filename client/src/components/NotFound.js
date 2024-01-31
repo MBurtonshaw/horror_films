@@ -3,7 +3,7 @@ import { React } from 'react';
 export default function NotFound(props) {
     if (window.innerWidth < 768) {
         return(
-            <div id='not_found_div' className='container m-auto text-center'>
+            <div id='not_found_div' className='container m-auto text-center background_box_mini'>
                 <div className='m-auto'>
                     <h1 className='py-2'>{props.message}</h1>
                     <h1 className='py-2'>Not Found</h1>

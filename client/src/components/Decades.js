@@ -110,7 +110,7 @@ export default function Decades(props) {
 if (url === 'classics') {
     if (window.innerWidth < 768) {
         return(
-            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box'>
+            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box_mini'>
                 <h1 className='my-4 mx-1'>
                     Decade: Classics
                 </h1>
@@ -131,7 +131,7 @@ if (url === 'classics') {
 } else if ( url === '70s' || url === '80s' || url === '90s' || url === '00s' || url === '10s' || url === '20s' ) {
     if (window.innerWidth < 768) {
         return(
-            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box'>
+            <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box_mini'>
                 <h1 className='my-4 mx-1'>
                     Decades: {url}
                 </h1>

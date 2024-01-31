@@ -55,7 +55,7 @@ export default function List(props) {
         if (filmList.length < 1) {
             return null;
         } else {
-            if (window.innerWidth < 992) {
+            if (window.innerWidth < 768) {
                 return(
                     filmList.map((item, i) => 
                         <li key={i} className='p-2' >
@@ -64,7 +64,7 @@ export default function List(props) {
                                     <a href={`/titles/${item.url}`}> { item.title } </a>
                                 </div>
                                 <div className='w-100'>
-                                    <button className='button-81' onClick={()=>{
+                                    <button onClick={()=>{
                                         Cookies.remove(`myList-${item.id}`, {path: `/`});
                                         window.location.reload();
                                     }}>remove</button>
@@ -83,7 +83,7 @@ export default function List(props) {
                                     <a href={`/titles/${item.url}`}> { item.title } </a>
                                 </div>
                                 <div className='col'>
-                                    <button className='button-81' onClick={()=>{
+                                    <button onClick={()=>{
                                         Cookies.remove(`myList-${item.id}`, {path: `/`});
                                         window.location.reload();
                                     }}>remove</button>
@@ -104,9 +104,9 @@ export default function List(props) {
 
      //checking if there are any cookies present. It not, this is returned
     if (!document.cookie) {
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 768) {
             return(
-                <div id='List' className='container w-100 p-5 mt-5 background_box'>
+                <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
                     <div className='animate'>
                         <h1> My List </h1>
                         <div className='py-5'>
@@ -142,9 +142,9 @@ export default function List(props) {
         //checks if there is a 'signedIn?' cookie present, and checking if it is empty
         //if it's empty, that means the user is currently signed out, and returns the following
     } else if (JSON.parse(Cookies.get('signedIn?')) === '' || JSON.parse(Cookies.get('signedIn?')) === undefined) {
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 768) {
             return(
-                <div id='List' className='container w-100 p-5 mt-5 background_box'>
+                <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
                     <div className='animate'>
                         <h1> My List </h1>
                         <div className='py-5'>
@@ -179,9 +179,9 @@ export default function List(props) {
         }
     } else {
         //else, the cookie has user data present, and the following is returned
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 768) {
             return(
-                <div id='List' className='container w-100 p-5 mt-5 background_box'>
+                <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
                     <div className='animate'>
                         <h1> My List </h1>
                         <ul className='p-0 pt-3'>

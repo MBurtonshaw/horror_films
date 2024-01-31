@@ -32,9 +32,9 @@ function registerUser(e) {
 /**************************************************************************************
     RENDER
 ***************************************************************************************/
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 768) {
         return(
-            <div id='Register' className='container my-5 py-5 w-100 m-auto'>
+            <div id='Register' className='container my-5 py-5 w-100 m-auto background_box_mini'>
                 <h1 className='pb-5'>Register</h1>
                 <form action='/login' method='POST' onSubmit={registerUser}>
                     <div className='m-auto'>
@@ -53,7 +53,7 @@ function registerUser(e) {
                         <button type='submit' onSubmit={registerUser}>Register</button>
                     </div>
                 </form>
-                <div className='py-3 my-5 background_box'>
+                <div className='py-3 my-5'>
                     <p className='w-100'>Already have an account?</p>
                     <a href='/login'>Login</a>
                 </div>

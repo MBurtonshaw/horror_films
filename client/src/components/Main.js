@@ -151,7 +151,7 @@ export default function Main() {
     function card_filler_mobile(number) {
         return(
             <div className='py-3 flashcard'>
-                <div className='container background_box p-5 mb-5'>
+                <div className='container background_box_mini p-5 mb-5'>
                     <a href={`/titles/${ number.url }`}>
                         <img id={ number.url } className='smaller_img' src={ `../../photos/titles/${ number.url }_mini.jpg` } alt={`a movie poster for ${number.title}`} />
                     </a>
@@ -201,7 +201,7 @@ export default function Main() {
 
                     {/* the first card doesn't use the card_filler function because it is supposed to be visible on pageload */}
                     <div className='py-3'>
-                        <div className='container background_box p-5 mb-5'>
+                        <div className='container background_box_mini p-5 mb-5'>
                             <div>
                                 <a href={`/titles/${ first.url }`}>
                                     <img id={ first.url } className='smaller_img' src={ `../../photos/titles/${ first.url }_mini.jpg` } alt={`a movie poster for ${first.title}`} />

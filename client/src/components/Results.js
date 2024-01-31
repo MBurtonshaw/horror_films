@@ -64,7 +64,7 @@ export default function Results(props) {
     if (isLoading === true) {
         if (window.innerWidth < 768) {
             return(
-                <div id="ResultsPage" className="container p-1 m-auto my-5 pb-2">
+                <div id="ResultsPage" className="container p-1 m-auto my-5 pb-2 background_box_mini">
                     <h1 className="m-5">Loading...</h1>
                 </div>
             );
@@ -85,7 +85,7 @@ export default function Results(props) {
             for (let m = 0; m < movies.length; m++) {
                 if (window.innerWidth < 768) {
                     return(
-                        <div id='ResultsPage' className='container p-1 m-auto my-5 pb-2'>
+                        <div id='ResultsPage' className='container p-1 m-auto my-5 pb-2 background_box_mini'>
                             <h1 className='m-5'>
                                 {props.context.actions.capitalizeFirstLetter(term.toLowerCase())}
                             </h1>

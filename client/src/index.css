@@ -112,6 +112,14 @@ button {
   padding: 1em;
 }
 
+.background_box_mini {
+  background-color: rgba(0,0,0, 0.6);
+  border-style: solid;
+  border-color: rgba(8, 15, 11, 0.7);
+  border-width: 1px;
+  padding: 1em;
+}
+
 .card {
   background-color: rgb(0, 0, 0, 0);
 }
@@ -327,7 +335,7 @@ button {
 
 
   body {
-    background-image: linear-gradient(black,  rgb(138, 226, 175), rgb(138, 226, 175));
+    background-image: url('../../client/public/photos/background_mini.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

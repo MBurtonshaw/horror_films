@@ -36,94 +36,94 @@ const LogoutWithContext = withContext(Logout);
 const RegisterWithContext = withContext(Register);
 
 function App() {
-/**************************************************************************************
-    STATE AND ASYNC FUNCTIONS
-***************************************************************************************/
-let [ user, setUser ] = useState('');
+  /**************************************************************************************
+      STATE AND ASYNC FUNCTIONS
+  ***************************************************************************************/
+  let [user, setUser] = useState('');
 
-function getData() {
-  if (!document.cookie) {
-    setUser('');
-  } else {
-    let logger = Cookies.get('signedIn?');
-    if (logger === undefined) {
-      return null;
+  function getData() {
+    if (!document.cookie) {
+      setUser('');
     } else {
-      let newLogger = JSON.parse(logger);
-      if(newLogger === '') {
-        setUser('');
+      let logger = Cookies.get('signedIn?');
+      if (logger === undefined) {
+        return null;
       } else {
-        setUser(newLogger);
+        let newLogger = JSON.parse(logger);
+        if (newLogger === '') {
+          setUser('');
+        } else {
+          setUser(newLogger);
+        }
       }
     }
   }
-}
 
-useEffect(()=> { getData() }, [ setUser ]);
+  useEffect(() => { getData() }, [setUser]);
 
-// used below in the NotFound component
-let url = window.location.pathname;
+  // used below in the NotFound component
+  let url = window.location.pathname;
 
-/**************************************************************************************
-    ROUTING
-***************************************************************************************/
+  /**************************************************************************************
+      ROUTING
+  ***************************************************************************************/
 
   return (
     <div id='app_div'>
       {/* passing user state to Header as props */}
-      <Header user={ user }/>
-        <BrowserRouter>
+      <Header user={user} />
+      <BrowserRouter>
         <Provider>
           <Routes>
-            <Route 
-              strict path = '/' 
-              element = {
-                <HomeWithContext />
-              } 
-            />
             <Route
-              path = '/titles/:url'
-              element = {
-                <TitleWithContext user={ user }/>
+              strict path='/'
+              element={
+                <HomeWithContext />
               }
             />
             <Route
-              path = '/titles'
-              element = {
+              path='/titles/:url'
+              element={
+                <TitleWithContext user={user} />
+              }
+            />
+            <Route
+              path='/titles'
+              element={
                 <TitlePageWithContext />
               }
             />
             <Route
-              path = '/genres/:url'
-              element = {
-                <GenreWithContext/>
+              path='/genres/:url'
+              element={
+                <GenreWithContext />
               }
             />
             <Route
               path='/genres'
-              element = {
+              element={
                 <GenrePageWithContext />
               }
             />
             <Route
               path='/results/:url'
-              element = {
-                <ResultsWithContext/>
+              element={
+                <ResultsWithContext />
               }
             />
             <Route
               path='/decades'
-              element = {
+              element={
                 <DecadesPageWithContext
-                  decades = {
+                  decades={
                     [
-                      {'name': 'Classics', 'url' : 'classics'},
-                      {'name': '1970s', 'url' : '70s'},
-                      {'name': '1980s', 'url' : '80s'},
-                      {'name': '1990s', 'url' : '90s'},
-                      {'name': '2000s', 'url' : '00s'},
-                      {'name': '2010s', 'url' : '10s'},
-                      {'name': '2020s', 'url' : '20s'}
+                      { 'name': 'Classics', 'url': 'classics' },
+                      { 'name': '1970s', 'url': '70s' },
+                      { 'name': '1980s', 'url': '80s' },
+                      { 'name': '1990s', 'url': '90s' },
+                      { 'name': '2000s', 'url': '00s' },
+                      { 'name': '2010s', 'url': '10s' },
+                      { 'name': '2020s', 'url': '20s' }
                     ]
                   }
                 />
@@ -131,39 +131,39 @@ let url = window.location.pathname;
             />
             <Route
               path='/decades/:url'
-              element = {
+              element={
                 <DecadesWithContext />
               }
             />
             <Route
               path='/list'
-              element = {
-                <ListWithContext user={user}/>
+              element={
+                <ListWithContext user={user} />
               }
             />
             <Route
               path='/login'
-              element = {
+              element={
                 <LoginWithContext />
               }
             />
             <Route
               path='/logout'
-              element = {
+              element={
                 <LogoutWithContext />
               }
             />
             <Route
               path='/register'
-              element = {
+              element={
                 <RegisterWithContext />
               }
             />
             <Route
               path='*'
-              element = {
+              element={
                 <div className='py-5 my-5 mx-auto'>
-                    <NotFound message={ url }/>
+                  <NotFound message={url} />
                 </div>
               }
             />

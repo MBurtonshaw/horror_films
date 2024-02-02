@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login(props) {
 
-/**************************************************************************************
-    STATE AND ASYNC FUNCTIONS
-***************************************************************************************/
+    /**************************************************************************************
+        STATE AND ASYNC FUNCTIONS
+    ***************************************************************************************/
     let [data, setData] = useState({
         email: '',
         password: ''
@@ -24,38 +24,38 @@ export default function Login(props) {
     }
 
     function content_filler() {
-        return(
+        return (
             <div className='animate'>
                 <h1 className='pb-5'>Logout</h1>
-                <form action='/login' method='POST' onSubmit={ logoutUser }>
+                <form action='/login' method='POST' onSubmit={logoutUser}>
                     <div className='m-auto'>
                         <h1>Are you sure?</h1>
-                        <button type='' className='button-81 mt-4' onClick={ logoutUser }>Logout</button>
+                        <button type='' className='button-81 mt-4' onClick={logoutUser}>Logout</button>
                     </div>
                 </form>
-                
+
             </div>
         );
     }
 
-/**************************************************************************************
-    RENDER
-***************************************************************************************/
-    if ( window.innerWidth < 768 ) {
-        return(
+    /**************************************************************************************
+        RENDER
+    ***************************************************************************************/
+    if (window.innerWidth < 768) {
+        return (
             <div id='Logout' className='container my-5 py-5 w-100 m-auto background_box_mini'>
-                { content_filler() }
+                {content_filler()}
                 <div className='py-3 my-5'>
-                    <a href={ '/' }>Home</a>
+                    <a href={'/'}>Home</a>
                 </div>
             </div>
         );
     } else {
-        return(
+        return (
             <div id='Logout' className='container my-5 py-5 background_box w-50 m-auto'>
-                { content_filler() }
+                {content_filler()}
                 <div className='py-3 my-5'>
-                    <a href={ '/' }>Home</a>
+                    <a href={'/'}>Home</a>
                 </div>
             </div>
         );

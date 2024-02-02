@@ -2,15 +2,15 @@ import { React } from 'react';
 
 export default function Header(props) {
 
-/**************************************************************************************
-    MOBILE
-***************************************************************************************/ 
+    /**************************************************************************************
+        MOBILE
+    ***************************************************************************************/
     if (window.innerWidth < 768) {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //props.user comes from App.js, where it is derived from a cookie set in /contexts/context.js
+        //props.user comes from App.js, where it is derived from a cookie set in /contexts/context.js
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
         if (props.user === '') {
-            return(
+            return (
                 <div id='Header' className='container animate'>
                     <div className="dropdown w-50 m-auto pt-3">
                         <button className="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +47,7 @@ export default function Header(props) {
                 </div>
             );
         } else {
-            return(
+            return (
                 <div id='Header' className='container'>
                     <div className="dropdown w-50 m-auto pt-3">
                         <button className="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,12 +91,12 @@ export default function Header(props) {
         }
     } else {
 
-/**************************************************************************************
-    DESKTOP
-***************************************************************************************/
+        /**************************************************************************************
+            DESKTOP
+        ***************************************************************************************/
 
-if (props.user === '') {
-            return(
+        if (props.user === '') {
+            return (
                 <div id='Header' className='container d-none d-md-block animate'>
                     <ul className="nav nav-fill justify-content-center">
                         <li className="nav-item header-nav">
@@ -118,7 +118,7 @@ if (props.user === '') {
                 </div>
             )
         } else {
-            return(
+            return (
                 <div id='Header' className='container d-none d-md-block animate'>
                     <ul className="nav nav-fill justify-content-center">
                         <li className="nav-item header-nav">

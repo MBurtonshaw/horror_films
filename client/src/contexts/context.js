@@ -13,13 +13,10 @@ export class Provider extends Component {
     // variable to initialize a new function imported from /HOCS/data
     this.data = new Data();
     this.cookie = Cookies.get( 'signedin?' );
-    this.state = {
-      user: this.cookie ? JSON.parse( this.cookie ) : null
-    }
+
   }
     
     state = {
-      user: null,
       error: null
     }
     
@@ -98,7 +95,6 @@ export class Provider extends Component {
             email: emailAddress,
             password: newPass
           }
-          this.setState({ user });
           Cookies.set( 'signedIn?', JSON.stringify( user ), { expires: 7 } );
         } else {
           console.log( 'Invalid Password' );

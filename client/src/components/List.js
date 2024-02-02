@@ -10,45 +10,42 @@ export default function List( props ) {
     let [ filmList, setFilmList ] = useState('');
     let finalArray = [];
     let [ error, setError ] = useState('');
+    let [ user, setUser ] = useState('');
+    let [ isLoading, setIsLoading ] = useState(true);
 
     async function getData() {
-        try {
-            if ( !document.cookie ) {
-                setFilmList('');
-    
+        if (isLoading) {
+        if (filmList.length < 1) {
+            if (!user) {
+                return null;
             } else {
-    
-                //looping through all movies in context and checking for cookies corresponding to the movies' [i] position
-                //this will return something for every movie on the list, so there will be 'undefined' being returned a lot
-                for ( let i = 0; i < props.context.data.movies.movies.length; i++ ) {
-                    filmArray.push(Cookies.get( `myList-${i}` ));
-    
-                    function remove_undefined( val ) {
-                        return val !== undefined;
+                let cookie_array =[];
+                for (let i = 0; i < props.context.data.movies.movies.length; i++) {
+                    let cookies = Cookies.get(`myList-${user.email}-${i}`);
+                    if (cookies !== undefined) {
+                        cookie_array.push(cookies);
                     }
-    
-                    //removing the undefined values from the array
-                    let filteredArray = filmArray.filter( remove_undefined );
-    
-                    //mapping through movies in context. If a movie title matches a cookie value, it's added to filmList in state
-                    props.context.data.movies.movies.map(( item, i ) => {
-                        for ( let k = 0; k < filteredArray.length; k++ ) {
-                            if ( item.title === filteredArray[k] ) {
-                                finalArray.push( item );
-                                setFilmList( props.context.actions.removeDuplicates( finalArray ) );
-                            }
-                        }
-                    });
-                } 
+                }
+                props.context.data.movies.movies.forEach(
+                    item => { if (cookie_array.includes(item.title)) {
+                        finalArray.push(item);
+                        setFilmList(finalArray);
+                    }}
+                );
+                setIsLoading(false);
             }
-        } catch( err ) {
-            setError( err.message );
         }
-        let filmArray = [];
+    }
+       
+
+
+
 
     }
+    useEffect(()=>{ setUser(props.user) });
+    useEffect(()=>{ getData() });
 
-    useEffect(()=>{ getData() }, [ setFilmList ]);
+
 
     /**************************************************************************************
         FUNCTIONS
@@ -69,7 +66,7 @@ export default function List( props ) {
                                 </div>
                                 <div className='w-100'>
                                     <button onClick={()=>{
-                                        Cookies.remove( `myList-${ item.id }`, { path: `/` } );
+                                        Cookies.remove( `myList-${user.email}-${ item.id }`, { path: `/` } );
                                         window.location.reload();
                                     }}>remove</button>
                                 </div>
@@ -88,7 +85,7 @@ export default function List( props ) {
                                 </div>
                                 <div className='col'>
                                     <button onClick={()=>{
-                                        Cookies.remove( `myList-${ item.id }`, { path: `/` } );
+                                        Cookies.remove( `myList-${user.email}-${ item.id }`, { path: `/` } );
                                         window.location.reload();
                                     }}>remove</button>
                                 </div>
@@ -182,31 +179,32 @@ export default function List( props ) {
             );
         }
     } else {
+        if (isLoading) {return null} else {
         //else, the cookie has user data present, and the following is returned
-        if ( window.innerWidth < 768 ) {
-            return(
-                <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
-                    <div className='animate'>
-                        <h1> My List </h1>
-                        <ul className='p-0 pt-3'>
-                            { mapper() }
-                        </ul>
+            if ( window.innerWidth < 768 ) {
+                return(
+                    <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
+                        <div className='animate'>
+                            <h1> My List </h1>
+                            <ul className='p-0 pt-3'>
+                                {mapper()}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            );
-        } else {
-            return(
-                <div id='List' className='container w-50 p-5 mt-5 background_box'>
-                    <div className='animate'>
-                        <h1> My List </h1>
-                        <ul className='p-0 pt-3'>
-                            { mapper() }
-                        </ul>
+                );
+            } else {
+                return(
+                    <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                        <div className='animate'>
+                            <h1> My List </h1>
+                            <ul className='p-0 pt-3'>
+                               {mapper()}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            );
+                );
+            }
         }
-        
     }
 }
     

@@ -41,7 +41,7 @@ function App() {
 ***************************************************************************************/
 let [ user, setUser ] = useState('');
 
-async function getData() {
+function getData() {
   if (!document.cookie) {
     setUser('');
   } else {
@@ -49,7 +49,7 @@ async function getData() {
     if (logger === undefined) {
       return null;
     } else {
-      let newLogger = await JSON.parse(logger);
+      let newLogger = JSON.parse(logger);
       if(newLogger === '') {
         setUser('');
       } else {

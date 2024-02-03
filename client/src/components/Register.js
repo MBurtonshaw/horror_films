@@ -52,7 +52,7 @@ export default function Register(props) {
                 <div className='background_box_mini w-100 m-auto'>
                     <div><a href='/register'>Back</a></div>
                     <div><a href='/login'>Login</a></div>
-                    <div><a href='/home'>Home</a></div>
+                    <div><a href='/'>Home</a></div>
                 </div>
 
             </div>

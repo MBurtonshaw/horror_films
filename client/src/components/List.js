@@ -183,7 +183,26 @@ export default function List(props) {
                 );
             }
         } else {
-            if (isLoading) { return null } else {
+            if (isLoading) { 
+                if (window.innerWidth < 768) {
+                    return (
+                        <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
+                            <div>
+                                <h1> Loading... </h1>
+                            </div>
+                        </div>
+                    );
+                } else {
+                    return (
+                        <div id='List' className='container w-50 p-5 mt-5 background_box'>
+                            <div>
+                                <h1> Loading... </h1>
+                            </div>
+                        </div>
+                    );
+                }
+                
+             } else {
                 //else, the cookie has user data present, and the following is returned
                 if (window.innerWidth < 768) {
                     return (

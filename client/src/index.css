@@ -356,6 +356,10 @@ button {
     background-size: cover;
   }
 
+  .title_load_filler {
+    min-height: 25em;
+  }
+
   span:hover {
     color: pink;
   }

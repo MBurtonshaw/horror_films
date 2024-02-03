@@ -59,7 +59,7 @@ function App() {
     }
   }
 
-  useEffect(() => { getData() }, [setUser]);
+  useEffect(() => { getData() }, [ setUser ]);
 
   // used below in the NotFound component
   let url = window.location.pathname;

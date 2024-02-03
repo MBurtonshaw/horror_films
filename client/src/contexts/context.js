@@ -97,10 +97,10 @@ export class Provider extends Component {
         }
         Cookies.set('signedIn?', JSON.stringify(user), { expires: 7 });
       } else {
-        console.log('Invalid Password');
+        return({"Error": "Passwords don't match"});
       }
     } else {
-      console.log('Not Found');
+      return({"Error": "User not found"});
     }
 
   }

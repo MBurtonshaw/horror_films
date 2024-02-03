@@ -63,17 +63,32 @@ export default function Home(props) {
         );
     } else {
         if (isLoading === true) {
-            return (
-                <div>
-                    <div className='w-25 m-auto p-3'>
-                        <div className='background_box w-50 m-auto'></div>
+            if (window.innerWidth < 768) {
+                return (
+                    <div>
+                        <div className='w-75 m-auto p-3'>
+                            <div className='background_box_mini w-75 m-auto'></div>
+                        </div>
+                        <h1 className='py-4'>...Loading...</h1>
+                        <h2 className='py-5'>Please wait while data is loading</h2>
+                        <div className='background_box_mini w-75 m-auto home_filler mb-5'></div>
+
                     </div>
-                    <h1 className='py-4'>...Loading...</h1>
-                    <h2 className='py-5'>Please wait while data is loading</h2>
-                    <div className='background_box w-50 m-auto home_filler mb-5'></div>
-                    <div className='background_box w-50 m-auto home_filler mb-5'></div>
-                </div>
-            );
+                );
+            } else {
+                return (
+                    <div>
+                        <div className='w-25 m-auto p-3'>
+                            <div className='background_box w-50 m-auto'></div>
+                        </div>
+                        <h1 className='py-4'>...Loading...</h1>
+                        <h2 className='py-5'>Please wait while data is loading</h2>
+                        <div className='background_box w-50 m-auto home_filler mb-5'></div>
+                        <div className='background_box w-50 m-auto home_filler mb-5'></div>
+                    </div>
+                );
+            }
+           
         } else {
             return (
                 <div id='home_div'>

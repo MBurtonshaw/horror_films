@@ -18,6 +18,12 @@ export default function Login(props) {
 
     async function loginUser(e) {
         e.preventDefault();
+        if (!data.email) {
+            setError('Please enter an email address');
+        } else {
+            if (!data.password) {
+                setError('Please enter a password');
+            } else {
         //signing in through Context with email and password from state
         props.context.actions.signIn(data.email, data.password).then(response => {
             //if there's any response from Context, it'll be an error
@@ -30,6 +36,9 @@ export default function Login(props) {
                 window.location.reload();
             }
         });
+            }
+        }
+
     }
 
     function content_filler() {

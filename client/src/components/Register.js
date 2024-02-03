@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const bcrypt = require('bcryptjs');
+import Error from './Error';
 
 export default function Register(props) {
 
@@ -13,6 +13,8 @@ export default function Register(props) {
         password: ''
     })
 
+    let [ error, setError ] = useState('');
+
     /**************************************************************************************
         FUNCTIONS
     ***************************************************************************************/
@@ -20,18 +22,55 @@ export default function Register(props) {
 
     function registerUser(e) {
         e.preventDefault();
-        props.context.actions.registerUser(data.name, data.email, data.password);
-        setData({
-            name: data.name,
-            email: data.email,
-            password: bcrypt.hash(data.password)
-        });
-        navigate(-1);
+        if (!data.name) {
+            setError('Please enter a name');
+        } else {
+            if (!data.email) {
+                setError('Please enter an email');
+            } else {
+                if (!data.password) {
+                    setError('Please enter a password');
+                } else {
+                    props.context.actions.registerUser(data.name, data.email, data.password).then(response => {
+                        if (!response) {
+                            navigate('/login');
+                        }
+                    });
+                }
+            }
+        }
     }
 
     /**************************************************************************************
         RENDER
     ***************************************************************************************/
+   if (error) {
+    if (window.innerWidth < 768) {
+        return (
+            <div className='py-5 my-5 mx-auto'>
+                <Error message={error} />
+                <div className='background_box_mini w-100 m-auto'>
+                    <div><a href='/register'>Back</a></div>
+                    <div><a href='/login'>Login</a></div>
+                    <div><a href='/home'>Home</a></div>
+                </div>
+
+            </div>
+        );
+    } else {
+        return (
+            <div className='py-5 my-5 mx-auto'>
+                <Error message={error} />
+                <div className='background_box w-25 m-auto'>
+                    <div><a href='/register'>Back</a></div>
+                    <div><a href='/login'>Login</a></div>
+                    <div><a href='/home'>Home</a></div>
+                </div>
+
+            </div>
+        );
+    }
+   } else {
     if (window.innerWidth < 768) {
         return (
             <div id='Register' className='container my-5 py-5 w-100 m-auto background_box_mini'>
@@ -87,5 +126,5 @@ export default function Register(props) {
             </div>
         );
     }
-
+   }
 }

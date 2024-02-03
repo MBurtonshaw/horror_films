@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login(props) {
@@ -6,20 +6,12 @@ export default function Login(props) {
     /**************************************************************************************
         STATE AND ASYNC FUNCTIONS
     ***************************************************************************************/
-    let [data, setData] = useState({
-        email: '',
-        password: ''
-    })
 
     const navigate = useNavigate();
 
     function logoutUser(e) {
         e.preventDefault();
         props.context.actions.signOut();
-        setData({
-            email: '',
-            password: ''
-        });
         navigate('/');
         window.location.reload();
     }

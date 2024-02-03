@@ -119,7 +119,7 @@ export default function Decades(props) {
                 return (
                     <div id='DecadePage' className='container p-1 m-auto my-5 pb-2 background_box_mini'>
                         <h1 className='my-4 mx-1'>
-                            Decades: {url}
+                            Decade: {url}
                         </h1>
                         {fill_in()}
                     </div>
@@ -128,7 +128,7 @@ export default function Decades(props) {
                 return (
                     <div id='DecadePage' className='container p-1 m-auto mt-5 w-50 background_box'>
                         <h1 className='m-5'>
-                            Decades: {url}
+                            Decade: {url}
                         </h1>
                         {fill_in()}
                     </div>

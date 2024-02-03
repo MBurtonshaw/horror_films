@@ -79,11 +79,10 @@ export class Provider extends Component {
   registerUser = async (firstName, emailAddress, passphrase) => {
     //Set user credentials and save to a cookie
     let salt = await bcrypt.genSalt(10);
-    let newPass = await bcrypt.hash(passphrase, salt);
     let user = {
       name: firstName,
       email: emailAddress,
-      password: newPass
+      password: passphrase
     }
     Cookies.set(`user: ${emailAddress}`, JSON.stringify(user), { expires: 10 });
     //}
@@ -95,20 +94,18 @@ export class Provider extends Component {
       let salt = await bcrypt.genSalt(10);
       let newType = JSON.parse(applicant);
       let newPass = await bcrypt.hash(passphrase, salt);
-      let newnewPass = await bcrypt.hash(newType.password, salt)
-
-      if (bcrypt.compare(newPass, newnewPass)) {
+      let newnewPass = await bcrypt.hash(newType.password, salt);
+      if (newPass === newnewPass) {
         let user = {
           email: emailAddress,
-          password: passphrase
+          password: newPass
         }
         Cookies.set('signedIn?', JSON.stringify(user), { expires: 7 });
-
       } else {
-        return ('Passwords do not match');
+        return('Passwords do not match');
       }
-
-    } else {
+  }
+ else {
       return ('User does not exist');
     }
   }

@@ -209,13 +209,13 @@ export default function Title(props) {
 
     function loader_fill_in() {
         if (window.innerWidth < 768) {
-            return(
+            return (
                 <div id='title_div' className='container'>
                     <div id='title_photo' className='container w-100'>
-                    
-                    <div className='mt-5 mb-5 pt-4 center'><h1 >...Loading...</h1><div className='background_box_mini w-50 m-auto'></div></div>
-                    <div className='background_box_mini title_load_filler w-75 m-auto my-5'></div>
-                    <div className='background_box_mini title_load_filler'></div>
+
+                        <div className='mt-5 mb-5 pt-4 center'><h1 >...Loading...</h1><div className='background_box_mini w-50 m-auto'></div></div>
+                        <div className='background_box_mini title_load_filler w-75 m-auto my-5'></div>
+                        <div className='background_box_mini title_load_filler'></div>
                     </div>
                 </div>
             );

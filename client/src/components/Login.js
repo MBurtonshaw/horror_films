@@ -75,7 +75,6 @@ export default function Login(props) {
                         <div><a href='/register'>Register</a></div>
                         <div><a href='/'>Home</a></div>
                     </div>
-
                 </div>
             );
         } else {
@@ -87,7 +86,6 @@ export default function Login(props) {
                         <div><a href='/register'>Register</a></div>
                         <div><a href='/home'>Home</a></div>
                     </div>
-
                 </div>
             );
         }

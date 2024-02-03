@@ -35,7 +35,6 @@ export default function List(props) {
                             }
                         }
                     );
-
                     setIsLoading(false);
                 }
             }
@@ -57,7 +56,6 @@ export default function List(props) {
                 return (
                     filmList.map((item, i) =>
                         <li key={i} className='p-2' >
-
                             <div className='w-100 p-2'>
                                 <a href={`/titles/${item.url}`}> {item.title} </a>
                             </div>
@@ -67,7 +65,6 @@ export default function List(props) {
                                     window.location.reload();
                                 }}>remove</button>
                             </div>
-
                         </li>
                     )
                 );
@@ -87,7 +84,6 @@ export default function List(props) {
                                     }}>remove</button>
                                 </div>
                             </div>
-
                         </li>
                     )
                 );
@@ -201,7 +197,6 @@ export default function List(props) {
                         </div>
                     );
                 }
-                
              } else {
                 //else, the cookie has user data present, and the following is returned
                 if (window.innerWidth < 768) {

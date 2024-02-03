@@ -24,9 +24,11 @@ export class Provider extends Component {
 
   render() {
     const { user } = this.state;
+    const { error } = this.state;
     // any of these values will be available to components connected to context
     const value = {
       user,
+      error,
       data: {
         movies
       },
@@ -87,23 +89,28 @@ export class Provider extends Component {
 
   signIn = async (emailAddress, passphrase) => {
     let applicant = Cookies.get(`user: ${emailAddress}`);
-    if (applicant) {
+    if (applicant !== undefined) {
+      let salt = await bcrypt.genSalt(10);
       let newType = JSON.parse(applicant);
-      let newPass = bcrypt.hash(passphrase);
-      if (bcrypt.compare(newPass, newType.password)) {
+      let newPass = await bcrypt.hash(passphrase, salt);
+      let newnewPass = await bcrypt.hash(newType.password, salt)
+
+      if (newPass === newnewPass) {
         let user = {
           email: emailAddress,
-          password: newPass
+          password: passphrase
         }
         Cookies.set('signedIn?', JSON.stringify(user), { expires: 7 });
-      } else {
-        return({"Error": "Passwords don't match"});
-      }
-    } else {
-      return({"Error": "User not found"});
-    }
 
+      } else {
+        return ('Passwords do not match');
+      }
+
+    } else {
+      return ('User does not exist');
+    }
   }
+
 
   signOut = async () => {
     let user = {

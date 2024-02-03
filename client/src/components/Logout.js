@@ -20,7 +20,8 @@ export default function Login(props) {
             email: '',
             password: ''
         });
-        navigate(-1);
+        navigate('/');
+        window.location.reload();
     }
 
     function content_filler() {
@@ -30,7 +31,7 @@ export default function Login(props) {
                 <form action='/login' method='POST' onSubmit={logoutUser}>
                     <div className='m-auto'>
                         <h1>Are you sure?</h1>
-                        <button type='' className='button-81 mt-4' onClick={logoutUser}>Logout</button>
+                        <button type='' className='mt-4' onClick={logoutUser}>Logout</button>
                     </div>
                 </form>
 

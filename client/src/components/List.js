@@ -91,7 +91,6 @@ export default function List(props) {
         }
     }
 
-
     /**************************************************************************************
         RENDER
     ***************************************************************************************/
@@ -179,7 +178,8 @@ export default function List(props) {
                 );
             }
         } else {
-            if (isLoading) { 
+            //loading screen based on isLoading from getData function
+            if (isLoading) {
                 if (window.innerWidth < 768) {
                     return (
                         <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>
@@ -197,8 +197,8 @@ export default function List(props) {
                         </div>
                     );
                 }
-             } else {
-                //else, the cookie has user data present, and the following is returned
+            } else {
+                //if the signedIn? cookie has user data, this is returned
                 if (window.innerWidth < 768) {
                     return (
                         <div id='List' className='container w-100 p-5 mt-5 background_box_mini'>

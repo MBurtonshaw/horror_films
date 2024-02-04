@@ -24,18 +24,18 @@ export default function Login(props) {
             if (!data.password) {
                 setError('Please enter a password');
             } else {
-        //signing in through Context with email and password from state
-        props.context.actions.signIn(data.email, data.password).then(response => {
-            //if there's any response from Context, it'll be an error
-            //so that response will be set to setError and be rendered as <Error /> below
-            if (response) {
-                setError(response);
-            } else {
-                //if there's no response, user is taken to the homepage and is now logged in
-                navigate('/');
-                window.location.reload();
-            }
-        });
+                //signing in through Context with email and password from state
+                props.context.actions.signIn(data.email, data.password).then(response => {
+                    //if there's any response from Context, it'll be an error
+                    //so that response will be set to setError and be rendered as <Error /> below
+                    if (response) {
+                        setError(response);
+                    } else {
+                        //if there's no response, user is taken to the homepage and is now logged in
+                        navigate('/');
+                        window.location.reload();
+                    }
+                });
             }
         }
 

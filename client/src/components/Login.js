@@ -84,7 +84,7 @@ export default function Login(props) {
                     <div className='background_box w-25 m-auto'>
                         <div><a href='/login'>Back</a></div>
                         <div><a href='/register'>Register</a></div>
-                        <div><a href='/home'>Home</a></div>
+                        <div><a href='/'>Home</a></div>
                     </div>
                 </div>
             );

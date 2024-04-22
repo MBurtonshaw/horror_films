@@ -17,6 +17,8 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import Footer from './components/Footer';
 import Cookies from 'js-cookie';
+import RecQs from './components/RecQs';
+import RecResults from './components/RecResults';
 
 /**************************************************************************************
     WRAPPING COMPONENTS IN CONTEXT
@@ -34,6 +36,7 @@ const ListWithContext = withContext(List);
 const LoginWithContext = withContext(Login);
 const LogoutWithContext = withContext(Logout);
 const RegisterWithContext = withContext(Register);
+const RecResultsWithContext = withContext(RecResults);
 
 function App() {
   /**************************************************************************************
@@ -157,6 +160,18 @@ function App() {
               path='/register'
               element={
                 <RegisterWithContext />
+              }
+            />
+            <Route
+              path='/RecQs'
+              element={
+                <RecQs />
+              }
+            />
+            <Route
+              path='/RecResults'
+              element={
+                <RecResultsWithContext />
               }
             />
             <Route

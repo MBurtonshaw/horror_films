@@ -147,6 +147,15 @@ button {
   margin-bottom: 5em;
 }
 
+.curtain {
+  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12),  rgb(42, 8, 8), black);
+  padding: 0.25em;
+}
+
+.curtain_div {
+  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.5), black, black, black, black, black, rgba(8, 15, 11, 0.5), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
+}
+
 .decades_loader {
   min-height: 30em;
 }

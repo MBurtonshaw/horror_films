@@ -39,6 +39,11 @@ export default function Header(props) {
                             </li>
                             <li>
                                 <button className="dropdown-item" type="button">
+                                    <a href='/RecQs'>Recommend</a>
+                                </button>
+                            </li>
+                            <li>
+                                <button className="dropdown-item" type="button">
                                     <a href='/login'>Login</a>
                                 </button>
                             </li>
@@ -81,6 +86,11 @@ export default function Header(props) {
                             </li>
                             <li>
                                 <button className="dropdown-item" type="button">
+                                    <a href='/RecQs'>Recommend</a>
+                                </button>
+                            </li>
+                            <li>
+                                <button className="dropdown-item" type="button">
                                     <a href='/logout'>Logout</a>
                                 </button>
                             </li>
@@ -112,6 +122,9 @@ export default function Header(props) {
                             <a className="nav-link" href="/decades"> Decades </a>
                         </li>
                         <li className="nav-item header-nav">
+                            <a className="nav-link" href='/RecQs'> Recommend </a>
+                        </li>
+                        <li className="nav-item header-nav">
                             <a className="nav-link" href="/login"> Login </a>
                         </li>
                     </ul>
@@ -135,6 +148,9 @@ export default function Header(props) {
                         </li>
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/list"> My List </a>
+                        </li>
+                        <li className="nav-item header-nav">
+                            <a className="nav-link" href='/RecQs'> Recommend </a>
                         </li>
                         <li className="nav-item header-nav">
                             <a className="nav-link" href="/logout"> Logout </a>

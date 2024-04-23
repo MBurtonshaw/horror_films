@@ -1,7 +1,8 @@
 /*******************************************************************************************
                                     MAIN
 *******************************************************************************************/
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -10,8 +11,8 @@ body {
   height: 100%;
   width: 100%;
   background-color: transparent;
-  background-repeat:no-repeat;
-  background-size:100% 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
@@ -37,7 +38,7 @@ a {
   text-decoration: none;
   color: rgb(138, 226, 175);
   font-size: 1.1em;
-  
+
 }
 
 a:hover {
@@ -80,12 +81,12 @@ button {
 
 .accordion-button:focus {
   box-shadow: none;
-  border-color: rgba(0,0,0,.125);
+  border-color: rgba(0, 0, 0, .125);
 }
 
 .accordion-button:not(.collapsed) {
   background-color: black;
-  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12),  rgb(42, 8, 8), black);
+  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(42, 8, 8), black);
   color: rgb(92, 200, 137);
   text-shadow: 2px 2px black;
   box-shadow: none;
@@ -127,7 +128,7 @@ button {
 }
 
 .background_box_mini {
-  background-color: rgba(0,0,0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   border-style: solid;
   border-color: rgba(8, 15, 11, 0.7);
   border-width: 1px;
@@ -148,12 +149,22 @@ button {
 }
 
 .curtain {
-  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12),  rgb(42, 8, 8), black);
+  background-image: linear-gradient(rgba(42, 8, 8, 0.1), rgba(42, 8, 8, 0.5), rgb(42, 8, 8), rgb(50, 10, 10), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(73, 16, 16), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(50, 10, 10), rgba(42, 8, 8, 0.5), rgba(42, 8, 8, 0.1));
+  padding: 0.25em;
+}
+
+.blur {
+  background-color: black;
+  box-shadow: 0 0 5px 10px black;
+}
+
+.curtain_2 {
+  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), black, black, black, black, black, black, black, black, black, rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
   padding: 0.25em;
 }
 
 .curtain_div {
-  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.5), black, black, black, black, black, rgba(8, 15, 11, 0.5), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
+  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.5), black, black, black, black, black, black, black, black, black, rgba(8, 15, 11, 0.5), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
 }
 
 .decades_loader {
@@ -323,10 +334,11 @@ button {
 
 @keyframes fly-left {
   from {
-      transform: translateX(35vw);
+    transform: translateX(35vw);
   }
+
   to {
-      transform: translateX(0vw);
+    transform: translateX(0vw);
   }
 }
 
@@ -336,10 +348,11 @@ button {
 
 @keyframes fly-up {
   from {
-      transform: translateY(50vh);
+    transform: translateY(50vh);
   }
+
   to {
-      transform: translateY(0vh);
+    transform: translateY(0vh);
   }
 }
 
@@ -350,8 +363,13 @@ button {
 }
 
 @keyframes animate-fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
